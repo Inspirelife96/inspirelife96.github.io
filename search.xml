@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[启发日报 第3期 2018/04/12]]></title>
+    <url>%2F2018%2F04%2F12%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC3%E6%9C%9F-2018-04-12%2F</url>
+    <content type="text"><![CDATA[今天浏览Cocoa China的时候，发现一篇不错的关于“iOS 性能优化总结”，所以，第一篇推荐给大家的就是这个。 #####性能：iOS 性能优化总结文章从卡顿产生的原因， iOS 设备中的 CPU &amp; GPU， 优化方案三方面做了综合的阐述。同时也给出了如何进行性能测试以及测试工具，同时附录的参考文章都是比较值得阅读的性能相关的文章。 #####基础知识点：字符串数组排序+模型对象数组排序给字符串数组排序是非常常见的功能，对于iOS开发者来说，我们通常使用NSArray排序提供的sortedArrayUsingComparator 方法：1- (NSArray&lt;ObjectType&gt; *)sortedArrayUsingComparator:(NSComparator NS_NOESCAPE)cmptr NS_AVAILABLE(10_6, 4_0); 同时，苹果专门为NSString 提供的字符串比较方法，获得一个NSComparisonResult 类型，将其自动返回。12// locale arg used to be a dictionary pre-Leopard. We now accept NSLocale. Assumes the current locale if non-nil and non-NSLocale. nil continues to mean canonical compare, which doesn&apos;t depend on user&apos;s locale choice.- (NSComparisonResult)compare:(NSString *)string options:(NSStringCompareOptions)mask range:(NSRange)rangeOfReceiverToCompare locale:(nullable id)locale; 但是你知道如果字符串里带有中文，日文或者特殊字符，这时候字符串的比较以及排序会怎么样吗？这篇文章对NSStringCompareOptions做了非常详细的分析以及对应的测试，我们不用完全记得，但至少有个印象，并把这篇文章加入到你的星标列表里。 #####第三方库推荐： DZNEmptyDataSet界面的空白状态是在“没有资料”、“空列表”、或“错误”时呈现给用户的界面，空白状态会透过一些图示或文字告诉使用者怎么回事，最后引导使用者操作相关的功能。良好的APP会花很多心思空白状态上，引导使用者添加内容到应用上，增强使用者的黏着度。大家可以参考下面的两篇文章，为我们阐述空白状态设计。Designing For The Empty States浅谈界面的空白状态设计 DZNEmptyDataSet提供了上述的设计的代码第三方框架，在这里推荐大家在自己的开发过程中使用，为哦那个户提供一个良好的空白状态界面。]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>性能</tag>
+        <tag>基础知识点</tag>
+        <tag>第三方框架</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启发日报 第2期 2018/04/11]]></title>
     <url>%2F2018%2F04%2F11%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC2%E6%9C%9F-2018-04-11%2F</url>
     <content type="text"><![CDATA[今天推荐的内容，是和我最近开发的项目有关，相信这些话题，大家也会在平常的开发中遇到。 #####基础知识点：NSCopying/NSMutableCopying今天写一些业务代码的时候，发现需要对自定义类的对象进行Copy操作。在C++中我们可以实现拷贝构造函数或者重载”=”操作符；而在Objective-C中，我们可以实现NSCopying/NSMutableCopying协议（当然前提是自定义的类继承自NSObject）。 在这里推荐下面的三篇文章： 第一篇：iOS中几个常用协议（一）NSCopying/NSMutableCopying因为在讨论NSCopying/NSMutableCopying时，我们不得不说的就是copy和mutableCopy，这篇文章做了很好的解释和总结。不过反而对主题NSCopying/NSMutableCopying，倒是有点一笔带过。 第二篇：Objective-C中的copy协议这篇的部分结论在第一篇中有提到，这里这要介绍了（实打实的基础内容）： NSObject对象是否可以copy自己 实现copy协议时，何时需要调用[super copyWithZone:zone] 为何在copyWithZone方法中要调用[[[self class] alloc] init]来分配内存 propery中的copy属性 第三篇： How to implement properly mutableCopyWithZone and copyWithZone第一篇和第二篇都没有特别讲NSMutableCopying的实现，事实上我们通常用到NSCopying比较多。而用到NSMutableCopying时，就意味着我们自己的类，需要定义两个，类似NSArray以及NSMutableArray，一个为不可变版本，另外一个为可变版本。我没有特别找到中文版的很详细的例子去介绍如何定义以及实现这两个类及对应的NSCopying/NSMutableCopying协议，但在stackoverflow找到了相关的提问以及答案。 #####FMDB的使用：在iOS开发中使用FMDB项目中有用到FMDB作为数据持久化方案，框架里设计的数据库管理工具类采用的是单例模式，今天在多线程操作时，涉及到频繁的更新数据库表时，出现了如下的错误：121. The FMDatabase &lt;FMDatabase: 0x7f8232c21f10&gt; is currently in use.2. error = not an error 可见，FMDatabase本身不是线程安全的， 在多个线程中共同一个 FMDatabase 对象并且在多个线程中同时使用，会造成数据混乱等问题。 如果我们的 app 需要多线程操作数据库，那么就需要使用 FMDatabaseQueue 来保证线程安全。 具体的使用请参考唐巧的这篇文章，尽管是写在2012年的，但依然是干货慢慢，FMDB使用的标杆。 #####第三方库推荐： SwiftTheme最近的项目是一个阅读软件，因此有考虑夜间模式，所以想找一个主题框架，来实现白天/夜间模式的主题切换。在Github上翻阅了不少主题框架，最终决定使用这个，因此也向大家推荐。这是一款简单、功能丰富、高性能、可扩展的主题框架（换肤框架）主要特点 纯Swift编写 兼容Objective-C 基于runtime 易于集成 扩展属性以 theme_* 开头，便于 IDE 自动补全 支持UIAppearance 自动监听主题切换，更新UI 支持通过字面量设置不同主题，通过索引进行切换 支持使用plist设置主题，可直接通过项目资源加载，或远程下载至沙盒中加载 主题参数配置错误时日志提示 强类型ThemePicker 完整的Demo]]></content>
