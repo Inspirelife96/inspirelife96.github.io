@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[启发日报 第5期 2018/04/16]]></title>
+    <url>%2F2018%2F04%2F16%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC5%E6%9C%9F-2018-04-16%2F</url>
+    <content type="text"><![CDATA[新的一周开始了，今天首先给大家推荐的是Cocoapods以及Carthage。开发过程中，我们肯定会用到其他第三方库，如果选择手动管理，或者我们需要将源码直接集成到我们的项目中，又或者编译代码，然后将类库链接到项目中，此外，还需要考虑版本以及兼容性问题。想想这些，就知道这会是一个浩大的工程。还好我们有CocoaPods和Carthage这两个工具来管理项目的一览关系。中心化（CocoaPods）和去中心化（Carthage）的集成方式，你喜欢哪一个？其实无所谓喜欢，我们都会用就可以了。 #####集成工具推荐：Cocoapods/Carthage 关于Cocoapods的使用，当然推荐唐巧的这篇文章： 用CocoaPods做iOS程序的依赖管理 而Carthage，大家看看简书上的这篇文章如何：项目依赖管理工具之CocoaPods与Carthage 今天想额外推荐给大家的两篇关于基础知识的文章 #####基础知识：iOS开发之UIView与UIViewController的生命周期总结我们可以通过代码或者借助于XIB/StoryBoard来创建UIView或者UIViewController，那么这两种创建方式，他们调用的API有什么不通，他们的生命周期是怎么样的？那么请看iOS开发之UIView与UIViewController的生命周期总结 #####第三方库推荐：JKCategories开发的时候，总会有一些常用的方法，但是苹果的官方类并没有给出API，我们总需要自己写一部分Category来扩展类的功能，例如日期转字符串，又或者button文字图片实现上下排列。久而久之，这部分代码一直来来回回的从一个项目COPY到另外一个项目，接下来就觉得我们该自己管理一份Category。且慢，先来看看JKCategories，这个Categories类库已经帮您把大部分的常用Categories实现，所以我们不必自己再造轮子，拿来直接使用即可。此外，您也可以学习学习这些Categories的实现代码，看看和自己以前写的有啥区别。]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>基础知识点</tag>
+        <tag>第三方框架</tag>
+        <tag>集成工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启发日报 第4期 2018/04/13]]></title>
     <url>%2F2018%2F04%2F13%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC4%E6%9C%9F-2018-04-13%2F</url>
     <content type="text"><![CDATA[今天的第一个主题是Masonry，Masonry 是一个轻量级的用于自动布局（AutoLayout）的第三方框架，以其简洁的使用方式，受到广大开发者的青睐。 #####第三方库推荐: Masonry 英文好的同学直接浏览Masonry 就可以看到他的所有使用方法以及Demo。想看中文的同学，可以浏览masonry使用技巧 #####源码分析：Masonry 源码解析关于Marsony的源码分析，有不少大牛写过，在这里推荐给大家三篇，大家可以结合着看。Masonry 源码解析iOS 源代码分析 — MasonryiOS框架·Masonry源码深度解析及学习启示:设计模式与链式编程思想 #####基础知识点：NSCoding、NSSecureCoding协议NSCoding经常应用在我们将某一个自定义class的结构存储到plist，或者序列化时。该协议非常简单，只需要实现下面这个两个协议：12- (void)encodeWithCoder:(NSCoder *)aCoder;- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder; 下面这篇文章有详细的介绍：NSCoding、NSSecureCoding 不过，如果class中的属性特别多，并且属性的类型还不一样时，写NSCoding的接口就会变得很痛苦。有时候还可能经常对属性进行修改，都要改encode和decode方法，导致更加容易犯错误。有没有一种方案，能让我们随意的增删改class的属性，而不需要去修改encode和decode里的代码呢？去看看这个利用runtime的方案吧。一个简化NSCoding的方案]]></content>
@@ -21,9 +34,9 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>性能</tag>
         <tag>基础知识点</tag>
         <tag>第三方框架</tag>
+        <tag>性能</tag>
       </tags>
   </entry>
   <entry>
