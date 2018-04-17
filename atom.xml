@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-16T10:12:08.000Z</updated>
+  <updated>2018-04-17T11:31:47.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>启发日报 第6期 2018/04/17</title>
+    <link href="http://yoursite.com/2018/04/17/%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC6%E6%9C%9F-2018-04-17/"/>
+    <id>http://yoursite.com/2018/04/17/启发日报-第6期-2018-04-17/</id>
+    <published>2018-04-17T11:26:17.000Z</published>
+    <updated>2018-04-17T11:31:47.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;我们在写网络数据请求的时候，通常是异步执行的，此外，我们往往有另一个需求，就是例如异步并发去下载多个文件/图片，等所有下载完成后再更新页面。在这里，我们就涉及到多线程。 而iOS当前多线程编程的核心就是Block和GCD(Grand Central
+        
+      
+    
+    </summary>
+    
+      <category term="启发日报" scheme="http://yoursite.com/categories/%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5/"/>
+    
+    
+      <category term="基础知识点" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+      <category term="学习网站" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
   
   <entry>
     <title>启发日报 第5期 2018/04/16</title>
@@ -99,11 +127,11 @@
       <category term="启发日报" scheme="http://yoursite.com/categories/%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5/"/>
     
     
-      <category term="性能" scheme="http://yoursite.com/tags/%E6%80%A7%E8%83%BD/"/>
-    
       <category term="基础知识点" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     
       <category term="第三方框架" scheme="http://yoursite.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="性能" scheme="http://yoursite.com/tags/%E6%80%A7%E8%83%BD/"/>
     
   </entry>
   

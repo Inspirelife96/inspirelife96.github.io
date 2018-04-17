@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[启发日报 第6期 2018/04/17]]></title>
+    <url>%2F2018%2F04%2F17%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC6%E6%9C%9F-2018-04-17%2F</url>
+    <content type="text"><![CDATA[我们在写网络数据请求的时候，通常是异步执行的，此外，我们往往有另一个需求，就是例如异步并发去下载多个文件/图片，等所有下载完成后再更新页面。在这里，我们就涉及到多线程。 而iOS当前多线程编程的核心就是Block和GCD(Grand Central Dispatch). 所以今天第一个要推荐给大家的就是关于GCD的文章。 #####基础知识：iOS多线程：『GCD』详尽总结此外，也推荐大家《Effective Objective-C 2.0》编写高质量的iOS与OS X代码的52个有效方法这本书的第六章-块与大中枢派发这一章节：（书的话，大家自行购买哈，很不错的书，适合放在手边随时翻阅） 第6章 块与大中枢派发 第37条：理解”块”这一概念 第38条：为常用的块类型创建typedef 第39条：用handler块降低代码分散程度 第40条：用块引用其所属对象时不要出现保留环 第41条：多用派发队列，少用同步锁 第42条：多用GCD，少用performSelector系列方法 第43条：掌握GCD及操作队列的使用时机 第44条：通过Dispatch Group机制，根据系统资源状况来执行任务 第45条：使用dispatch_once来执行只需运行一次的线程安全代码 第46条：不要使用dispatch_get_current_queue #####学习网站推荐：learnappmaking因为有订阅，所以定期会收到Reinder的Email，包括一些教程，或者开发技巧的推荐。不过今天收到的信确实“Do the work”。Reinder是一个很喜欢帮助大家编写代码，并分享开发经验的人，这份信的意思，大概是他在遇到太多太多不靠谱的开发人员向他求助后发出的呐喊。他列举了三个例子： One developer sent me 3 messages asking – no, literally begging – for help with a problem that could have been solved by Googling the error message and clicking on the first result. Another developer, to whom I offered to help with a quick Skype call, didn’t show up for that call, despite having answered “10” on the question “On a scale of 1-10, how good do you want to get at iOS development?” Yet another developer copied Xcode’s error message straight into the comment box – no question, no explanation, no “Hey, it doesn’t work, could you help me?” 而他更期望的是提问题的人确实是做过工作的，就是他这封信的标题“Do the work”，也就是说当发生问题是，你自己确实努力过，而在你能力范围内无法解决时，再去提问。而不是遇到问题，直接丢给别人。Questions I’ll happily answer any day and night: “I’m building this ecommerce app for fashion designers. Do you think I should use Firebase or Parse Server? I’ve tried both, but I don’t know how to decide.” “I’m using Swift’s guard statement in my code, but I don’t know if I’m doing it right. Could you check out this function I wrote and let me know how I can improve it?” “I encountered this error in my code. I know where it’s coming from, and I found this article that explains how to solve the error, but I’m totally stuck on applying that stuff in my own code. What’s the next step I can take?” These people are doing the work. 之前还看过一篇文章，好像是一位stackoverflow的活跃者最终和stackoverflow说拜拜，原因是因为在stackoverflow上，越来越多的人变的直接伸手，从来不看或者不查询是否自己的问题已经存在并解决。而这种现象却无法遏制，因此寒了心，从此不再上面回答问题了。 所以，为了让自己能得到更多的帮助，请在提问前尽可能多的做好自己的工作。]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>基础知识点</tag>
+        <tag>学习网站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启发日报 第5期 2018/04/16]]></title>
     <url>%2F2018%2F04%2F16%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC5%E6%9C%9F-2018-04-16%2F</url>
     <content type="text"><![CDATA[新的一周开始了，今天首先给大家推荐的是Cocoapods以及Carthage。开发过程中，我们肯定会用到其他第三方库，如果选择手动管理，或者我们需要将源码直接集成到我们的项目中，又或者编译代码，然后将类库链接到项目中，此外，还需要考虑版本以及兼容性问题。想想这些，就知道这会是一个浩大的工程。还好我们有CocoaPods和Carthage这两个工具来管理项目的一览关系。中心化（CocoaPods）和去中心化（Carthage）的集成方式，你喜欢哪一个？其实无所谓喜欢，我们都会用就可以了。 #####集成工具推荐：Cocoapods/Carthage 关于Cocoapods的使用，当然推荐唐巧的这篇文章： 用CocoaPods做iOS程序的依赖管理 而Carthage，大家看看简书上的这篇文章如何：项目依赖管理工具之CocoaPods与Carthage 今天想额外推荐给大家的两篇关于基础知识的文章 #####基础知识：iOS开发之UIView与UIViewController的生命周期总结我们可以通过代码或者借助于XIB/StoryBoard来创建UIView或者UIViewController，那么这两种创建方式，他们调用的API有什么不通，他们的生命周期是怎么样的？那么请看iOS开发之UIView与UIViewController的生命周期总结 #####第三方库推荐：JKCategories开发的时候，总会有一些常用的方法，但是苹果的官方类并没有给出API，我们总需要自己写一部分Category来扩展类的功能，例如日期转字符串，又或者button文字图片实现上下排列。久而久之，这部分代码一直来来回回的从一个项目COPY到另外一个项目，接下来就觉得我们该自己管理一份Category。且慢，先来看看JKCategories，这个Categories类库已经帮您把大部分的常用Categories实现，所以我们不必自己再造轮子，拿来直接使用即可。此外，您也可以学习学习这些Categories的实现代码，看看和自己以前写的有啥区别。]]></content>
@@ -34,9 +46,9 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>性能</tag>
         <tag>基础知识点</tag>
         <tag>第三方框架</tag>
+        <tag>性能</tag>
       </tags>
   </entry>
   <entry>
