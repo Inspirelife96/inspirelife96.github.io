@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-17T11:31:47.000Z</updated>
+  <updated>2018-04-18T12:14:13.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>启发日报 第7期 2018/04/18</title>
+    <link href="http://yoursite.com/2018/04/18/%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC7%E6%9C%9F-2018-04-18/"/>
+    <id>http://yoursite.com/2018/04/18/启发日报-第7期-2018-04-18/</id>
+    <published>2018-04-18T12:13:24.000Z</published>
+    <updated>2018-04-18T12:14:13.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;程序员总是在不停的翻新自己的代码，貌似我有点强迫症，有时候一个分行，一个空格都要按照自己预想的修改。今天的工作是在做代码的重构，合并公共代码，修改方法调用，调整架构等等。所以，今天想向大家推荐的是关于MVC/MVP/MVVM以及VIPER的文章。&lt;/p&gt;
+&lt;p&gt;#####架
+        
+      
+    
+    </summary>
+    
+      <category term="启发日报" scheme="http://yoursite.com/categories/%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5/"/>
+    
+    
+      <category term="架构" scheme="http://yoursite.com/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="基础知识点" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+      <category term="思考" scheme="http://yoursite.com/tags/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
   
   <entry>
     <title>启发日报 第6期 2018/04/17</title>

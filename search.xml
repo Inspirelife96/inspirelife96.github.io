@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[启发日报 第7期 2018/04/18]]></title>
+    <url>%2F2018%2F04%2F18%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC7%E6%9C%9F-2018-04-18%2F</url>
+    <content type="text"><![CDATA[程序员总是在不停的翻新自己的代码，貌似我有点强迫症，有时候一个分行，一个空格都要按照自己预想的修改。今天的工作是在做代码的重构，合并公共代码，修改方法调用，调整架构等等。所以，今天想向大家推荐的是关于MVC/MVP/MVVM以及VIPER的文章。 #####架构：[译]iOS架构模式——解密MVC、MVP、MVVM和VIPER翻译稍微有点笔误，如果大家更喜欢看英文并且有翻墙工具，那么就去直接看原文吧：https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52 #####基础知识点：iOS绘图框架CoreGraphics分析平常UIKit用多了，但其底层的依赖CoreGraphics，却涉及不多。如果你初次接触CoreGraphics框架，那么推荐您看看这篇文章，深入浅出的介绍了iOS的绘图方法和分析一下CoreGraphics框架的绘图原理。 #####思考：You and Your CareerLimboy 无网不剩最近有一篇文章更新，不是iOS技术文，不过却很有深意，推荐给大家。]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>架构</tag>
+        <tag>基础知识点</tag>
+        <tag>思考</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启发日报 第6期 2018/04/17]]></title>
     <url>%2F2018%2F04%2F17%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC6%E6%9C%9F-2018-04-17%2F</url>
     <content type="text"><![CDATA[我们在写网络数据请求的时候，通常是异步执行的，此外，我们往往有另一个需求，就是例如异步并发去下载多个文件/图片，等所有下载完成后再更新页面。在这里，我们就涉及到多线程。 而iOS当前多线程编程的核心就是Block和GCD(Grand Central Dispatch). 所以今天第一个要推荐给大家的就是关于GCD的文章。 #####基础知识：iOS多线程：『GCD』详尽总结此外，也推荐大家《Effective Objective-C 2.0》编写高质量的iOS与OS X代码的52个有效方法这本书的第六章-块与大中枢派发这一章节：（书的话，大家自行购买哈，很不错的书，适合放在手边随时翻阅） 第6章 块与大中枢派发 第37条：理解”块”这一概念 第38条：为常用的块类型创建typedef 第39条：用handler块降低代码分散程度 第40条：用块引用其所属对象时不要出现保留环 第41条：多用派发队列，少用同步锁 第42条：多用GCD，少用performSelector系列方法 第43条：掌握GCD及操作队列的使用时机 第44条：通过Dispatch Group机制，根据系统资源状况来执行任务 第45条：使用dispatch_once来执行只需运行一次的线程安全代码 第46条：不要使用dispatch_get_current_queue #####学习网站推荐：learnappmaking因为有订阅，所以定期会收到Reinder的Email，包括一些教程，或者开发技巧的推荐。不过今天收到的信确实“Do the work”。Reinder是一个很喜欢帮助大家编写代码，并分享开发经验的人，这份信的意思，大概是他在遇到太多太多不靠谱的开发人员向他求助后发出的呐喊。他列举了三个例子： One developer sent me 3 messages asking – no, literally begging – for help with a problem that could have been solved by Googling the error message and clicking on the first result. Another developer, to whom I offered to help with a quick Skype call, didn’t show up for that call, despite having answered “10” on the question “On a scale of 1-10, how good do you want to get at iOS development?” Yet another developer copied Xcode’s error message straight into the comment box – no question, no explanation, no “Hey, it doesn’t work, could you help me?” 而他更期望的是提问题的人确实是做过工作的，就是他这封信的标题“Do the work”，也就是说当发生问题是，你自己确实努力过，而在你能力范围内无法解决时，再去提问。而不是遇到问题，直接丢给别人。Questions I’ll happily answer any day and night: “I’m building this ecommerce app for fashion designers. Do you think I should use Firebase or Parse Server? I’ve tried both, but I don’t know how to decide.” “I’m using Swift’s guard statement in my code, but I don’t know if I’m doing it right. Could you check out this function I wrote and let me know how I can improve it?” “I encountered this error in my code. I know where it’s coming from, and I found this article that explains how to solve the error, but I’m totally stuck on applying that stuff in my own code. What’s the next step I can take?” These people are doing the work. 之前还看过一篇文章，好像是一位stackoverflow的活跃者最终和stackoverflow说拜拜，原因是因为在stackoverflow上，越来越多的人变的直接伸手，从来不看或者不查询是否自己的问题已经存在并解决。而这种现象却无法遏制，因此寒了心，从此不再上面回答问题了。 所以，为了让自己能得到更多的帮助，请在提问前尽可能多的做好自己的工作。]]></content>
