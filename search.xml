@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[启发日报 第8期 2018/04/19]]></title>
+    <url>%2F2018%2F04%2F19%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC8%E6%9C%9F-2018-04-19%2F</url>
+    <content type="text"><![CDATA[在这个浮躁的年代，现在能静下心来写博客的人不多了。曾今的大牛博客，现在更新的寥寥无几。我的订阅列表里，现在还能坚持更新的，恐怕也就唐巧大大了。前两天又更新了一篇，虽然唐巧现在没有专注在iOS开发这一块，不过不管是技术文章，还是他的读书笔记，又或者年终总结，他的博客的内容还是有很高的质量的，所以今天要推荐给大家的第一篇是： #####思考： 运营启蒙 - 读《运营之光》我想每个程序员，也该学一点运营的知识，因此，哪怕你没打算读这本书，那么花十分钟看看读书笔记，来吸收这本书的精华吧。 #####基础知识点：深入理解iOS NSNotificationNSNotification在平时开发中使用非常频繁，很多时候我们都知道他怎么用，但不一定知道他到底是怎么回事，这篇文章的作者非常的用心，为大家展示了NSNotification背后的故事。相信大家读完之后，对NSNotification会有一个更深层次的认识。 #####第三方库推荐：PYSearch一个非常优雅的搜索控制器iOS框架，我一直有用，所以也推荐给大家使用。 支持各种热门搜索风格 支持多种搜索历史风格 支持各种搜索结果显示模式 支持搜索建议 支持搜索历史缓存 支持使用delegate或block完成搜索的回调 支持CocoaPods 支持多语言 支持横屏或者竖屏的iPhone或iPad]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>基础知识点</tag>
+        <tag>第三方框架</tag>
+        <tag>思考</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启发日报 第7期 2018/04/18]]></title>
     <url>%2F2018%2F04%2F18%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC7%E6%9C%9F-2018-04-18%2F</url>
     <content type="text"><![CDATA[程序员总是在不停的翻新自己的代码，貌似我有点强迫症，有时候一个分行，一个空格都要按照自己预想的修改。今天的工作是在做代码的重构，合并公共代码，修改方法调用，调整架构等等。所以，今天想向大家推荐的是关于MVC/MVP/MVVM以及VIPER的文章。 #####架构：[译]iOS架构模式——解密MVC、MVP、MVVM和VIPER翻译稍微有点笔误，如果大家更喜欢看英文并且有翻墙工具，那么就去直接看原文吧：https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52 #####基础知识点：iOS绘图框架CoreGraphics分析平常UIKit用多了，但其底层的依赖CoreGraphics，却涉及不多。如果你初次接触CoreGraphics框架，那么推荐您看看这篇文章，深入浅出的介绍了iOS的绘图方法和分析一下CoreGraphics框架的绘图原理。 #####思考：You and Your CareerLimboy 无网不剩最近有一篇文章更新，不是iOS技术文，不过却很有深意，推荐给大家。]]></content>
@@ -8,8 +21,8 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>架构</tag>
         <tag>基础知识点</tag>
+        <tag>架构</tag>
         <tag>思考</tag>
       </tags>
   </entry>
