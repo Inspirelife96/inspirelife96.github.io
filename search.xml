@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[启发日报 第9期 2018/04/20]]></title>
+    <url>%2F2018%2F04%2F20%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC9%E6%9C%9F-2018-04-20%2F</url>
+    <content type="text"><![CDATA[周五了，发现如果要认真推荐一些帖子的话，每天还真得浏览不少文章。今天也没有想到特别的主题。前几天有在写UIButton的时候，遇到了上图下字的需求，着实花了一点功夫去看怎么修改UIButton的布局。所以，即便是小小的UIButton控件，也总有那么一些特别的需求，再回想起令人抓狂的UINavigationBar，UITabbar等等，所以想整理下关于各个控件介绍的优秀文章，今天就有了今天的第一篇： #####基础知识点：你真的会用UIButton吗? UIButton详细介绍文章的内容包括： 什么是UIButton UIButton的状态 UIButton的属性设置 UIButton基本使用步骤 UIButton的代码创建与常用属性设置 重写按钮的某个状态属性的 setter 或 getter 方法设置按钮的状态 调整UIButton内部布局 #####基础知识点：字符串解析项目中需要解析字符串中是否含有符合某些特殊规则的字符串，因此想到了正则表达式。所以在这推荐给大家一篇赖在Objc.io的文章。 #####第三方库推荐：SCLAlertView-Swift/SCLAlertView好看又好用的AlertView，话不多少，上图，至于怎么用，去Github上下载Demo吧。]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>基础知识点</tag>
+        <tag>第三方框架</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启发日报 第8期 2018/04/19]]></title>
     <url>%2F2018%2F04%2F19%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC8%E6%9C%9F-2018-04-19%2F</url>
     <content type="text"><![CDATA[在这个浮躁的年代，现在能静下心来写博客的人不多了。曾今的大牛博客，现在更新的寥寥无几。我的订阅列表里，现在还能坚持更新的，恐怕也就唐巧大大了。前两天又更新了一篇，虽然唐巧现在没有专注在iOS开发这一块，不过不管是技术文章，还是他的读书笔记，又或者年终总结，他的博客的内容还是有很高的质量的，所以今天要推荐给大家的第一篇是： #####思考： 运营启蒙 - 读《运营之光》我想每个程序员，也该学一点运营的知识，因此，哪怕你没打算读这本书，那么花十分钟看看读书笔记，来吸收这本书的精华吧。 #####基础知识点：深入理解iOS NSNotificationNSNotification在平时开发中使用非常频繁，很多时候我们都知道他怎么用，但不一定知道他到底是怎么回事，这篇文章的作者非常的用心，为大家展示了NSNotification背后的故事。相信大家读完之后，对NSNotification会有一个更深层次的认识。 #####第三方库推荐：PYSearch一个非常优雅的搜索控制器iOS框架，我一直有用，所以也推荐给大家使用。 支持各种热门搜索风格 支持多种搜索历史风格 支持各种搜索结果显示模式 支持搜索建议 支持搜索历史缓存 支持使用delegate或block完成搜索的回调 支持CocoaPods 支持多语言 支持横屏或者竖屏的iPhone或iPad]]></content>

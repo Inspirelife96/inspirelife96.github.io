@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-19T11:54:26.000Z</updated>
+  <updated>2018-04-20T12:13:34.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>启发日报 第9期 2018/04/20</title>
+    <link href="http://yoursite.com/2018/04/20/%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC9%E6%9C%9F-2018-04-20/"/>
+    <id>http://yoursite.com/2018/04/20/启发日报-第9期-2018-04-20/</id>
+    <published>2018-04-20T12:12:53.000Z</published>
+    <updated>2018-04-20T12:13:34.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;周五了，发现如果要认真推荐一些帖子的话，每天还真得浏览不少文章。今天也没有想到特别的主题。前几天有在写UIButton的时候，遇到了上图下字的需求，着实花了一点功夫去看怎么修改UIButton的布局。所以，即便是小小的UIButton控件，也总有那么一些特别的需求，再回想起
+        
+      
+    
+    </summary>
+    
+      <category term="启发日报" scheme="http://yoursite.com/categories/%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5/"/>
+    
+    
+      <category term="基础知识点" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+      <category term="第三方框架" scheme="http://yoursite.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>启发日报 第8期 2018/04/19</title>
