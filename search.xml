@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[启发日报 第10期 2018/04/23]]></title>
+    <url>%2F2018%2F04%2F23%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC10%E6%9C%9F-2018-04-23%2F</url>
+    <content type="text"><![CDATA[因为在重构自己的代码，所以周末的时候有在看MVVM以及ReactiveCocoa，考虑是否用MVVM重构下自己的代码，并考虑是否引入ReactiveCocoa。因为ReactiveCocoa的学习成本高，而且调试困难，所以一直都在由于。今天看了雷纯锋的这篇技术博客，确实给自己增强了不少信心。所以，就开始吧，希望重构完成之后，也能给出一篇博客来介绍重构的过程以及自己学习ReactiveCocoa的过程。 今天推荐给大家的主菜就是： #####架构：MVVM With ReactiveCocoa 此外，还有三篇文章，我觉得还不错，对于入门和概念了解有帮助： iOS 关于MVC和MVVM设计模式的那些事iOS 关于MVVM Without ReactiveCocoa设计模式的那些事 iOS 关于MVVM With ReactiveCocoa设计模式的那些事 今天的内容就这些了，我想这些内容大家上下班的时候看已经足够了。]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>架构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启发日报 第9期 2018/04/20]]></title>
     <url>%2F2018%2F04%2F20%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC9%E6%9C%9F-2018-04-20%2F</url>
     <content type="text"><![CDATA[周五了，发现如果要认真推荐一些帖子的话，每天还真得浏览不少文章。今天也没有想到特别的主题。前几天有在写UIButton的时候，遇到了上图下字的需求，着实花了一点功夫去看怎么修改UIButton的布局。所以，即便是小小的UIButton控件，也总有那么一些特别的需求，再回想起令人抓狂的UINavigationBar，UITabbar等等，所以想整理下关于各个控件介绍的优秀文章，今天就有了今天的第一篇： #####基础知识点：你真的会用UIButton吗? UIButton详细介绍文章的内容包括： 什么是UIButton UIButton的状态 UIButton的属性设置 UIButton基本使用步骤 UIButton的代码创建与常用属性设置 重写按钮的某个状态属性的 setter 或 getter 方法设置按钮的状态 调整UIButton内部布局 #####基础知识点：字符串解析项目中需要解析字符串中是否含有符合某些特殊规则的字符串，因此想到了正则表达式。所以在这推荐给大家一篇赖在Objc.io的文章。 #####第三方库推荐：SCLAlertView-Swift/SCLAlertView好看又好用的AlertView，话不多少，上图，至于怎么用，去Github上下载Demo吧。]]></content>
@@ -33,8 +44,8 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>基础知识点</tag>
         <tag>架构</tag>
+        <tag>基础知识点</tag>
         <tag>思考</tag>
       </tags>
   </entry>
