@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[启发日报 第12期 2018/04/25]]></title>
+    <url>%2F2018%2F04%2F25%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC12%E6%9C%9F-2018-04-25%2F</url>
+    <content type="text"><![CDATA[今天首先推荐的是基础内容，事实上大家对NSArray, NSSet, NSOrderedSet 和 NSDictionary这些类已经用的非常熟悉了，但是这篇文章肯定有您不知道的内容：来自Objc.io中国的一篇关于基础集合类的文章，虽然是15年的文章，但其含金量还是足足的。 #####基础知识：基础集合类 第二个想推荐给大家的和技术无关，是在CocoaChina上看到的一篇关于如何学习iOS的文章，励志成为全栈开发的同学们可以看看怎么学习 #####学习:浅谈iOS进阶路线一直都是在菜鸟的路途中徘徊，看了这篇，瞬间被击溃了。漫漫路，虽然上了年纪，但还是得一步一个脚印去努力。]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>基础知识点</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[启发日报 第11期 2018/04/24]]></title>
+    <url>%2F2018%2F04%2F25%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC11%E6%9C%9F-2018-04-24%2F</url>
+    <content type="text"><![CDATA[昨天有点偷懒，所以没有按时写完第11期。事实上是昨天忙着别的事情了，没有时间去阅读一些文章，因此也不知道推荐什么。 因此，今天首要的任务是把昨天没完成的补上。 今天在重构本地缓存相关的类，有用到Sqlite以及NSCache。重构的时候，就在考虑是不是有更好的第三方库，因此今天推荐给大家的是 #####第三方库推荐：YYCache同时，作者还非常贴心的把设计思路分享给了大家：YYCache 设计思路.在阅读的时候，有非常多的内容可以拓展，比如LRU算法，线程锁等等。大家可以自行查阅相关内容。 #####练习：如何把delegate形式转成block形式以后可能会有这种类型的推荐，也就是会把平常遇到的一些问题提出来，和大家一起讨论和练习。项目用到了 MWFeedParser这个第三方库，但是他提供的是delegate形式的callback，很想改成block形式的，大家觉得应该怎么改？]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>第三方框架</tag>
+        <tag>练习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启发日报 第10期 2018/04/23]]></title>
     <url>%2F2018%2F04%2F23%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC10%E6%9C%9F-2018-04-23%2F</url>
     <content type="text"><![CDATA[因为在重构自己的代码，所以周末的时候有在看MVVM以及ReactiveCocoa，考虑是否用MVVM重构下自己的代码，并考虑是否引入ReactiveCocoa。因为ReactiveCocoa的学习成本高，而且调试困难，所以一直都在由于。今天看了雷纯锋的这篇技术博客，确实给自己增强了不少信心。所以，就开始吧，希望重构完成之后，也能给出一篇博客来介绍重构的过程以及自己学习ReactiveCocoa的过程。 今天推荐给大家的主菜就是： #####架构：MVVM With ReactiveCocoa 此外，还有三篇文章，我觉得还不错，对于入门和概念了解有帮助： iOS 关于MVC和MVVM设计模式的那些事iOS 关于MVVM Without ReactiveCocoa设计模式的那些事 iOS 关于MVVM With ReactiveCocoa设计模式的那些事 今天的内容就这些了，我想这些内容大家上下班的时候看已经足够了。]]></content>
@@ -19,8 +43,8 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>基础知识点</tag>
         <tag>第三方框架</tag>
+        <tag>基础知识点</tag>
       </tags>
   </entry>
   <entry>
@@ -31,8 +55,8 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>基础知识点</tag>
         <tag>第三方框架</tag>
+        <tag>基础知识点</tag>
         <tag>思考</tag>
       </tags>
   </entry>
@@ -44,8 +68,8 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>架构</tag>
         <tag>基础知识点</tag>
+        <tag>架构</tag>
         <tag>思考</tag>
       </tags>
   </entry>
@@ -69,8 +93,8 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>基础知识点</tag>
         <tag>第三方框架</tag>
+        <tag>基础知识点</tag>
         <tag>集成工具</tag>
       </tags>
   </entry>
@@ -82,8 +106,8 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>基础知识点</tag>
         <tag>第三方框架</tag>
+        <tag>基础知识点</tag>
         <tag>源码分析</tag>
       </tags>
   </entry>
@@ -95,8 +119,8 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>基础知识点</tag>
         <tag>第三方框架</tag>
+        <tag>基础知识点</tag>
         <tag>性能</tag>
       </tags>
   </entry>
@@ -108,8 +132,8 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>基础知识点</tag>
         <tag>第三方框架</tag>
+        <tag>基础知识点</tag>
         <tag>数据持久化</tag>
       </tags>
   </entry>
