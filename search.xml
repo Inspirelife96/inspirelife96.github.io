@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[启发日报 第13期 2018/04/26]]></title>
+    <url>%2F2018%2F04%2F26%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC13%E6%9C%9F-2018-04-26%2F</url>
+    <content type="text"><![CDATA[做iOS开发，避免不了用户注册，登录页面。业务逻辑别论，UI的实现上肯定涉及到UITextField。看上去很简单，可有时候不少功能还是挺折腾的。所以今天要推荐的第几篇是关于UITextField的。 #####基础知识：iOS-UITextField 全面解析我更推荐看UITextField，不过这篇的总结非常直观，就当API参考了。 #####拓展：iOS开发-UITextField的那点事(https://www.jianshu.com/p/4b9957f2afc2)这是一篇UITextField的拓展文章，主要是关于输入控制，以及键盘遮盖问题。常见的就是我们需要限制输入长度或者输入的文本类型。或许这里面的探讨可以给您一些启示。 #####拓展：iOS登录注册登录界面（UITextField）然后是这一篇，是在开发登录界面时，一个开发者的考虑，里面有一些细节的点，非常值得学习，例如键盘的类型选择等，从用户的角度触发，来设置方便用户的值。 #####第三方库推荐： IQKeyboardManager既然说起了键盘遮挡的问题，那么向大家推荐下面这个第三方库，非常简单实用。]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>第三方框架</tag>
+        <tag>基础知识点</tag>
+        <tag>拓展</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启发日报 第12期 2018/04/25]]></title>
     <url>%2F2018%2F04%2F25%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC12%E6%9C%9F-2018-04-25%2F</url>
     <content type="text"><![CDATA[今天首先推荐的是基础内容，事实上大家对NSArray, NSSet, NSOrderedSet 和 NSDictionary这些类已经用的非常熟悉了，但是这篇文章肯定有您不知道的内容：来自Objc.io中国的一篇关于基础集合类的文章，虽然是15年的文章，但其含金量还是足足的。 #####基础知识：基础集合类 第二个想推荐给大家的和技术无关，是在CocoaChina上看到的一篇关于如何学习iOS的文章，励志成为全栈开发的同学们可以看看怎么学习 #####学习:浅谈iOS进阶路线一直都是在菜鸟的路途中徘徊，看了这篇，瞬间被击溃了。漫漫路，虽然上了年纪，但还是得一步一个脚印去努力。]]></content>
@@ -68,8 +81,8 @@
         <category>启发日报</category>
       </categories>
       <tags>
-        <tag>基础知识点</tag>
         <tag>架构</tag>
+        <tag>基础知识点</tag>
         <tag>思考</tag>
       </tags>
   </entry>

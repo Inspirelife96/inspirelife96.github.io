@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-25T11:43:44.000Z</updated>
+  <updated>2018-04-26T12:29:01.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>启发日报 第13期 2018/04/26</title>
+    <link href="http://yoursite.com/2018/04/26/%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC13%E6%9C%9F-2018-04-26/"/>
+    <id>http://yoursite.com/2018/04/26/启发日报-第13期-2018-04-26/</id>
+    <published>2018-04-26T12:28:13.000Z</published>
+    <updated>2018-04-26T12:29:01.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;做iOS开发，避免不了用户注册，登录页面。业务逻辑别论，UI的实现上肯定涉及到&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uitextfield&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="启发日报" scheme="http://yoursite.com/categories/%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5/"/>
+    
+    
+      <category term="第三方框架" scheme="http://yoursite.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="基础知识点" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+      <category term="拓展" scheme="http://yoursite.com/tags/%E6%8B%93%E5%B1%95/"/>
+    
+  </entry>
   
   <entry>
     <title>启发日报 第12期 2018/04/25</title>
@@ -181,9 +211,9 @@
       <category term="启发日报" scheme="http://yoursite.com/categories/%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5/"/>
     
     
-      <category term="基础知识点" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    
       <category term="架构" scheme="http://yoursite.com/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="基础知识点" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     
       <category term="思考" scheme="http://yoursite.com/tags/%E6%80%9D%E8%80%83/"/>
     
