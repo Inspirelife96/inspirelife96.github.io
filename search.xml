@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[启发日报 第14期 2018/04/27]]></title>
+    <url>%2F2018%2F04%2F30%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC14%E6%9C%9F-2018-04-27%2F</url>
+    <content type="text"><![CDATA[写了那么多的block，却从来没有特别系统的去学习过block。事实上是看过一些的，block的语法部分还可以理解，但每次看到底层实现时，总会被弄的晕乎乎的。今天打算花一点时间，好好的学习一下。主要是参考《Objective-C 高级编程 iOS与OS X多线程和内存管理》一书的第二章“Blocks”。主要包括： blocks概要 blocks模式 blocks的实现 大家可以自己买书看，或者可以先看看这篇读后笔记：iOS Block用法和实现原理 唐巧也写了一篇block原理的博客，我觉得比书更容易理解一些，大家也可以阅读。谈Objective-C block的实现 习惯看英文的同学，也推荐看下面这三篇 A look inside blocks: Episode 1 A look inside blocks: Episode 2 A look inside blocks: Episode 3 以及苹果的官方文档：Blocks Programming TopicsA Short Practical Guide to Blocks]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>基础知识点</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启发日报 第13期 2018/04/26]]></title>
     <url>%2F2018%2F04%2F26%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC13%E6%9C%9F-2018-04-26%2F</url>
     <content type="text"><![CDATA[做iOS开发，避免不了用户注册，登录页面。业务逻辑别论，UI的实现上肯定涉及到UITextField。看上去很简单，可有时候不少功能还是挺折腾的。所以今天要推荐的第几篇是关于UITextField的。 #####基础知识：iOS-UITextField 全面解析我更推荐看UITextField，不过这篇的总结非常直观，就当API参考了。 #####拓展：iOS开发-UITextField的那点事(https://www.jianshu.com/p/4b9957f2afc2)这是一篇UITextField的拓展文章，主要是关于输入控制，以及键盘遮盖问题。常见的就是我们需要限制输入长度或者输入的文本类型。或许这里面的探讨可以给您一些启示。 #####拓展：iOS登录注册登录界面（UITextField）然后是这一篇，是在开发登录界面时，一个开发者的考虑，里面有一些细节的点，非常值得学习，例如键盘的类型选择等，从用户的角度触发，来设置方便用户的值。 #####第三方库推荐： IQKeyboardManager既然说起了键盘遮挡的问题，那么向大家推荐下面这个第三方库，非常简单实用。]]></content>
