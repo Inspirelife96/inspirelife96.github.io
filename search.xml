@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[启发日报 第15期 2018/04/30]]></title>
+    <url>%2F2018%2F05%2F01%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC15%E6%9C%9F-2018-04-30%2F</url>
+    <content type="text"><![CDATA[今天推荐给大家的是关于Navigation Bar或者Tab Bar遮挡View的问题。关键就在于 edgesForExtendedLayout translucent extendedLayoutIncludesOpaqueBars automaticallyAdjustsScrollViewInsets(iOS 11为contentInsetAdjustmentBehavior)下面这篇文章有一个很好的演示和总结： #####基础知识：导航栏遮住View问题的详细总结(已更新iOS11) 同时，这篇文章也不错：iOS 导航栏的那些事儿 既然谈到了Navigation Bar，那么我们就多聊聊导航栏的事吧。 首先，苹果的官方文档，好好读下，基本上就应该什么都了解了：UINavigationControllerUINavigationBarUINavigationItem 不喜欢看英文的可以参考下面几片文章：iOS 导航栏 知识总结iOS 自定义导航栏笔记 最后推荐一些导航栏的特效的实现以及第三方库：超简单！！！ iOS设置状态栏、导航栏按钮、标题、颜色、透明度，偏移等 #####第三方库推荐： WRNavigationBar]]></content>
+      <categories>
+        <category>启发日报</category>
+      </categories>
+      <tags>
+        <tag>第三方框架</tag>
+        <tag>基础知识点</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启发日报 第14期 2018/04/27]]></title>
     <url>%2F2018%2F04%2F30%2F%E5%90%AF%E5%8F%91%E6%97%A5%E6%8A%A5-%E7%AC%AC14%E6%9C%9F-2018-04-27%2F</url>
     <content type="text"><![CDATA[写了那么多的block，却从来没有特别系统的去学习过block。事实上是看过一些的，block的语法部分还可以理解，但每次看到底层实现时，总会被弄的晕乎乎的。今天打算花一点时间，好好的学习一下。主要是参考《Objective-C 高级编程 iOS与OS X多线程和内存管理》一书的第二章“Blocks”。主要包括： blocks概要 blocks模式 blocks的实现 大家可以自己买书看，或者可以先看看这篇读后笔记：iOS Block用法和实现原理 唐巧也写了一篇block原理的博客，我觉得比书更容易理解一些，大家也可以阅读。谈Objective-C block的实现 习惯看英文的同学，也推荐看下面这三篇 A look inside blocks: Episode 1 A look inside blocks: Episode 2 A look inside blocks: Episode 3 以及苹果的官方文档：Blocks Programming TopicsA Short Practical Guide to Blocks]]></content>
