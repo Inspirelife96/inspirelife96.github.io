@@ -29,10 +29,11 @@
     
       
       
-        
-        
-          &lt;p&gt;今天推荐给大家的是关于Navigation Bar或者Tab
-        
+        &lt;p&gt;今天推荐给大家的是关于Navigation Bar或者Tab Bar遮挡View的问题。关键就在于&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;edgesForExtendedLayout&lt;/li&gt;
+&lt;li&gt;translucent&lt;/li&gt;
+&lt;li&gt;extendedLayoutInclude
       
     
     </summary>
@@ -59,10 +60,7 @@
     
       
       
-        
-        
-          &lt;p&gt;写了那么多的block，却从来没有特别系统的去学习过block。事实上是看过一些的，block的语法部分还可以理解，但每次看到底层实现时，总会被弄的晕乎乎的。今天打算花一点时间，好好的学习一下。主要是参考《Objective-C 高级编程 iOS与OS
-        
+        &lt;p&gt;写了那么多的block，却从来没有特别系统的去学习过block。事实上是看过一些的，block的语法部分还可以理解，但每次看到底层实现时，总会被弄的晕乎乎的。今天打算花一点时间，好好的学习一下。主要是参考《Objective-C 高级编程 iOS与OS X多线程和内存管理》
       
     
     </summary>
@@ -87,10 +85,7 @@
     
       
       
-        
-        
-          &lt;p&gt;做iOS开发，避免不了用户注册，登录页面。业务逻辑别论，UI的实现上肯定涉及到&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uitextfield&quot; target=&quot;_blank&quot;
-        
+        &lt;p&gt;做iOS开发，避免不了用户注册，登录页面。业务逻辑别论，UI的实现上肯定涉及到&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uitextfield&quot; target=&quot;_blank&quot; rel=&quot;noopene
       
     
     </summary>
@@ -119,10 +114,7 @@
     
       
       
-        
-        
-          &lt;p&gt;今天首先推荐的是基础内容，事实上大家对NSArray, NSSet, NSOrderedSet 和
-        
+        &lt;p&gt;今天首先推荐的是基础内容，事实上大家对NSArray, NSSet, NSOrderedSet 和 NSDictionary这些类已经用的非常熟悉了，但是这篇文章肯定有您不知道的内容：来自Objc.io中国的一篇关于基础集合类的文章，虽然是15年的文章，但其含金量还是足足的
       
     
     </summary>
@@ -149,12 +141,9 @@
     
       
       
-        
-        
-          &lt;p&gt;昨天有点偷懒，所以没有按时写完第11期。事实上是昨天忙着别的事情了，没有时间去阅读一些文章，因此也不知道推荐什么。&lt;/p&gt;
+        &lt;p&gt;昨天有点偷懒，所以没有按时写完第11期。事实上是昨天忙着别的事情了，没有时间去阅读一些文章，因此也不知道推荐什么。&lt;/p&gt;
 &lt;p&gt;因此，今天首要的任务是把昨天没完成的补上。&lt;/p&gt;
 &lt;p&gt;今天在重构本地缓存相关的类，有用到Sqlite以及NSCache。重构的时候，就在考虑
-        
       
     
     </summary>
@@ -181,10 +170,7 @@
     
       
       
-        
-        
-          &lt;p&gt;因为在重构自己的代码，所以周末的时候有在看MVVM以及ReactiveCocoa，考虑是否用MVVM重构下自己的代码，并考虑是否引入ReactiveCocoa。因为ReactiveCocoa的学习成本高，而且调试困难，所以一直都在由于。今天看了&lt;a
-        
+        &lt;p&gt;因为在重构自己的代码，所以周末的时候有在看MVVM以及ReactiveCocoa，考虑是否用MVVM重构下自己的代码，并考虑是否引入ReactiveCocoa。因为ReactiveCocoa的学习成本高，而且调试困难，所以一直都在由于。今天看了&lt;a href=&quot;http:/
       
     
     </summary>
@@ -209,10 +195,7 @@
     
       
       
-        
-        
-          &lt;p&gt;周五了，发现如果要认真推荐一些帖子的话，每天还真得浏览不少文章。今天也没有想到特别的主题。前几天有在写UIButton的时候，遇到了上图下字的需求，着实花了一点功夫去看怎么修改UIButton的布局。所以，即便是小小的UIButton控件，也总有那么一些特别的需求，再回想起
-        
+        &lt;p&gt;周五了，发现如果要认真推荐一些帖子的话，每天还真得浏览不少文章。今天也没有想到特别的主题。前几天有在写UIButton的时候，遇到了上图下字的需求，着实花了一点功夫去看怎么修改UIButton的布局。所以，即便是小小的UIButton控件，也总有那么一些特别的需求，再回想起
       
     
     </summary>
@@ -239,10 +222,7 @@
     
       
       
-        
-        
-          &lt;p&gt;在这个浮躁的年代，现在能静下心来写博客的人不多了。曾今的大牛博客，现在更新的寥寥无几。我的订阅列表里，现在还能坚持更新的，恐怕也就唐巧大大了。前两天又更新了一篇，虽然唐巧现在没有专注在iOS开发这一块，不过不管是技术文章，还是他的读书笔记，又或者年终总结，他的博客的内容还是
-        
+        &lt;p&gt;在这个浮躁的年代，现在能静下心来写博客的人不多了。曾今的大牛博客，现在更新的寥寥无几。我的订阅列表里，现在还能坚持更新的，恐怕也就唐巧大大了。前两天又更新了一篇，虽然唐巧现在没有专注在iOS开发这一块，不过不管是技术文章，还是他的读书笔记，又或者年终总结，他的博客的内容还是
       
     
     </summary>
@@ -271,11 +251,8 @@
     
       
       
-        
-        
-          &lt;p&gt;程序员总是在不停的翻新自己的代码，貌似我有点强迫症，有时候一个分行，一个空格都要按照自己预想的修改。今天的工作是在做代码的重构，合并公共代码，修改方法调用，调整架构等等。所以，今天想向大家推荐的是关于MVC/MVP/MVVM以及VIPER的文章。&lt;/p&gt;
+        &lt;p&gt;程序员总是在不停的翻新自己的代码，貌似我有点强迫症，有时候一个分行，一个空格都要按照自己预想的修改。今天的工作是在做代码的重构，合并公共代码，修改方法调用，调整架构等等。所以，今天想向大家推荐的是关于MVC/MVP/MVVM以及VIPER的文章。&lt;/p&gt;
 &lt;p&gt;#####架
-        
       
     
     </summary>
@@ -304,10 +281,7 @@
     
       
       
-        
-        
-          &lt;p&gt;我们在写网络数据请求的时候，通常是异步执行的，此外，我们往往有另一个需求，就是例如异步并发去下载多个文件/图片，等所有下载完成后再更新页面。在这里，我们就涉及到多线程。 而iOS当前多线程编程的核心就是Block和GCD(Grand Central
-        
+        &lt;p&gt;我们在写网络数据请求的时候，通常是异步执行的，此外，我们往往有另一个需求，就是例如异步并发去下载多个文件/图片，等所有下载完成后再更新页面。在这里，我们就涉及到多线程。 而iOS当前多线程编程的核心就是Block和GCD(Grand Central Dispatch).&lt;/
       
     
     </summary>
@@ -334,10 +308,7 @@
     
       
       
-        
-        
-          &lt;p&gt;新的一周开始了，今天首先给大家推荐的是Cocoapods以及Carthage。&lt;br&gt;开发过程中，我们肯定会用到其他第三方库，如果选择手动管理，或者我们需要将源码直接集成到我们的项目中，又或者编译代码，然后将类库链接到项目中，此外，还需要考虑版本以及兼容性问题。想想这些，就
-        
+        &lt;p&gt;新的一周开始了，今天首先给大家推荐的是Cocoapods以及Carthage。&lt;br&gt;开发过程中，我们肯定会用到其他第三方库，如果选择手动管理，或者我们需要将源码直接集成到我们的项目中，又或者编译代码，然后将类库链接到项目中，此外，还需要考虑版本以及兼容性问题。想想这些，就
       
     
     </summary>
@@ -366,10 +337,7 @@
     
       
       
-        
-        
-          &lt;p&gt;今天的第一个主题是Masonry，&lt;a href=&quot;https://github.com/SnapKit/Masonry&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Masonry&lt;/a&gt;
-        
+        &lt;p&gt;今天的第一个主题是Masonry，&lt;a href=&quot;https://github.com/SnapKit/Masonry&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Masonry&lt;/a&gt; 是一个轻量级的用于自动布局（AutoLayout）的第三方框架，
       
     
     </summary>
@@ -398,11 +366,8 @@
     
       
       
-        
-        
-          &lt;p&gt;今天浏览Cocoa China的时候，发现一篇不错的关于“iOS 性能优化总结”，所以，第一篇推荐给大家的就是这个。&lt;/p&gt;
-&lt;p&gt;#####性能：&lt;a href=&quot;http://www.cocoachina.com/ios/20180412/22990.html&quot;
-        
+        &lt;p&gt;今天浏览Cocoa China的时候，发现一篇不错的关于“iOS 性能优化总结”，所以，第一篇推荐给大家的就是这个。&lt;/p&gt;
+&lt;p&gt;#####性能：&lt;a href=&quot;http://www.cocoachina.com/ios/20180412/22990.html&quot; tar
       
     
     </summary>
@@ -431,11 +396,8 @@
     
       
       
-        
-        
-          &lt;p&gt;今天推荐的内容，是和我最近开发的项目有关，相信这些话题，大家也会在平常的开发中遇到。&lt;/p&gt;
+        &lt;p&gt;今天推荐的内容，是和我最近开发的项目有关，相信这些话题，大家也会在平常的开发中遇到。&lt;/p&gt;
 &lt;p&gt;#####基础知识点：NSCopying/NSMutableCopying&lt;br&gt;今天写一些业务代码的时候，发现需要对自定义类的对象进行Copy操作。在C++中我们可以实现拷
-        
       
     
     </summary>
@@ -464,11 +426,8 @@
     
       
       
-        
-        
-          &lt;p&gt;这个主题，想了很久但一直没有下笔，如今打算给自己一个目标，也算是压力，看看能坚持多久。&lt;/p&gt;
+        &lt;p&gt;这个主题，想了很久但一直没有下笔，如今打算给自己一个目标，也算是压力，看看能坚持多久。&lt;/p&gt;
 &lt;p&gt;主题名字就叫“启发日报”吧，周一到周五每天更新一篇文章，内容为iOS开发相关的好文推荐，可能是Apple的新闻，iOS的基础知识点，或者架构分析，框架，源码推荐等等。&lt;/p
-        
       
     
     </summary>
