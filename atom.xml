@@ -23,6 +23,8 @@
     <published>2018-05-01T13:29:15.000Z</published>
     <updated>2018-05-01T13:30:10.000Z</updated>
     
+    <content type="html"><![CDATA[<p>今天推荐给大家的是关于Navigation Bar或者Tab Bar遮挡View的问题。关键就在于</p><ul><li>edgesForExtendedLayout</li><li>translucent</li><li>extendedLayoutIncludesOpaqueBars</li><li>automaticallyAdjustsScrollViewInsets(iOS 11为contentInsetAdjustmentBehavior)<br>下面这篇文章有一个很好的演示和总结：</li></ul><p>#####基础知识：<a href="https://www.jianshu.com/p/9f1d8fab82c4" target="_blank" rel="noopener">导航栏遮住View问题的详细总结(已更新iOS11)</a></p><p>同时，这篇文章也不错：<br><a href="http://ios.jobbole.com/90851/" target="_blank" rel="noopener">iOS 导航栏的那些事儿</a></p><p>既然谈到了Navigation Bar，那么我们就多聊聊导航栏的事吧。</p><p>首先，苹果的官方文档，好好读下，基本上就应该什么都了解了：<br><a href="https://developer.apple.com/documentation/uikit/uinavigationcontroller" target="_blank" rel="noopener">UINavigationController</a><br><a href="https://developer.apple.com/documentation/uikit/uinavigationbar#//apple_ref/occ/instm/UINavigationBar/pushNavigationItem:animated:" target="_blank" rel="noopener">UINavigationBar</a><br><a href="https://developer.apple.com/documentation/uikit/uinavigationitem#//apple_ref/occ/cl/UINavigationItem" target="_blank" rel="noopener">UINavigationItem</a></p><p>不喜欢看英文的可以参考下面几片文章：<br><a href="https://www.jianshu.com/p/d878c237aada" target="_blank" rel="noopener">iOS 导航栏 知识总结</a><br><a href="https://www.jianshu.com/p/b7818eba288c" target="_blank" rel="noopener">iOS 自定义导航栏笔记</a></p><p>最后推荐一些导航栏的特效的实现以及第三方库：<br><a href="https://www.jianshu.com/p/540a7e6f7b40" target="_blank" rel="noopener">超简单！！！ iOS设置状态栏、导航栏按钮、标题、颜色、透明度，偏移等</a></p><p>#####第三方库推荐： <strong><a href="https://github.com/wangrui460/WRNavigationBar" target="_blank" rel="noopener">WRNavigationBar</a></strong></p>]]></content>
+    
     <summary type="html">
     
       
@@ -51,6 +53,8 @@
     <published>2018-04-30T12:05:32.000Z</published>
     <updated>2018-04-30T12:07:22.000Z</updated>
     
+    <content type="html"><![CDATA[<p>写了那么多的block，却从来没有特别系统的去学习过block。事实上是看过一些的，block的语法部分还可以理解，但每次看到底层实现时，总会被弄的晕乎乎的。今天打算花一点时间，好好的学习一下。主要是参考《Objective-C 高级编程 iOS与OS X多线程和内存管理》一书的第二章“Blocks”。主要包括：</p><ul><li>blocks概要</li><li>blocks模式</li><li>blocks的实现</li></ul><p>大家可以自己买书看，或者可以先看看这篇读后笔记：<br><a href="https://www.jianshu.com/p/d28a5633b963" target="_blank" rel="noopener">iOS Block用法和实现原理</a></p><p>唐巧也写了一篇block原理的博客，我觉得比书更容易理解一些，大家也可以阅读。<br><a href="http://blog.devtang.com/2013/07/28/a-look-inside-blocks/" title="谈Objective-C block的实现" target="_blank" rel="noopener">谈Objective-C block的实现</a></p><p>习惯看英文的同学，也推荐看下面这三篇</p><ul><li><a href="http://www.galloway.me.uk/2012/10/a-look-inside-blocks-episode-1/" target="_blank" rel="noopener">A look inside blocks: Episode 1</a></li><li><a href="http://www.galloway.me.uk/2012/10/a-look-inside-blocks-episode-2/" target="_blank" rel="noopener">A look inside blocks: Episode 2</a></li><li><a href="http://www.galloway.me.uk/2013/05/a-look-inside-blocks-episode-3-block-copy/" target="_blank" rel="noopener">A look inside blocks: Episode 3</a></li></ul><p>以及苹果的官方文档：<br><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Blocks/Articles/00_Introduction.html#//apple_ref/doc/uid/TP40007502" target="_blank" rel="noopener">Blocks Programming Topics</a><br><a href="https://developer.apple.com/library/content/featuredarticles/Short_Practical_Guide_Blocks/index.html#//apple_ref/doc/uid/TP40009758" target="_blank" rel="noopener">A Short Practical Guide to Blocks</a></p>]]></content>
+    
     <summary type="html">
     
       
@@ -76,6 +80,8 @@
     <id>http://yoursite.com/2018/04/26/启发日报-第13期-2018-04-26/</id>
     <published>2018-04-26T12:28:13.000Z</published>
     <updated>2018-04-26T12:29:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>做iOS开发，避免不了用户注册，登录页面。业务逻辑别论，UI的实现上肯定涉及到<a href="https://developer.apple.com/documentation/uikit/uitextfield" target="_blank" rel="noopener">UITextField</a>。看上去很简单，可有时候不少功能还是挺折腾的。所以今天要推荐的第几篇是关于UITextField的。</p><p>#####基础知识：<a href="https://www.jianshu.com/p/fe95f7e64b89" target="_blank" rel="noopener">iOS-UITextField 全面解析</a><br>我更推荐看<a href="https://developer.apple.com/documentation/uikit/uitextfield" target="_blank" rel="noopener">UITextField</a>，不过这篇的总结非常直观，就当API参考了。</p><p>#####拓展：iOS开发-UITextField的那点事(<a href="https://www.jianshu.com/p/4b9957f2afc2" target="_blank" rel="noopener">https://www.jianshu.com/p/4b9957f2afc2</a>)<br>这是一篇UITextField的拓展文章，主要是关于输入控制，以及键盘遮盖问题。常见的就是我们需要限制输入长度或者输入的文本类型。或许这里面的探讨可以给您一些启示。</p><p>#####拓展：<a href="https://blog.csdn.net/sevenquan/article/details/50488623" target="_blank" rel="noopener">iOS登录注册登录界面（UITextField）</a><br>然后是这一篇，是在开发登录界面时，一个开发者的考虑，里面有一些细节的点，非常值得学习，例如键盘的类型选择等，从用户的角度触发，来设置方便用户的值。</p><p>#####第三方库推荐： <strong><a href="https://github.com/hackiftekhar/IQKeyboardManager" target="_blank" rel="noopener">IQKeyboardManager</a></strong><br>既然说起了键盘遮挡的问题，那么向大家推荐下面这个第三方库，非常简单实用。</p>]]></content>
     
     <summary type="html">
     
@@ -107,6 +113,8 @@
     <published>2018-04-25T11:40:22.000Z</published>
     <updated>2018-04-25T11:43:44.000Z</updated>
     
+    <content type="html"><![CDATA[<p>今天首先推荐的是基础内容，事实上大家对NSArray, NSSet, NSOrderedSet 和 NSDictionary这些类已经用的非常熟悉了，但是这篇文章肯定有您不知道的内容：来自Objc.io中国的一篇关于基础集合类的文章，虽然是15年的文章，但其含金量还是足足的。</p><p>#####基础知识：<a href="https://www.objccn.io/issue-7-1/" target="_blank" rel="noopener">基础集合类</a></p><p>第二个想推荐给大家的和技术无关，是在CocoaChina上看到的一篇关于如何学习iOS的文章，励志成为全栈开发的同学们可以看看怎么学习</p><p>#####学习:<a href="http://www.cocoachina.com/ios/20180425/23164.html" target="_blank" rel="noopener">浅谈iOS进阶路线</a><br>一直都是在菜鸟的路途中徘徊，看了这篇，瞬间被击溃了。漫漫路，虽然上了年纪，但还是得一步一个脚印去努力。</p>]]></content>
+    
     <summary type="html">
     
       
@@ -134,6 +142,8 @@
     <id>http://yoursite.com/2018/04/25/启发日报-第11期-2018-04-24/</id>
     <published>2018-04-25T11:40:14.000Z</published>
     <updated>2018-04-25T11:41:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨天有点偷懒，所以没有按时写完第11期。事实上是昨天忙着别的事情了，没有时间去阅读一些文章，因此也不知道推荐什么。</p><p>因此，今天首要的任务是把昨天没完成的补上。</p><p>今天在重构本地缓存相关的类，有用到Sqlite以及NSCache。重构的时候，就在考虑是不是有更好的第三方库，因此今天推荐给大家的是</p><p>#####第三方库推荐：<a href="https://github.com/ibireme/YYCache" target="_blank" rel="noopener">YYCache</a><br>同时，作者还非常贴心的把设计思路分享给了大家：<a href="https://blog.ibireme.com/2015/10/26/yycache/" target="_blank" rel="noopener">YYCache 设计思路</a>.<br>在阅读的时候，有非常多的内容可以拓展，比如LRU算法，线程锁等等。大家可以自行查阅相关内容。</p><p>#####练习：如何把delegate形式转成block形式<br>以后可能会有这种类型的推荐，也就是会把平常遇到的一些问题提出来，和大家一起讨论和练习。<br>项目用到了 <strong><a href="https://github.com/mwaterfall/MWFeedParser" target="_blank" rel="noopener">MWFeedParser</a></strong>这个第三方库，但是他提供的是delegate形式的callback，很想改成block形式的，大家觉得应该怎么改？</p>]]></content>
     
     <summary type="html">
     
@@ -165,6 +175,8 @@
     <published>2018-04-23T10:54:57.000Z</published>
     <updated>2018-04-23T10:55:37.000Z</updated>
     
+    <content type="html"><![CDATA[<p>因为在重构自己的代码，所以周末的时候有在看MVVM以及ReactiveCocoa，考虑是否用MVVM重构下自己的代码，并考虑是否引入ReactiveCocoa。因为ReactiveCocoa的学习成本高，而且调试困难，所以一直都在由于。今天看了<a href="http://blog.leichunfeng.com/" target="_blank" rel="noopener">雷纯锋</a>的这篇技术博客，确实给自己增强了不少信心。所以，就开始吧，希望重构完成之后，也能给出一篇博客来介绍重构的过程以及自己学习ReactiveCocoa的过程。</p><p>今天推荐给大家的主菜就是：</p><p>#####架构：<a href="http://blog.leichunfeng.com/blog/2016/02/27/mvvm-with-reactivecocoa/" target="_blank" rel="noopener">MVVM With ReactiveCocoa</a></p><p>此外，还有三篇文章，我觉得还不错，对于入门和概念了解有帮助：</p><p><a href="http://www.cocoachina.com/ios/20170612/19500.html" target="_blank" rel="noopener">iOS 关于MVC和MVVM设计模式的那些事</a><br><a href="http://www.cocoachina.com/ios/20170628/19664.html" target="_blank" rel="noopener">iOS 关于MVVM Without ReactiveCocoa设计模式的那些事 </a><br><a href="http://www.cocoachina.com/ios/20170704/19714.html" target="_blank" rel="noopener">iOS 关于MVVM With ReactiveCocoa设计模式的那些事</a></p><p>今天的内容就这些了，我想这些内容大家上下班的时候看已经足够了。</p>]]></content>
+    
     <summary type="html">
     
       
@@ -190,6 +202,8 @@
     <id>http://yoursite.com/2018/04/20/启发日报-第9期-2018-04-20/</id>
     <published>2018-04-20T12:12:53.000Z</published>
     <updated>2018-04-20T12:13:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>周五了，发现如果要认真推荐一些帖子的话，每天还真得浏览不少文章。今天也没有想到特别的主题。前几天有在写UIButton的时候，遇到了上图下字的需求，着实花了一点功夫去看怎么修改UIButton的布局。所以，即便是小小的UIButton控件，也总有那么一些特别的需求，再回想起令人抓狂的UINavigationBar，UITabbar等等，所以想整理下关于各个控件介绍的优秀文章，今天就有了今天的第一篇：</p><p>#####基础知识点：<a href="https://blog.csdn.net/chendehao001/article/details/52072596" target="_blank" rel="noopener">你真的会用UIButton吗? UIButton详细介绍</a><br>文章的内容包括：</p><ul><li>什么是UIButton</li><li>UIButton的状态</li><li>UIButton的属性设置</li><li>UIButton基本使用步骤</li><li>UIButton的代码创建与常用属性设置</li><li>重写按钮的某个状态属性的 setter 或 getter 方法设置按钮的状态</li><li>调整UIButton内部布局</li></ul><p>#####基础知识点：<a href="https://www.objccn.io/issue-9-4/" target="_blank" rel="noopener">字符串解析</a><br>项目中需要解析字符串中是否含有符合某些特殊规则的字符串，因此想到了正则表达式。所以在这推荐给大家一篇赖在Objc.io的文章。</p><p>#####第三方库推荐：<a href="https://github.com/vikmeup/SCLAlertView-Swift" target="_blank" rel="noopener">SCLAlertView-Swift</a>/<a href="https://github.com/dogo/SCLAlertView" target="_blank" rel="noopener">SCLAlertView</a><br>好看又好用的AlertView，话不多少，上图，至于怎么用，去Github上下载Demo吧。</p><p><img src="https://upload-images.jianshu.io/upload_images/1771779-a30e9d492e799ff1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/1771779-1d8128d1c9247a96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>]]></content>
     
     <summary type="html">
     
@@ -218,6 +232,8 @@
     <id>http://yoursite.com/2018/04/19/启发日报-第8期-2018-04-19/</id>
     <published>2018-04-19T11:53:32.000Z</published>
     <updated>2018-04-19T11:54:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在这个浮躁的年代，现在能静下心来写博客的人不多了。曾今的大牛博客，现在更新的寥寥无几。我的订阅列表里，现在还能坚持更新的，恐怕也就唐巧大大了。前两天又更新了一篇，虽然唐巧现在没有专注在iOS开发这一块，不过不管是技术文章，还是他的读书笔记，又或者年终总结，他的博客的内容还是有很高的质量的，所以今天要推荐给大家的第一篇是：</p><p>#####思考： <a href="http://blog.devtang.com/2018/04/16/operation-light-summary/" title="运营启蒙 - 读《运营之光》" target="_blank" rel="noopener">运营启蒙 - 读《运营之光》</a><br>我想每个程序员，也该学一点运营的知识，因此，哪怕你没打算读这本书，那么花十分钟看看读书笔记，来吸收这本书的精华吧。</p><p>#####基础知识点：<a href="https://www.jianshu.com/p/83770200d476" target="_blank" rel="noopener">深入理解iOS NSNotification</a><br>NSNotification在平时开发中使用非常频繁，很多时候我们都知道他怎么用，但不一定知道他到底是怎么回事，这篇文章的作者非常的用心，为大家展示了NSNotification背后的故事。相信大家读完之后，对NSNotification会有一个更深层次的认识。</p><p>#####第三方库推荐：<a href="https://github.com/ko1o/PYSearch" target="_blank" rel="noopener">PYSearch</a><br>一个非常优雅的搜索控制器iOS框架，我一直有用，所以也推荐给大家使用。</p><ul><li>支持各种热门搜索风格</li><li>支持多种搜索历史风格</li><li>支持各种搜索结果显示模式</li><li>支持搜索建议</li><li>支持搜索历史缓存</li><li>支持使用delegate或block完成搜索的回调</li><li>支持CocoaPods</li><li>支持多语言</li><li>支持横屏或者竖屏的iPhone或iPad</li></ul><p><img src="https://upload-images.jianshu.io/upload_images/1771779-6245e474c54b4936.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>]]></content>
     
     <summary type="html">
     
@@ -248,6 +264,8 @@
     <id>http://yoursite.com/2018/04/18/启发日报-第7期-2018-04-18/</id>
     <published>2018-04-18T12:13:24.000Z</published>
     <updated>2018-04-18T12:14:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>程序员总是在不停的翻新自己的代码，貌似我有点强迫症，有时候一个分行，一个空格都要按照自己预想的修改。今天的工作是在做代码的重构，合并公共代码，修改方法调用，调整架构等等。所以，今天想向大家推荐的是关于MVC/MVP/MVVM以及VIPER的文章。</p><p>#####架构：<a href="https://juejin.im/post/5ad1b93d518825557b4d2d44" target="_blank" rel="noopener">[译]iOS架构模式——解密MVC、MVP、MVVM和VIPER</a><br>翻译稍微有点笔误，如果大家更喜欢看英文并且有翻墙工具，那么就去直接看原文吧：<a href="https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52" target="_blank" rel="noopener">https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52</a></p><p>#####基础知识点：<a href="http://www.cocoachina.com/ios/20170809/20187.html" target="_blank" rel="noopener">iOS绘图框架CoreGraphics分析</a><br>平常UIKit用多了，但其底层的依赖CoreGraphics，却涉及不多。如果你初次接触CoreGraphics框架，那么推荐您看看这篇文章，深入浅出的介绍了iOS的绘图方法和分析一下CoreGraphics框架的绘图原理。</p><p>#####思考：<a href="http://limboy.me/essay/2018/04/15/you-and-your-career.html" target="_blank" rel="noopener">You and Your Career</a><br><a href="http://limboy.me/" target="_blank" rel="noopener">Limboy 无网不剩</a>最近有一篇文章更新，不是iOS技术文，不过却很有深意，推荐给大家。</p>]]></content>
     
     <summary type="html">
     
@@ -280,6 +298,8 @@
     <published>2018-04-17T11:26:17.000Z</published>
     <updated>2018-04-17T11:31:47.000Z</updated>
     
+    <content type="html"><![CDATA[<p>我们在写网络数据请求的时候，通常是异步执行的，此外，我们往往有另一个需求，就是例如异步并发去下载多个文件/图片，等所有下载完成后再更新页面。在这里，我们就涉及到多线程。 而iOS当前多线程编程的核心就是Block和GCD(Grand Central Dispatch).</p><p>所以今天第一个要推荐给大家的就是关于GCD的文章。</p><p>#####基础知识：<a href="https://www.jianshu.com/p/2d57c72016c6" target="_blank" rel="noopener">iOS多线程：『GCD』详尽总结</a><br>此外，也推荐大家《Effective Objective-C 2.0》编写高质量的iOS与OS X代码的52个有效方法这本书的第六章-块与大中枢派发这一章节：（书的话，大家自行购买哈，很不错的书，适合放在手边随时翻阅）</p><ul><li>第6章　块与大中枢派发</li><li>第37条：理解”块”这一概念</li><li>第38条：为常用的块类型创建typedef</li><li>第39条：用handler块降低代码分散程度</li><li>第40条：用块引用其所属对象时不要出现保留环</li><li>第41条：多用派发队列，少用同步锁</li><li>第42条：多用GCD，少用performSelector系列方法</li><li>第43条：掌握GCD及操作队列的使用时机</li><li>第44条：通过Dispatch Group机制，根据系统资源状况来执行任务</li><li>第45条：使用dispatch_once来执行只需运行一次的线程安全代码</li><li>第46条：不要使用dispatch_get_current_queue</li></ul><p>#####学习网站推荐：<a href="https://learnappmaking.com/" target="_blank" rel="noopener">learnappmaking</a><br>因为有订阅，所以定期会收到Reinder的Email，包括一些教程，或者开发技巧的推荐。不过今天收到的信确实“Do the work”。Reinder是一个很喜欢帮助大家编写代码，并分享开发经验的人，这份信的意思，大概是他在遇到太多太多不靠谱的开发人员向他求助后发出的呐喊。他列举了三个例子：</p><ul><li>One developer sent me 3 messages asking – no, literally begging – for help with a problem that could have been solved by Googling the error message and clicking on the first result.</li><li>Another developer, to whom I offered to help with a quick Skype call, didn’t show up for that call, despite having answered “10” on the question “On a scale of 1-10, how good do you want to get at iOS development?”</li><li>Yet another developer copied Xcode’s error message straight into the comment box – no question, no explanation, no “Hey, it doesn’t work, could you help me?”</li></ul><p>而他更期望的是提问题的人确实是做过工作的，就是他这封信的标题“Do the work”，也就是说当发生问题是，你自己确实努力过，而在你能力范围内无法解决时，再去提问。而不是遇到问题，直接丢给别人。<br>Questions I’ll happily answer any day and night:</p><ul><li>“I’m building this ecommerce app for fashion designers. Do you think I should use Firebase or Parse Server? I’ve tried both, but I don’t know how to decide.”</li><li>“I’m using Swift’s guard statement in my code, but I don’t know if I’m doing it right. Could you check out this function I wrote and let me know how I can improve it?”</li><li>“I encountered this error in my code. I know where it’s coming from, and I found this article that explains how to solve the error, but I’m totally stuck on applying that stuff in my own code. What’s the next step I can take?”</li></ul><p>These people are doing the work.</p><p>之前还看过一篇文章，好像是一位stackoverflow的活跃者最终和stackoverflow说拜拜，原因是因为在stackoverflow上，越来越多的人变的直接伸手，从来不看或者不查询是否自己的问题已经存在并解决。而这种现象却无法遏制，因此寒了心，从此不再上面回答问题了。</p><p>所以，为了让自己能得到更多的帮助，请在提问前尽可能多的做好自己的工作。</p>]]></content>
+    
     <summary type="html">
     
       
@@ -307,6 +327,8 @@
     <id>http://yoursite.com/2018/04/16/启发日报-第5期-2018-04-16/</id>
     <published>2018-04-16T10:10:37.000Z</published>
     <updated>2018-04-16T10:12:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>新的一周开始了，今天首先给大家推荐的是Cocoapods以及Carthage。<br>开发过程中，我们肯定会用到其他第三方库，如果选择手动管理，或者我们需要将源码直接集成到我们的项目中，又或者编译代码，然后将类库链接到项目中，此外，还需要考虑版本以及兼容性问题。想想这些，就知道这会是一个浩大的工程。还好我们有CocoaPods和Carthage这两个工具来管理项目的一览关系。<br>中心化（CocoaPods）和去中心化（Carthage）的集成方式，你喜欢哪一个？其实无所谓喜欢，我们都会用就可以了。</p><p>#####集成工具推荐：<a href="https://cocoapods.org/" target="_blank" rel="noopener">Cocoapods</a>/Carthage</p><ul><li>关于Cocoapods的使用，当然推荐唐巧的这篇文章： <a href="http://blog.devtang.com/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/" title="用CocoaPods做iOS程序的依赖管理" target="_blank" rel="noopener">用CocoaPods做iOS程序的依赖管理</a></li><li>而Carthage，大家看看简书上的这篇文章如何：<a href="https://www.jianshu.com/p/6c4b1b4a69c5" target="_blank" rel="noopener">项目依赖管理工具之CocoaPods与Carthage</a></li></ul><p>今天想额外推荐给大家的两篇关于基础知识的文章</p><p>#####基础知识：<a href="http://www.cocoachina.com/ios/20180323/22742.html" target="_blank" rel="noopener">iOS开发之UIView与UIViewController的生命周期总结</a><br>我们可以通过代码或者借助于XIB/StoryBoard来创建UIView或者UIViewController，那么这两种创建方式，他们调用的API有什么不通，他们的生命周期是怎么样的？那么请看<a href="http://www.cocoachina.com/ios/20180323/22742.html" target="_blank" rel="noopener">iOS开发之UIView与UIViewController的生命周期总结</a></p><p>#####第三方库推荐：<a href="https://github.com/shaojiankui/JKCategories" target="_blank" rel="noopener">JKCategories</a><br>开发的时候，总会有一些常用的方法，但是苹果的官方类并没有给出API，我们总需要自己写一部分Category来扩展类的功能，例如日期转字符串，又或者button文字图片实现上下排列。久而久之，这部分代码一直来来回回的从一个项目COPY到另外一个项目，接下来就觉得我们该自己管理一份Category。<br>且慢，先来看看<a href="https://github.com/shaojiankui/JKCategories" target="_blank" rel="noopener">JKCategories</a>，这个Categories类库已经帮您把大部分的常用Categories实现，所以我们不必自己再造轮子，拿来直接使用即可。此外，您也可以学习学习这些Categories的实现代码，看看和自己以前写的有啥区别。</p>]]></content>
     
     <summary type="html">
     
@@ -338,6 +360,8 @@
     <published>2018-04-13T04:05:06.000Z</published>
     <updated>2018-04-13T04:05:59.000Z</updated>
     
+    <content type="html"><![CDATA[<p>今天的第一个主题是Masonry，<a href="https://github.com/SnapKit/Masonry" target="_blank" rel="noopener">Masonry</a> 是一个轻量级的用于自动布局（AutoLayout）的第三方框架，以其简洁的使用方式，受到广大开发者的青睐。</p><p>#####第三方库推荐: <a href="https://github.com/SnapKit/Masonry" target="_blank" rel="noopener">Masonry</a></p><p>英文好的同学直接浏览<a href="https://github.com/SnapKit/Masonry" target="_blank" rel="noopener">Masonry</a> 就可以看到他的所有使用方法以及Demo。<br>想看中文的同学，可以浏览<a href="https://www.jianshu.com/p/f5883db2411d" target="_blank" rel="noopener">masonry使用技巧</a></p><p>#####源码分析：Masonry 源码解析<br>关于Marsony的源码分析，有不少大牛写过，在这里推荐给大家三篇，大家可以结合着看。<br><a href="http://blog.ifelseboyxx.com/2017/02/23/Masonry-Analysis/" target="_blank" rel="noopener">Masonry 源码解析</a><br><a href="https://github.com/Draveness/Analyze/blob/master/contents/Masonry/iOS%20%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20---%20Masonry.md" target="_blank" rel="noopener">iOS 源代码分析 — Masonry</a><br><a href="https://juejin.im/post/5acec952f265da237e0a197b" target="_blank" rel="noopener">iOS框架·Masonry源码深度解析及学习启示:设计模式与链式编程思想</a></p><p>#####基础知识点：NSCoding、NSSecureCoding协议<br>NSCoding经常应用在我们将某一个自定义class的结构存储到plist，或者序列化时。该协议非常简单，只需要实现下面这个两个协议：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (void)encodeWithCoder:(NSCoder *)aCoder;</span><br><span class="line">- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder;</span><br></pre></td></tr></table></figure></p><p>下面这篇文章有详细的介绍：<a href="https://www.jianshu.com/p/c5475f30bb4e" target="_blank" rel="noopener">NSCoding、NSSecureCoding</a></p><p>不过，如果class中的属性特别多，并且属性的类型还不一样时，写NSCoding的接口就会变得很痛苦。有时候还可能经常对属性进行修改，都要改encode和decode方法，导致更加容易犯错误。有没有一种方案，能让我们随意的增删改class的属性，而不需要去修改encode和decode里的代码呢？去看看这个利用runtime的方案吧。<br><a href="https://blog.csdn.net/becomedragonlong/article/details/48376097" target="_blank" rel="noopener">一个简化NSCoding的方案</a></p>]]></content>
+    
     <summary type="html">
     
       
@@ -367,6 +391,8 @@
     <id>http://yoursite.com/2018/04/12/启发日报-第3期-2018-04-12/</id>
     <published>2018-04-12T12:13:23.000Z</published>
     <updated>2018-04-12T12:14:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天浏览Cocoa China的时候，发现一篇不错的关于“iOS 性能优化总结”，所以，第一篇推荐给大家的就是这个。</p><p>#####性能：<a href="http://www.cocoachina.com/ios/20180412/22990.html" target="_blank" rel="noopener">iOS 性能优化总结</a><br>文章从卡顿产生的原因， iOS 设备中的 CPU &amp; GPU， 优化方案三方面做了综合的阐述。同时也给出了如何进行性能测试以及测试工具，同时附录的参考文章都是比较值得阅读的性能相关的文章。</p><p>#####基础知识点：<a href="https://juejin.im/post/5acece4cf265da238a30d2af" target="_blank" rel="noopener">字符串数组排序+模型对象数组排序</a><br>给字符串数组排序是非常常见的功能，对于iOS开发者来说，我们通常使用NSArray排序提供的sortedArrayUsingComparator 方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (NSArray&lt;ObjectType&gt; *)sortedArrayUsingComparator:(NSComparator NS_NOESCAPE)cmptr NS_AVAILABLE(10_6, 4_0);</span><br></pre></td></tr></table></figure></p><p>同时，苹果专门为NSString 提供的字符串比较方法，获得一个NSComparisonResult 类型，将其自动返回。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// locale arg used to be a dictionary pre-Leopard. We now accept NSLocale. Assumes the current locale if non-nil and non-NSLocale. nil continues to mean canonical compare, which doesn&apos;t depend on user&apos;s locale choice.</span><br><span class="line">- (NSComparisonResult)compare:(NSString *)string options:(NSStringCompareOptions)mask range:(NSRange)rangeOfReceiverToCompare locale:(nullable id)locale;</span><br></pre></td></tr></table></figure></p><p>但是你知道如果字符串里带有中文，日文或者特殊字符，这时候字符串的比较以及排序会怎么样吗？这篇文章对NSStringCompareOptions做了非常详细的分析以及对应的测试，我们不用完全记得，但至少有个印象，并把这篇文章加入到你的星标列表里。</p><p>#####第三方库推荐： <a href="https://github.com/dzenbot/DZNEmptyDataSet" target="_blank" rel="noopener">DZNEmptyDataSet</a><br>界面的空白状态是在“没有资料”、“空列表”、或“错误”时呈现给用户的界面，空白状态会透过一些图示或文字告诉使用者怎么回事，最后引导使用者操作相关的功能。良好的APP会花很多心思空白状态上，引导使用者添加内容到应用上，增强使用者的黏着度。大家可以参考下面的两篇文章，为我们阐述空白状态设计。<br><a href="https://tympanus.net/codrops/2013/01/09/designing-for-the-empty-states/" target="_blank" rel="noopener">Designing For The Empty States</a><br><a href="http://www.ui.cn/detail/20299.html" target="_blank" rel="noopener">浅谈界面的空白状态设计</a></p><p><a href="https://github.com/dzenbot/DZNEmptyDataSet" target="_blank" rel="noopener">DZNEmptyDataSet</a>提供了上述的设计的代码第三方框架，在这里推荐大家在自己的开发过程中使用，为哦那个户提供一个良好的空白状态界面。</p>]]></content>
     
     <summary type="html">
     
@@ -399,6 +425,8 @@
     <published>2018-04-11T00:00:50.000Z</published>
     <updated>2018-04-11T00:03:00.000Z</updated>
     
+    <content type="html"><![CDATA[<p>今天推荐的内容，是和我最近开发的项目有关，相信这些话题，大家也会在平常的开发中遇到。</p><p>#####基础知识点：NSCopying/NSMutableCopying<br>今天写一些业务代码的时候，发现需要对自定义类的对象进行Copy操作。在C++中我们可以实现拷贝构造函数或者重载”=”操作符；而在Objective-C中，我们可以实现NSCopying/NSMutableCopying协议（当然前提是自定义的类继承自NSObject）。</p><p>在这里推荐下面的三篇文章：</p><ul><li><p>第一篇：<a href="https://www.jianshu.com/p/e98e6e30ebda" target="_blank" rel="noopener">iOS中几个常用协议（一）NSCopying/NSMutableCopying</a><br>因为在讨论NSCopying/NSMutableCopying时，我们不得不说的就是copy和mutableCopy，这篇文章做了很好的解释和总结。不过反而对主题NSCopying/NSMutableCopying，倒是有点一笔带过。</p></li><li><p>第二篇：<a href="http://www.cnblogs.com/chaoguo1234/p/6088593.html" target="_blank" rel="noopener">Objective-C中的copy协议</a><br>这篇的部分结论在第一篇中有提到，这里这要介绍了（实打实的基础内容）：</p></li><li>NSObject对象是否可以copy自己</li><li>实现copy协议时，何时需要调用[super copyWithZone:zone]</li><li>为何在copyWithZone方法中要调用[[[self class] alloc] init]来分配内存</li><li><p>propery中的copy属性</p></li><li><p>第三篇： <a href="https://stackoverflow.com/questions/18192220/how-to-implement-properly-mutablecopywithzone-and-copywithzone" target="_blank" rel="noopener">How to implement properly mutableCopyWithZone and copyWithZone</a><br>第一篇和第二篇都没有特别讲NSMutableCopying的实现，事实上我们通常用到NSCopying比较多。而用到NSMutableCopying时，就意味着我们自己的类，需要定义两个，类似NSArray以及NSMutableArray，一个为不可变版本，另外一个为可变版本。我没有特别找到中文版的很详细的例子去介绍如何定义以及实现这两个类及对应的NSCopying/NSMutableCopying协议，但在stackoverflow找到了相关的提问以及答案。</p></li></ul><p>#####FMDB的使用：<a href="http://blog.devtang.com/2012/04/22/use-fmdb/" title="在iOS开发中使用FMDB" target="_blank" rel="noopener">在iOS开发中使用FMDB</a><br>项目中有用到FMDB作为数据持久化方案，框架里设计的数据库管理工具类采用的是单例模式，今天在多线程操作时，涉及到频繁的更新数据库表时，出现了如下的错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. The FMDatabase &lt;FMDatabase: 0x7f8232c21f10&gt; is currently in use.</span><br><span class="line">2. error = not an error</span><br></pre></td></tr></table></figure></p><p>可见，FMDatabase本身不是线程安全的， 在多个线程中共同一个 FMDatabase 对象并且在多个线程中同时使用，会造成数据混乱等问题。 如果我们的 app 需要多线程操作数据库，那么就需要使用 FMDatabaseQueue 来保证线程安全。</p><p>具体的使用请参考唐巧的这篇文章，尽管是写在2012年的，但依然是干货慢慢，FMDB使用的标杆。</p><p>#####第三方库推荐： <strong><a href="https://github.com/jiecao-fm/SwiftTheme" target="_blank" rel="noopener">SwiftTheme</a></strong><br>最近的项目是一个阅读软件，因此有考虑夜间模式，所以想找一个主题框架，来实现白天/夜间模式的主题切换。在Github上翻阅了不少主题框架，最终决定使用这个，因此也向大家推荐。<br>这是一款简单、功能丰富、高性能、可扩展的主题框架（换肤框架）<br>主要特点</p><ul><li>纯Swift编写</li><li>兼容Objective-C</li><li>基于runtime</li><li>易于集成</li><li>扩展属性以 theme_* 开头，便于 IDE 自动补全</li><li>支持UIAppearance</li><li>自动监听主题切换，更新UI</li><li>支持通过字面量设置不同主题，通过索引进行切换</li><li>支持使用plist设置主题，可直接通过项目资源加载，或远程下载至沙盒中加载</li><li>主题参数配置错误时日志提示</li><li>强类型ThemePicker</li><li>完整的Demo</li></ul>]]></content>
+    
     <summary type="html">
     
       
@@ -429,6 +457,8 @@
     <id>http://yoursite.com/2018/04/10/启发日报-第1期-2018-04-10/</id>
     <published>2018-04-10T08:29:19.000Z</published>
     <updated>2018-04-10T08:52:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这个主题，想了很久但一直没有下笔，如今打算给自己一个目标，也算是压力，看看能坚持多久。</p><p>主题名字就叫“启发日报”吧，周一到周五每天更新一篇文章，内容为iOS开发相关的好文推荐，可能是Apple的新闻，iOS的基础知识点，或者架构分析，框架，源码推荐等等。</p><p>今天是第一期，先推荐给大家的是Casa Taloyum的「iOS应用架构谈」。</p><p><a href="https://casatwy.com/iosying-yong-jia-gou-tan-kai-pian.html" target="_blank" rel="noopener">iOS应用架构谈 开篇</a><br><a href="https://casatwy.com/iosying-yong-jia-gou-tan-viewceng-de-zu-zhi-he-diao-yong-fang-an.html" target="_blank" rel="noopener">iOS应用架构谈 view层的组织和调用方案</a><br><a href="https://casatwy.com/iosying-yong-jia-gou-tan-wang-luo-ceng-she-ji-fang-an.html" target="_blank" rel="noopener">iOS应用架构谈 网络层设计方案</a><br><a href="https://casatwy.com/iosying-yong-jia-gou-tan-ben-di-chi-jiu-hua-fang-an-ji-dong-tai-bu-shu.html" target="_blank" rel="noopener">iOS应用架构谈 本地持久化方案及动态部署</a><br><a href="https://casatwy.com/iOS-Modulization.html" target="_blank" rel="noopener">iOS应用架构谈 组件化方案</a></p><p>每当我新开项目或者项目完成的时候，我都会去翻阅这几篇文章，iOS应用架构，不仅仅是MVC，或者MVVM，MVP这些模式，而是更高层的一个架构设计。C大的文章很好的从各方面做了详细的介绍，而且深入浅出，不管你是新手还是专家，我想都能从中受益。</p><p>这一期比较特殊，本来我应该推荐3-5个内容，但是我想C大的干货，足够大家好好大吃一顿了吧。</p>]]></content>
     
     <summary type="html">
     
