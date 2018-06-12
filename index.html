@@ -920,7 +920,8 @@
 
       
         
-          <p>适合: 中级开发者阅读<br>来自: <a href="https://developer.apple.com/documentation" target="_blank" rel="noopener">developer.apple.com</a><br>关键字: 多线程, 并发, GCD, Runloop<br>原文：<a href="https://objccn.io/issue-2-1/" target="_blank" rel="noopener">并发编程：API 及挑战</a> </p>
+          <img src="/2018/05/04/zebra-4-4/zebra-4-4.png" title="并发编程：API 及挑战">
+<p>适合: 中级开发者阅读<br>来自: <a href="https://objccn.io/" target="_blank" rel="noopener">objc中国</a><br>关键字: 多线程, 并发, GCD, Runloop<br>原文：<a href="https://objccn.io/issue-2-1/" target="_blank" rel="noopener">并发编程：API 及挑战</a> </p>
 <p>这是一篇提纲挈领的文章，来讨论OS X 和 iOS 中的并发编程。我们希望通过本文你能够了解到并发编程带来的复杂性和相关问题。并发编程中，无论是看起来多么简单的 API ，它们所能产生的问题会变得非常的难以观测，而且要想调试这类问题往往也都是非常困难的。但另一方面，并发实际上是一个非常棒的工具。它充分利用了现代多核 CPU 的强大计算能力。在开发中，关键的一点就是尽量让并发模型保持简单，这样可以限制所需要的锁的数量。</p>
 <p>文章建议采纳的安全模式是这样的：从主线程中提取出要使用到的数据，并利用一个操作队列在后台处理相关的数据，最后回到主队列中来发送你在后台队列中得到的结果。使用这种方式，你不需要自己做任何锁操作，这也就大大减少了犯错误的几率。</p>
           <!--noindex-->
