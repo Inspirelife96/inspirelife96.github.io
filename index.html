@@ -807,7 +807,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/zebra-4-4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/zebra-5-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -826,7 +826,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/04/zebra-4-4/" itemprop="url">并发编程：API 及挑战</a></h1>
+                <a class="post-title-link" href="/2018/05/05/zebra-5-1/" itemprop="url">YYCache</a></h1>
         
 
         <div class="post-meta">
@@ -838,8 +838,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T05:00:00+08:00">
-                2018-05-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T05:00:00+08:00">
+                2018-05-05
               </time>
             
 
@@ -861,8 +861,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-04-第4期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/04 第4期</span>
+                  <a href="/categories/斑马日报-2018-05-05-第5期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/05 第5期</span>
                   </a>
                 </span>
 
@@ -879,8 +879,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/04/zebra-4-4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/04/zebra-4-4/" itemprop="commentCount"></span>
+                <a href="/2018/05/05/zebra-5-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/05/zebra-5-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -888,7 +888,7 @@
 
           
           
-             <span id="/2018/05/04/zebra-4-4/" class="leancloud_visitors" data-flag-title="并发编程：API 及挑战">
+             <span id="/2018/05/05/zebra-5-1/" class="leancloud_visitors" data-flag-title="YYCache">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -920,13 +920,721 @@
 
       
         
-          <img src="/2018/05/04/zebra-4-4/zebra-4-4.png" title="并发编程：API 及挑战">
-<p>适合: 中级开发者阅读<br>来自: <a href="https://objccn.io/" target="_blank" rel="noopener">objc中国</a><br>关键字: 多线程, 并发, GCD, Runloop<br>原文：<a href="https://objccn.io/issue-2-1/" target="_blank" rel="noopener">并发编程：API 及挑战</a> </p>
-<p>这是一篇提纲挈领的文章，来讨论OS X 和 iOS 中的并发编程。我们希望通过本文你能够了解到并发编程带来的复杂性和相关问题。并发编程中，无论是看起来多么简单的 API ，它们所能产生的问题会变得非常的难以观测，而且要想调试这类问题往往也都是非常困难的。但另一方面，并发实际上是一个非常棒的工具。它充分利用了现代多核 CPU 的强大计算能力。在开发中，关键的一点就是尽量让并发模型保持简单，这样可以限制所需要的锁的数量。</p>
-<p>文章建议采纳的安全模式是这样的：从主线程中提取出要使用到的数据，并利用一个操作队列在后台处理相关的数据，最后回到主队列中来发送你在后台队列中得到的结果。使用这种方式，你不需要自己做任何锁操作，这也就大大减少了犯错误的几率。</p>
+          <img src="/2018/05/05/zebra-5-1/zebra-5-1.png" title="YYCache">
+<p>适合: 初级开发者阅读<br>来自: <a href="https://github.com/" target="_blank" rel="noopener">github</a><br>关键字: 第三方框架<br>原文：<a href="https://github.com/ibireme/YYCache" target="_blank" rel="noopener">YYCache</a> </p>
+<p>这是一个高性能的iOS缓存框架，如果你在寻找一个内存，磁盘缓存结合并高性能的缓存方案，那么我推荐你使用YYCache。在内存缓存方面，他并没有直接使用苹果提供的NSCache方案，而是使用了双向链表自实现了LRU淘汰算法，而在磁盘缓存方面，更是提供了数据库和文件相结合的方式，以便在存储大文件和小文件时各自能达到最好的性能。下面是他的特性：</p>
+<ul>
+<li>LRU: 缓存支持 LRU (least-recently-used) 淘汰算法。</li>
+<li>缓存控制: 支持多种缓存控制方法：总数量、总大小、存活时间、空闲空间。</li>
+<li>兼容性: API 基本和 NSCache 保持一致, 所有方法都是线程安全的。</li>
+<li>内存缓存<ul>
+<li>对象释放控制: 对象的释放(release) 可以配置为同步或异步进行，可以配置在主线程或后台线程进行。</li>
+<li>自动清空: 当收到内存警告或 App 进入后台时，缓存可以配置为自动清空。</li>
+</ul>
+</li>
+<li>磁盘缓存<ul>
+<li>可定制性: 磁盘缓存支持自定义的归档解档方法，以支持那些没有实现 NSCoding 协议的对象。</li>
+<li>存储类型控制: 磁盘缓存支持对每个对象的存储类型 (SQLite/文件) 进行自动或手动控制，以获得更高的存取性能。</li>
+</ul>
+</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/04/zebra-4-4/#more" rel="contents">
+            <a class="btn" href="/2018/05/05/zebra-5-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/zebra-5-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="启发光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="启发光明的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/zebra-5-2/" itemprop="url">YYCache 设计思路</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T04:00:00+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/斑马日报-2018-05-05-第5期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/05 第5期</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/05/zebra-5-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/05/zebra-5-2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/05/zebra-5-2/" class="leancloud_visitors" data-flag-title="YYCache 设计思路">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <img src="/2018/05/05/zebra-5-2/zebra-5-2.png" title="YYCache 设计思路">
+<p>适合: 中级开发者阅读<br>来自: <a href="https://blog.ibireme.com/" target="_blank" rel="noopener">ibireme</a><br>关键字: 源码阅读<br>原文：<a href="https://blog.ibireme.com/2015/10/26/yycache/" target="_blank" rel="noopener">YYCache 设计思路</a> </p>
+<p>ibireme谈YYCache的设计思路。如果面试的时候你被问到如何自己设计一个缓存框架，那么这篇文章就提供了非常好的参考答案。或许很多时候我们自己在用着各种缓存，NSMutableDictinary，NSCache，有或者归档，SQLite等等。但如果需要你考虑一个框架的时候，你该如何设计呢？内存缓存和磁盘缓存如何结合？缓存的方案？如何调度？数据如何同步？是否需要异步调用？如何保证线程安全？</p>
+<p>ibireme在调阅了大量的系统或第三方库的实现原理之后，给出了自己的方案，那就是<a href="https://github.com/ibireme/YYCache" target="_blank" rel="noopener">YYCache</a>。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/05/zebra-5-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/zebra-5-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="启发光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="启发光明的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/zebra-5-3/" itemprop="url">YYCache源码分析（一） - YYMemoryCache</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T03:00:00+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/斑马日报-2018-05-05-第5期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/05 第5期</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/05/zebra-5-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/05/zebra-5-3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/05/zebra-5-3/" class="leancloud_visitors" data-flag-title="YYCache源码分析（一） - YYMemoryCache">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <img src="/2018/05/05/zebra-5-3/zebra-5-3.png" title="YYCache源码分析（一） - YYMemoryCache">
+<p>适合: 中级开发者阅读<br>来自: <a href="https://www.csdn.net/" target="_blank" rel="noopener">csdn</a><br>关键字: 源码阅读<br>原文：<a href="https://blog.csdn.net/u012441289/article/details/77941749" target="_blank" rel="noopener">YYCache源码分析（一） - YYMemoryCache</a> </p>
+<p>YYCache的源代码确实非常值得学习，在上篇推荐了作者的设计思路之后，我们来看看源码吧。最直接的就是你直接把代码下载下来阅读即可。源码本身就8个文件，2000行左右的代码，结构清晰，API明了，事实上，阅读起来应该没有特别大的困难。但如果你是初学者，或者对C语言，双向链表不是特别了解，又或者你想快速的了解，那么来看看别人对源码的分析，或许是不错的想法。</p>
+<p>因为YYCache名声在外，自然好多人写了源码分析，其实都是大同小异，我这边推荐一个我觉内容，分析，排版都不错的，来自<a href="https://www.csdn.net/" target="_blank" rel="noopener">csdn</a>的博主<a href="https://blog.csdn.net/u012441289" target="_blank" rel="noopener">爱生活的小悦悦</a>写的YYCache源码分析系列，一共三篇，这是第一篇，主要介绍：</p>
+<ul>
+<li>文件结构</li>
+<li>YYCache的使用</li>
+<li>YYMemoryCache.h文件分析</li>
+<li>YYMemoryCache.m实现分析</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/05/zebra-5-3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/zebra-5-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="启发光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="启发光明的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/zebra-5-4/" itemprop="url">YYCache源码分析(二) - YYDiskCache</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T02:00:00+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/斑马日报-2018-05-05-第5期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/05 第5期</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/05/zebra-5-4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/05/zebra-5-4/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/05/zebra-5-4/" class="leancloud_visitors" data-flag-title="YYCache源码分析(二) - YYDiskCache">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <img src="/2018/05/05/zebra-5-4/zebra-5-4.png" title="YYCache源码分析(二) - YYDiskCache">
+<p>适合: 中级开发者阅读<br>来自: <a href="https://www.csdn.net/" target="_blank" rel="noopener">csdn</a><br>关键字: 源码阅读<br>原文：<a href="https://blog.csdn.net/u012441289/article/details/78081315" target="_blank" rel="noopener">YYCache源码分析(二) - YYDiskCache</a> </p>
+<p>YYCache的源代码确实非常值得学习，在上篇推荐了作者的设计思路之后，我们来看看源码吧。最直接的就是你直接把代码下载下来阅读即可。源码本身就8个文件，2000行左右的代码，结构清晰，API明了，事实上，阅读起来应该没有特别大的困难。但如果你是初学者，或者对C语言，双向链表不是特别了解，又或者你想快速的了解，那么来看看别人对源码的分析，或许是不错的想法。</p>
+<p>因为YYCache名声在外，自然好多人写了源码分析，其实都是大同小异，我这边推荐一个我觉内容，分析，排版都不错的，来自<a href="https://www.csdn.net/" target="_blank" rel="noopener">csdn</a>的博主<a href="https://blog.csdn.net/u012441289" target="_blank" rel="noopener">爱生活的小悦悦</a>写的YYCache源码分析系列，一共三篇，这是第二篇，主要介绍：</p>
+<ul>
+<li>YYDiskCache</li>
+</ul>
+<p>为什么选这篇文章？因为除了大众的源码注释之外，这篇文章提到了NSMapTable，这是我觉得一个比较特别的值得推荐的点。所以，欢迎阅读。  </p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/05/zebra-5-4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/zebra-5-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="启发光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="启发光明的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/zebra-5-5/" itemprop="url">YYCache源码分析(三) - YYKVStorage</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T01:00:00+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/斑马日报-2018-05-05-第5期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/05 第5期</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/05/zebra-5-5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/05/zebra-5-5/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/05/zebra-5-5/" class="leancloud_visitors" data-flag-title="YYCache源码分析(三) - YYKVStorage">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <img src="/2018/05/05/zebra-5-5/zebra-5-5.png" title="YYCache源码分析(三) - YYKVStorage">
+<p>适合: 中级开发者阅读<br>来自: <a href="https://www.csdn.net/" target="_blank" rel="noopener">csdn</a><br>关键字: 源码阅读<br>原文：<a href="https://blog.csdn.net/u012441289/article/details/78081317" target="_blank" rel="noopener">YYCache源码分析(三) - YYKVStorage</a> </p>
+<p>YYCache的源代码确实非常值得学习，在上篇推荐了作者的设计思路之后，我们来看看源码吧。最直接的就是你直接把代码下载下来阅读即可。源码本身就8个文件，2000行左右的代码，结构清晰，API明了，事实上，阅读起来应该没有特别大的困难。但如果你是初学者，或者对C语言，双向链表不是特别了解，又或者你想快速的了解，那么来看看别人对源码的分析，或许是不错的想法。</p>
+<p>因为YYCache名声在外，自然好多人写了源码分析，其实都是大同小异，我这边推荐一个我觉内容，分析，排版都不错的，来自<a href="https://www.csdn.net/" target="_blank" rel="noopener">csdn</a>的博主<a href="https://blog.csdn.net/u012441289" target="_blank" rel="noopener">爱生活的小悦悦</a>写的YYCache源码分析系列，一共三篇，这是第三篇，主要介绍：</p>
+<ul>
+<li>YYKVStorage</li>
+</ul>
+<p>除了大众的YYKVStorage的源码注释之外，这篇文章也解释了“YYDiskCache中文件存放的路径和数据库表的结构”， “SQLite3的大致使用过程”，这是其他文章中没有提及的，这也是我推荐这篇文章的原因。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/05/zebra-5-5/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1148,7 +1856,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/zebra-4-2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/zebra-4-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -1167,7 +1875,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/04/zebra-4-2/" itemprop="url">iOS MD5 （消息摘要算法5）</a></h1>
+                <a class="post-title-link" href="/2018/05/04/zebra-4-4/" itemprop="url">并发编程：API 及挑战</a></h1>
         
 
         <div class="post-meta">
@@ -1179,7 +1887,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T04:00:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T05:00:00+08:00">
                 2018-05-04
               </time>
             
@@ -1220,8 +1928,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/04/zebra-4-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/04/zebra-4-2/" itemprop="commentCount"></span>
+                <a href="/2018/05/04/zebra-4-4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/04/zebra-4-4/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1229,7 +1937,7 @@
 
           
           
-             <span id="/2018/05/04/zebra-4-2/" class="leancloud_visitors" data-flag-title="iOS MD5 （消息摘要算法5）">
+             <span id="/2018/05/04/zebra-4-4/" class="leancloud_visitors" data-flag-title="并发编程：API 及挑战">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1261,700 +1969,13 @@
 
       
         
-          <img src="/2018/05/04/zebra-4-2/zebra-4-2.png" title="iOS MD5 （消息摘要算法5）">
-<p>适合: 初级开发者阅读<br>来自: <a href="https://www.cnblogs.com/" target="_blank" rel="noopener">cnblogs</a><br>关键字: 加密, 安全<br>原文：<a href="https://www.cnblogs.com/10-19-92/p/6750280.html" target="_blank" rel="noopener">iOS MD5 （消息摘要算法5）</a> </p>
-<p>在软件开发过程中，对数据的加密是保证数据安全的重要手段，在IOS开发中，对于发送的网络请求，有时候是需要进行加密处理的。MD5就是其中的一种。作为初级开发这，你只需要了解什么是MD5，什么情况下需要MD5，以及iOS中如何实现和使用MD5. 这是一篇简明但实用的博客，介绍了上面的所有内容。 至于MD5背后的长长的故事以及内部如何实现的过程，如果你有兴趣，你们可以参考<a href="https://baike.baidu.com/item/MD5/212708?fr=aladdin" target="_blank" rel="noopener">MD5</a></p>
+          <img src="/2018/05/04/zebra-4-4/zebra-4-4.png" title="并发编程：API 及挑战">
+<p>适合: 中级开发者阅读<br>来自: <a href="https://objccn.io/" target="_blank" rel="noopener">objc中国</a><br>关键字: 多线程, 并发, GCD, Runloop<br>原文：<a href="https://objccn.io/issue-2-1/" target="_blank" rel="noopener">并发编程：API 及挑战</a> </p>
+<p>这是一篇提纲挈领的文章，来讨论OS X 和 iOS 中的并发编程。我们希望通过本文你能够了解到并发编程带来的复杂性和相关问题。并发编程中，无论是看起来多么简单的 API ，它们所能产生的问题会变得非常的难以观测，而且要想调试这类问题往往也都是非常困难的。但另一方面，并发实际上是一个非常棒的工具。它充分利用了现代多核 CPU 的强大计算能力。在开发中，关键的一点就是尽量让并发模型保持简单，这样可以限制所需要的锁的数量。</p>
+<p>文章建议采纳的安全模式是这样的：从主线程中提取出要使用到的数据，并利用一个操作队列在后台处理相关的数据，最后回到主队列中来发送你在后台队列中得到的结果。使用这种方式，你不需要自己做任何锁操作，这也就大大减少了犯错误的几率。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/04/zebra-4-2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/zebra-4-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="启发光明">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="启发光明的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/04/zebra-4-3/" itemprop="url">iOS多线程：『NSOperation、NSOperationQueue』详尽总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T03:00:00+08:00">
-                2018-05-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-04-第4期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/04 第4期</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/04/zebra-4-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/04/zebra-4-3/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/05/04/zebra-4-3/" class="leancloud_visitors" data-flag-title="iOS多线程：『NSOperation、NSOperationQueue』详尽总结">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <img src="/2018/05/04/zebra-4-3/zebra-4-3.png" title="iOS多线程：『NSOperation、NSOperationQueue』详尽总结">
-<p>适合: 中级开发者阅读<br>来自: <a href="https://bujige.net/" target="_blank" rel="noopener">Walking Boy’s Blog</a><br>关键字: 多线程, NSOperation, NSOperationQueue<br>原文：<a href="https://bujige.net/blog/iOS-Complete-learning-NSOperation.html" target="_blank" rel="noopener">iOS多线程：『NSOperation、NSOperationQueue』详尽总结</a> </p>
-<p>NSOperation、NSOperationQueue 是苹果提供给我们的一套多线程解决方案。实际上NSOperation、NSOperationQueue是基于 GCD 更高一层的封装，完全面向对象。GCD在多线程使用中非常完美，事实上，我也更喜欢GCD， 那苹果为什么还要提供这套面向对象的封装呢，来看看他的优势：</p>
-<ul>
-<li>可添加完成的代码块，在操作完成后执行。</li>
-<li>添加操作之间的依赖关系，方便的控制执行顺序。</li>
-<li>设定操作执行的优先级。</li>
-<li>可以很方便的取消一个操作的执行。</li>
-<li>使用 KVO 观察对操作执行状态的更改：isExecuteing、isFinished、isCancelled。</li>
-</ul>
-<p>可以看到，在取消操作执行，添加以来，KVO观察等方面，NSOperation、NSOperationQueue实现起来确实比GCD来的简单优秀。你同时也可以看到，很多你正在使用的第三方库，在很多场合也优先使用了NSOperation、NSOperationQueue。</p>
-<p>所以，在使用GCD的同时，也需要考虑下，使用NSOperation、NSOperationQueue是不是一个更好的选择。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/04/zebra-4-3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/zebra-4-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="启发光明">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="启发光明的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/04/zebra-4-5/" itemprop="url">iOS对UIViewController生命周期和属性方法的解析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T01:00:00+08:00">
-                2018-05-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-04-第4期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/04 第4期</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/04/zebra-4-5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/04/zebra-4-5/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/05/04/zebra-4-5/" class="leancloud_visitors" data-flag-title="iOS对UIViewController生命周期和属性方法的解析">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <img src="/2018/05/04/zebra-4-5/zebra-4-5.png" title="iOS对UIViewController生命周期和属性方法的解析">
-<p>适合: 初级开发者阅读<br>来自: <a href="https://www.oschina.net/" target="_blank" rel="noopener">oschina</a><br>关键字: UIKit, UIViewController<br>原文：<a href="https://my.oschina.net/u/2340880/blog/524564" target="_blank" rel="noopener">iOS对UIViewController生命周期和属性方法的解析</a> </p>
-<p>作为MVC设计模式中的C，Controller一直扮演着项目开发中最重要的角色，它是视图和数据的桥梁，通过它的管理，将数据有条有理的展示在我们的View层上。iOS中的UIViewController是UIKit框架中最基本的一个类。从第一个UI视图到复杂完整项目，都离不开UIViewController作为基础。基于UIViewController的封装和扩展，也能够出色的完成各种复杂界面逻辑。</p>
-<p>这篇博客，旨在讨论UIViewController的生命周期和属性方法，在最基础的东西上，往往会得到意想不到的惊喜。下面列出了UIViewController中与其生命周期有关的方法，你自己先来画画这个生命周期的调用顺序吧，然后再来看这篇文章。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//类的初始化方法</span><br><span class="line">+ (void)initialize;</span><br><span class="line">//对象初始化方法</span><br><span class="line">- (instancetype)init;</span><br><span class="line">//从归档初始化</span><br><span class="line">- (instancetype)initWithCoder:(NSCoder *)coder;</span><br><span class="line">//加载视图</span><br><span class="line">-(void)loadView;</span><br><span class="line">//将要加载视图</span><br><span class="line">- (void)viewDidLoad;</span><br><span class="line">//将要布局子视图</span><br><span class="line">-(void)viewWillLayoutSubviews;</span><br><span class="line">//已经布局子视图</span><br><span class="line">-(void)viewDidLayoutSubviews;</span><br><span class="line">//内存警告</span><br><span class="line">- (void)didReceiveMemoryWarning;</span><br><span class="line">//已经展示</span><br><span class="line">-(void)viewDidAppear:(BOOL)animated;</span><br><span class="line">//将要展示</span><br><span class="line">-(void)viewWillAppear:(BOOL)animated;</span><br><span class="line">//将要消失</span><br><span class="line">-(void)viewWillDisappear:(BOOL)animated;</span><br><span class="line">//已经消失</span><br><span class="line">-(void)viewDidDisappear:(BOOL)animated;</span><br><span class="line">//被释放</span><br><span class="line">-(void)dealloc;</span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/04/zebra-4-5/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/zebra-3-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="启发光明">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="启发光明的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/zebra-3-1/" itemprop="url">WWDC 2013 Session笔记 - iOS7中的ViewController切换</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T05:00:00+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-03-第3期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/03 第3期</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/03/zebra-3-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/03/zebra-3-1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/05/03/zebra-3-1/" class="leancloud_visitors" data-flag-title="WWDC 2013 Session笔记 - iOS7中的ViewController切换">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <img src="/2018/05/03/zebra-3-1/zebra-3-1.png" title="WWDC 2013 Session笔记 - iOS7中的ViewController切换">
-<p>适合: 初级开发者阅读<br>来自: <a href="https://onevcat.com/" target="_blank" rel="noopener">OneV’s Den</a><br>关键字: 架构<br>原文：<a href="https://onevcat.com/2013/10/vc-transition-in-ios7/" target="_blank" rel="noopener">WWDC 2013 Session笔记 - iOS7中的ViewController切换</a> </p>
-<p>今天的开篇推荐王巍 (@onevcat)的这篇关于ViewController切换的博文 - <a href="https://onevcat.com/2013/10/vc-transition-in-ios7/" target="_blank" rel="noopener">WWDC 2013 Session笔记 - iOS7中的ViewController切换</a> 。写于2013年WWDC之后他整理的笔记，着重介绍了iOS7中苹果给出了一套完整的ViewController之间迁移效果的方案，自此，我们可以非常愉快的自定义ViewController之间迁移的动画效果了。</p>
-<p>这是一篇入门级的文章，包括对UIViewControllerContextTransitioning， UIViewControllerAnimatedTransitioning， UIViewControllerTransitioningDelegate等协议的介绍，使用，以及案例。如果你还没有使用过这些，那么强烈推荐您跟着王巍的Demo自己来实践一次。同时把更好的ViewController迁移效果带入你的应用中。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/03/zebra-3-1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/zebra-3-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="启发光明">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="启发光明的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/zebra-3-2/" itemprop="url">书籍推荐 - iOS核心动画高级技巧</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T04:00:00+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-03-第3期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/03 第3期</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/03/zebra-3-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/03/zebra-3-2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/05/03/zebra-3-2/" class="leancloud_visitors" data-flag-title="书籍推荐 - iOS核心动画高级技巧">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <img src="/2018/05/03/zebra-3-2/zebra-3-2.png" title="书籍推荐 - iOS核心动画高级技巧">
-<p>适合: 高级开发者阅读<br>来自: 书籍推荐<br>关键字: Core Animation<br>原文：<a href="https://zsisme.gitbooks.io/ios-/content/" target="_blank" rel="noopener">iOS核心动画高级技巧</a></p>
-<p>这是iOS Core Animation: Advanced Techniques的中文译本。他基本讲述了和Core Animation的一切你需要学习和知道的内容。如果你打算好好了解学习Core Animation，那么这本就是你的枕边书。很庆幸<a href="https://github.com/AttackOnDobby" target="_blank" rel="noopener">AttackOnDobby</a>， <a href="https://github.com/evenluo/" target="_blank" rel="noopener">evenluo</a>帮我们做了详尽准确的翻译，以及<a href="https://github.com/ZsIsMe" target="_blank" rel="noopener">ZsIsMe</a>同学将它发布在gitbooks上。</p>
-<p>所以这次是真的电子书了，而不是京东的链接了。所以，尽情享受下来自Core Animation的盛宴吧。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/03/zebra-3-2/#more" rel="contents">
+            <a class="btn" href="/2018/05/04/zebra-4-4/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1996,7 +2017,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2046,7 +2067,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2057,7 +2078,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2068,7 +2089,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
