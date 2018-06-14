@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="初级,github,第三方框架," />
+  <meta name="keywords" content="中级,源码阅读,简书," />
 
 
 
@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="适合: 初级开发者阅读来自: github关键字: 第三方框架原文：SDWebImage  在iOS的图片加载框架中，SDWebImage可谓是占据大半壁江山。它支持从网络中下载且缓存图片，并设置图片到对应的UIImageView控件或者UIButton控件。在项目中使用SDWebImage来管理图片加载相关操作可以极大地提高开发效率，让我们更加专注于业务逻辑实现。 截止发文的时候，最新的版本为4">
-<meta name="keywords" content="初级,github,第三方框架">
+<meta name="description" content="适合: 中级开发者阅读来自: JKnight关键字: 源码阅读原文：YYCache 源码解析  又一篇我觉得写的非常不错的YYCache源码分析的文章，所以忍不住又来推荐给大家。作者的某一些点的分析，在之前推荐的文章中没有解释或者解释的不够详细。例如：  保证线程安全的方案 提高缓存性能的几个尝试 异步释放对象的技巧  如果你已经阅读过源码，那就就快速浏览下，看看有那些遗漏，如果你还没有阅读过，">
+<meta name="keywords" content="中级,源码阅读,简书">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SDWebImage">
+<meta property="og:title" content="YYCache 源码解析">
 <meta property="og:url" content="http://yoursite.com/2018/05/06/zebra-6-3/index.html">
 <meta property="og:site_name" content="启发光明的博客">
-<meta property="og:description" content="适合: 初级开发者阅读来自: github关键字: 第三方框架原文：SDWebImage  在iOS的图片加载框架中，SDWebImage可谓是占据大半壁江山。它支持从网络中下载且缓存图片，并设置图片到对应的UIImageView控件或者UIButton控件。在项目中使用SDWebImage来管理图片加载相关操作可以极大地提高开发效率，让我们更加专注于业务逻辑实现。 截止发文的时候，最新的版本为4">
+<meta property="og:description" content="适合: 中级开发者阅读来自: JKnight关键字: 源码阅读原文：YYCache 源码解析  又一篇我觉得写的非常不错的YYCache源码分析的文章，所以忍不住又来推荐给大家。作者的某一些点的分析，在之前推荐的文章中没有解释或者解释的不够详细。例如：  保证线程安全的方案 提高缓存性能的几个尝试 异步释放对象的技巧  如果你已经阅读过源码，那就就快速浏览下，看看有那些遗漏，如果你还没有阅读过，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T03:50:03.000Z">
+<meta property="og:image" content="http://yoursite.com/2018/05/06/zebra-6-3/zebra-6-3.png">
+<meta property="og:updated_time" content="2018-06-14T05:42:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SDWebImage">
-<meta name="twitter:description" content="适合: 初级开发者阅读来自: github关键字: 第三方框架原文：SDWebImage  在iOS的图片加载框架中，SDWebImage可谓是占据大半壁江山。它支持从网络中下载且缓存图片，并设置图片到对应的UIImageView控件或者UIButton控件。在项目中使用SDWebImage来管理图片加载相关操作可以极大地提高开发效率，让我们更加专注于业务逻辑实现。 截止发文的时候，最新的版本为4">
+<meta name="twitter:title" content="YYCache 源码解析">
+<meta name="twitter:description" content="适合: 中级开发者阅读来自: JKnight关键字: 源码阅读原文：YYCache 源码解析  又一篇我觉得写的非常不错的YYCache源码分析的文章，所以忍不住又来推荐给大家。作者的某一些点的分析，在之前推荐的文章中没有解释或者解释的不够详细。例如：  保证线程安全的方案 提高缓存性能的几个尝试 异步释放对象的技巧  如果你已经阅读过源码，那就就快速浏览下，看看有那些遗漏，如果你还没有阅读过，">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/06/zebra-6-3/zebra-6-3.png">
 
 
 
@@ -128,7 +130,7 @@
 
 
 
-  <title>SDWebImage | 启发光明的博客</title>
+  <title>YYCache 源码解析 | 启发光明的博客</title>
   
 
 
@@ -315,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SDWebImage</h1>
+          <h1 class="post-title" itemprop="name headline">YYCache 源码解析</h1>
         
 
         <div class="post-meta">
@@ -327,7 +329,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T03:00:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T04:00:00+08:00">
                 2018-05-06
               </time>
             
@@ -377,7 +379,7 @@
 
           
           
-             <span id="/2018/05/06/zebra-6-3/" class="leancloud_visitors" data-flag-title="SDWebImage">
+             <span id="/2018/05/06/zebra-6-3/" class="leancloud_visitors" data-flag-title="YYCache 源码解析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -408,23 +410,15 @@
       
 
       
-        
-<p>适合: 初级开发者阅读<br>来自: <a href="https://github.com/" target="_blank" rel="noopener">github</a><br>关键字: 第三方框架<br>原文：<a href="https://github.com/rs/SDWebImage" target="_blank" rel="noopener">SDWebImage</a> </p>
-<p>在iOS的图片加载框架中，SDWebImage可谓是占据大半壁江山。它支持从网络中下载且缓存图片，并设置图片到对应的UIImageView控件或者UIButton控件。在项目中使用SDWebImage来管理图片加载相关操作可以极大地提高开发效率，让我们更加专注于业务逻辑实现。</p>
-<p>截止发文的时候，最新的版本为4.4.1，而且一直在保持维护更新。来看看他的核心功能：</p>
+        <img src="/2018/05/06/zebra-6-3/zebra-6-3.png" title="YYCache 源码解析">
+<p>适合: 中级开发者阅读<br>来自: <a href="https://knightsj.github.io/" target="_blank" rel="noopener">J<em>Knight</em></a><br>关键字: 源码阅读<br>原文：<a href="https://knightsj.github.io/2018/01/23/YYCache%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" target="_blank" rel="noopener">YYCache 源码解析</a> </p>
+<p>又一篇我觉得写的非常不错的YYCache源码分析的文章，所以忍不住又来推荐给大家。作者的某一些点的分析，在之前推荐的文章中没有解释或者解释的不够详细。例如：</p>
 <ul>
-<li>提供了一个 UIImageView 的 category 用来加载网络图片并且对网络图片的缓存进行管理</li>
-<li>采用异步方式来下载网络图片</li>
-<li>采用异步方式，使用 memory＋disk 来缓存网络图片，自动管理缓存。</li>
-<li>支持 GIF 动画</li>
-<li>支持 WebP 格式</li>
-<li>同一个 URL 的网络图片不会被重复下载</li>
-<li>失效的 URL 不会被无限重试</li>
-<li>耗时操作都在子线程，确保不会阻塞主线程</li>
-<li>使用 GCD 和 ARC</li>
-<li>支持 Arm64</li>
+<li>保证线程安全的方案</li>
+<li>提高缓存性能的几个尝试</li>
+<li>异步释放对象的技巧</li>
 </ul>
-<p>所以，如果你需要一个图片加载框架，那么请毫不犹豫的开始使用他吧。</p>
+<p>如果你已经阅读过源码，那就就快速浏览下，看看有那些遗漏，如果你还没有阅读过，那么就如作者推荐的，下载YYCache的源码，并结合这篇文章细细品味吧。</p>
 <a id="more"></a>
 
       
@@ -443,11 +437,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/初级/" rel="tag"># 初级</a>
+            <a href="/tags/中级/" rel="tag"># 中级</a>
           
-            <a href="/tags/github/" rel="tag"># github</a>
+            <a href="/tags/源码阅读/" rel="tag"># 源码阅读</a>
           
-            <a href="/tags/第三方框架/" rel="tag"># 第三方框架</a>
+            <a href="/tags/简书/" rel="tag"># 简书</a>
           
         </div>
       
@@ -460,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/06/zebra-6-4/" rel="next" title="NSObject的load和initialize方法">
-                <i class="fa fa-chevron-left"></i> NSObject的load和initialize方法
+              <a href="/2018/05/06/zebra-6-5/" rel="next" title="SDWebImage">
+                <i class="fa fa-chevron-left"></i> SDWebImage
               </a>
             
           </div>
@@ -470,8 +464,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/06/zebra-6-5/" rel="prev" title="SDWebImage">
-                SDWebImage <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/06/zebra-6-2/" rel="prev" title="YYCache 源码分析 拾遗">
+                YYCache 源码分析 拾遗 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -549,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
