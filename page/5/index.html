@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/zebra-1-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/zebra-9-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -316,7 +316,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/01/zebra-1-1/" itemprop="url">iOS应用架构谈 开篇</a></h1>
+                <a class="post-title-link" href="/2018/05/09/zebra-9-2/" itemprop="url">KVC原理剖析</a></h1>
         
 
         <div class="post-meta">
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T05:00:00+08:00">
-                2018-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T04:00:00+08:00">
+                2018-05-09
               </time>
             
 
@@ -351,8 +351,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-01-第1期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/01 第1期</span>
+                  <a href="/categories/斑马日报-2018-05-09-第9期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/09 第9期</span>
                   </a>
                 </span>
 
@@ -369,8 +369,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/01/zebra-1-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/01/zebra-1-1/" itemprop="commentCount"></span>
+                <a href="/2018/05/09/zebra-9-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/09/zebra-9-2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -378,7 +378,7 @@
 
           
           
-             <span id="/2018/05/01/zebra-1-1/" class="leancloud_visitors" data-flag-title="iOS应用架构谈 开篇">
+             <span id="/2018/05/09/zebra-9-2/" class="leancloud_visitors" data-flag-title="KVC原理剖析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,20 +410,16 @@
 
       
         
-          <img src="/2018/05/01/zebra-1-1/zebra-1-1.png" title="iOS应用架构谈 开篇">
-<p>适合: 高级开发者阅读<br>来自: <a href="https://casatwy.com/" target="_blank" rel="noopener">Casa Taloyum</a><br>关键字: 架构<br>原文：<a href="https://casatwy.com/iosying-yong-jia-gou-tan-kai-pian.html" target="_blank" rel="noopener">iOS应用架构谈 开篇</a> </p>
-<p>作为开篇的推荐，是Casa Taloyum关于iOS应用架构的一系列文章。2015年上半年陆续发表在Casa Taloyum的博客上。虽然已经过去了三年，但我还是经常翻阅这几篇文章，这是几篇并是贴别的说技术，而是讲“思想”的文章，所以是老少咸宜，希望大家在通往架构师的路上一帆风顺。</p>
-<p><a href="https://casatwy.com/iosying-yong-jia-gou-tan-kai-pian.html" target="_blank" rel="noopener">iOS应用架构谈 开篇</a>，正如Casa Taloyum在文中说的，开篇要回答的问题是：</p>
+          <p>适合: 初级开发者阅读<br>来自: <a href="https://www.jianshu.com/" target="_blank" rel="noopener">简书</a><br>关键字: Key-Value Coding, KVC<br>原文：<a href="https://www.jianshu.com/p/1d39bc610a5b" target="_blank" rel="noopener">KVC原理剖析</a> </p>
+<p>Key-Value Coding, KVC, 键值编码，这是我们在日常编码中经常会用到的一种技术。这得益于OC的语言特性，可以让我们不必进行任何操作就可以进行属性的动态读写。KVC的操作方法由NSKeyValueCoding非正式协议提供，而NSObject以Category的形式实现了这个非正式协议，因此可以说OC中几乎所有的对象都支持KVC操作，正如你常用到的， KVC常用的操作方法如下：</p>
 <ul>
-<li>架构设计的方法</li>
-<li>什么样的架构师是好架构师？</li>
-<li>什么样的架构叫好架构？</li>
-<li>关于架构分层</li>
+<li>动态设置：setValue:forKey:, setValue:forKeyPath:</li>
+<li>动态读取：valueForKey:, valueForKeyPath:</li>
 </ul>
-<p>那么如果这几个问题，让你来回答，你会怎么回答？如果你有兴趣，在看文章前，你可以自己拿个小本，打打草稿，或者在评论区留下自己的看法，然后你再来看看Casa Taloyu的观点。</p>
+<p>那么你知道它的实现原理吗？它还有哪些别的功能吗？又或者我们在使用KVC编码时需要注意什么？它的性能又如何？首先推荐的当然是苹果的官方文档<a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/index.html#//apple_ref/doc/uid/10000107-SW1" target="_blank" rel="noopener">Key-Value Coding Programming Guide</a>。 但是如果你不喜欢阅读英文的话，(刘小壮)(<a href="https://www.jianshu.com/p/1d39bc610a5b)的这篇[KVC原理剖析](https://www.jianshu.com/p/1d39bc610a5b)也非常适合，他几乎就是官方文档的翻译版本，结构和例子都基本一致。" target="_blank" rel="noopener">https://www.jianshu.com/p/1d39bc610a5b)的这篇[KVC原理剖析](https://www.jianshu.com/p/1d39bc610a5b)也非常适合，他几乎就是官方文档的翻译版本，结构和例子都基本一致。</a></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/01/zebra-1-1/#more" rel="contents">
+            <a class="btn" href="/2018/05/09/zebra-9-2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -474,7 +470,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/zebra-1-2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/zebra-9-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -493,7 +489,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/01/zebra-1-2/" itemprop="url">iOS应用架构谈 view层的组织和调用方案</a></h1>
+                <a class="post-title-link" href="/2018/05/09/zebra-9-3/" itemprop="url">iOS开发技巧系列---详解KVC(我告诉你KVC的一切)</a></h1>
         
 
         <div class="post-meta">
@@ -505,8 +501,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T04:00:00+08:00">
-                2018-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T03:00:00+08:00">
+                2018-05-09
               </time>
             
 
@@ -528,8 +524,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-01-第1期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/01 第1期</span>
+                  <a href="/categories/斑马日报-2018-05-09-第9期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/09 第9期</span>
                   </a>
                 </span>
 
@@ -546,8 +542,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/01/zebra-1-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/01/zebra-1-2/" itemprop="commentCount"></span>
+                <a href="/2018/05/09/zebra-9-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/09/zebra-9-3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -555,7 +551,7 @@
 
           
           
-             <span id="/2018/05/01/zebra-1-2/" class="leancloud_visitors" data-flag-title="iOS应用架构谈 view层的组织和调用方案">
+             <span id="/2018/05/09/zebra-9-3/" class="leancloud_visitors" data-flag-title="iOS开发技巧系列---详解KVC(我告诉你KVC的一切)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -587,23 +583,17 @@
 
       
         
-          <img src="/2018/05/01/zebra-1-2/zebra-1-2.png" title="iOS应用架构谈 view层的组织和调用方案">
-<p>适合: 高级开发者阅读<br>来自: <a href="https://casatwy.com/" target="_blank" rel="noopener">Casa Taloyum</a><br>关键字: 架构<br>原文：<a href="https://casatwy.com/iosying-yong-jia-gou-tan-viewceng-de-zu-zhi-he-diao-yong-fang-an.html" target="_blank" rel="noopener">iOS应用架构谈 view层的组织和调用方案</a> </p>
-<p>Casa Taloyum的iOS应用架构谈系列第二篇，也是最重要的一篇。View层和业务的对接面最广，影响也最深。因此如果View层的架构不够好，哪怕稍微一点点的改动而引起的业务方的问题，会如同蝴蝶效应一样，让你进退两难。所以，诚如Casa Taloyum在文章中说的，在做View层架构的时候，我们必须抱着充分的自我怀疑态度，做决策时要拿捏好尺度。</p>
-<p>此外，你要要知道，我们熟悉或不熟悉的MVC、MVVM、MVP、VIPER等架构模式，大部分就是针对View层而设计的，随便拿一个出来就可以说上好几篇幅。</p>
-<p>Casa Taloyum在这篇文中大致讨论了下面的这些问题：</p>
+          <p>适合: 初级开发者阅读<br>来自: <a href="https://www.jianshu.com/" target="_blank" rel="noopener">简书</a><br>关键字: Key-Value Coding, KVC<br>原文：<a href="https://www.jianshu.com/p/45cbd324ea65" target="_blank" rel="noopener">iOS开发技巧系列—详解KVC(我告诉你KVC的一切)</a> </p>
+<p>Key-Value Coding, KVC, 键值编码，这是我们在日常编码中经常会用到的一种技术。这得益于OC的语言特性，可以让我们不必进行任何操作就可以进行属性的动态读写。KVC的操作方法由NSKeyValueCoding非正式协议提供，而NSObject以Category的形式实现了这个非正式协议，因此可以说OC中几乎所有的对象都支持KVC操作，正如你常用到的， KVC常用的操作方法如下：</p>
 <ul>
-<li>View代码结构的规定</li>
-<li>关于view的布局</li>
-<li>何时使用storyboard，何时使用nib，何时使用代码写View</li>
-<li>是否有必要让业务方统一派生ViewController？</li>
-<li>MVC、MVVM、MVCS、VIPER</li>
-<li>跨业务时View的处理</li>
+<li>动态设置：setValue:forKey:, setValue:forKeyPath:</li>
+<li>动态读取：valueForKey:, valueForKeyPath:</li>
 </ul>
-<p>同样，在您阅读之前，可以考虑下这些问题，欢迎在评论区留言。<br>
+<p>那么你知道它的实现原理吗？它还有哪些别的功能吗？又或者我们在使用KVC编码时需要注意什么？它的性能又如何？</p>
+<p>这是另外一篇值得推荐的KVC的博文，和<a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/index.html#//apple_ref/doc/uid/10000107-SW1" target="_blank" rel="noopener">Key-Value Coding Programming Guide</a>或者<a href="https://www.jianshu.com/p/1d39bc610a5b" target="_blank" rel="noopener">KVC原理剖析</a>的视角略有不同，但同样可以让你了解KVC的一切。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/01/zebra-1-2/#more" rel="contents">
+            <a class="btn" href="/2018/05/09/zebra-9-3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -654,7 +644,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/zebra-1-3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/zebra-8-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -673,7 +663,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/01/zebra-1-3/" itemprop="url">iOS应用架构谈 网络层设计方案</a></h1>
+                <a class="post-title-link" href="/2018/05/08/zebra-8-2/" itemprop="url">《Objective-C 高级编程》干货三部曲（二）：Blocks篇</a></h1>
         
 
         <div class="post-meta">
@@ -685,8 +675,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T03:00:00+08:00">
-                2018-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T05:00:00+08:00">
+                2018-05-08
               </time>
             
 
@@ -708,8 +698,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-01-第1期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/01 第1期</span>
+                  <a href="/categories/斑马日报-2018-05-08-第8期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/08 第8期</span>
                   </a>
                 </span>
 
@@ -726,8 +716,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/01/zebra-1-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/01/zebra-1-3/" itemprop="commentCount"></span>
+                <a href="/2018/05/08/zebra-8-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/08/zebra-8-2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -735,7 +725,7 @@
 
           
           
-             <span id="/2018/05/01/zebra-1-3/" class="leancloud_visitors" data-flag-title="iOS应用架构谈 网络层设计方案">
+             <span id="/2018/05/08/zebra-8-2/" class="leancloud_visitors" data-flag-title="《Objective-C 高级编程》干货三部曲（二）：Blocks篇">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -767,19 +757,17 @@
 
       
         
-          <img src="/2018/05/01/zebra-1-3/zebra-1-3.png" title="iOS应用架构谈 网络层设计方案">
-<p>适合: 高级开发者阅读<br>来自: <a href="https://casatwy.com/" target="_blank" rel="noopener">Casa Taloyum</a><br>关键字: 架构<br>原文：<a href="https://casatwy.com/iosying-yong-jia-gou-tan-wang-luo-ceng-she-ji-fang-an.html" target="_blank" rel="noopener">iOS应用架构谈 网络层设计方案</a> </p>
-<p>Casa Taloyum的iOS应用架构谈系列第三篇。我想现在脱离网络的App应该少之又少了吧，所以网络层是App不可缺少的一部分。好在现在AFNetworking基本已成为App的标准配置。同时Apple在这方面也做着各种努力，例如新的网络API，新的安全机制等等。当然我们要讨论的是网络层谈设计方案，并不是说要如何使用AFNetworking或者讨论Apple的API。</p>
-<p>这篇文章着重讨论了</p>
+          <p>适合: 所有开发者阅读<br>来自: <a href="https://knightsj.github.io/" target="_blank" rel="noopener">J<em>Knight</em></a><br>关键字: 书籍推荐<br>原文：<a href="https://knightsj.github.io/2017/04/17/%E3%80%8AObjective-C%20%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E3%80%8B%E5%B9%B2%E8%B4%A7%E4%B8%89%E9%83%A8%E6%9B%B2%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9ABlocks%E7%AF%87/" target="_blank" rel="noopener">《Objective-C 高级编程》干货三部曲（二）：Blocks篇</a> </p>
+<p>之前向大家推荐过这本书 -《Objective-C 高级编程》，这次推荐给大家的是<a href="https://knightsj.github.io/" target="_blank" rel="noopener">J<em>Knight</em></a>同学的关于此书的读书笔记。同书的结构，他也分了三篇来写的笔记：</p>
 <ul>
-<li>网络层跟业务对接部分的设计</li>
-<li>网络层的安全机制实现</li>
-<li>网络层的优化方案</li>
+<li>引用计数篇</li>
+<li>Block篇</li>
+<li>GCD篇</li>
 </ul>
-<p>所以，也在评论区聊聊您是如何设计网络层，跟业务层进行数据交互，又或者在iOS客户端上，网络安全机制需要注意什么。</p>
+<p>这是第二篇 - Block篇， 也希望大家在读书之后通过阅读此博客对知识进行一下梳理和二次复习。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/01/zebra-1-3/#more" rel="contents">
+            <a class="btn" href="/2018/05/08/zebra-8-2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -830,7 +818,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/zebra-1-4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/zebra-8-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -849,7 +837,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/01/zebra-1-4/" itemprop="url">iOS应用架构谈 本地持久化方案及动态部署</a></h1>
+                <a class="post-title-link" href="/2018/05/08/zebra-8-1/" itemprop="url">《Objective-C 高级编程》干货三部曲（一）：引用计数篇</a></h1>
         
 
         <div class="post-meta">
@@ -861,8 +849,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T02:00:00+08:00">
-                2018-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T05:00:00+08:00">
+                2018-05-08
               </time>
             
 
@@ -884,8 +872,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-01-第1期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/01 第1期</span>
+                  <a href="/categories/斑马日报-2018-05-08-第8期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/08 第8期</span>
                   </a>
                 </span>
 
@@ -902,8 +890,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/01/zebra-1-4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/01/zebra-1-4/" itemprop="commentCount"></span>
+                <a href="/2018/05/08/zebra-8-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/08/zebra-8-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -911,7 +899,7 @@
 
           
           
-             <span id="/2018/05/01/zebra-1-4/" class="leancloud_visitors" data-flag-title="iOS应用架构谈 本地持久化方案及动态部署">
+             <span id="/2018/05/08/zebra-8-1/" class="leancloud_visitors" data-flag-title="《Objective-C 高级编程》干货三部曲（一）：引用计数篇">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -943,23 +931,17 @@
 
       
         
-          <img src="/2018/05/01/zebra-1-4/zebra-1-4.png" title="iOS应用架构谈 本地持久化方案及动态部署">
-<p>适合: 高级开发者阅读<br>来自: <a href="https://casatwy.com/" target="_blank" rel="noopener">Casa Taloyum</a><br>关键字: 架构<br>原文：<a href="https://casatwy.com/iosying-yong-jia-gou-tan-ben-di-chi-jiu-hua-fang-an-ji-dong-tai-bu-shu.html" target="_blank" rel="noopener">iOS应用架构谈 本地持久化方案及动态部署</a> </p>
-<p>Casa Taloyum的iOS应用架构谈系列第四篇。这一篇的持久化方案又是一个非常需要发挥的地方，方案非常多，非常值得讨论。持久化方案对整个App架构的影响和网络层方案对整个架构的影响类似，一般都是导致整个项目耦合度高的罪魁祸首。</p>
-<p>所以这篇文章着重讨论了</p>
+          <p>适合: 所有开发者阅读<br>来自: <a href="https://knightsj.github.io/" target="_blank" rel="noopener">J<em>Knight</em></a><br>关键字: 书籍推荐<br>原文：<a href="https://knightsj.github.io/2017/04/10/%E3%80%8AObjective-C%20%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E3%80%8B%E5%B9%B2%E8%B4%A7%E4%B8%89%E9%83%A8%E6%9B%B2%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E7%AF%87/" target="_blank" rel="noopener">《Objective-C 高级编程》干货三部曲（一）：引用计数篇</a> </p>
+<p>之前向大家推荐过这本书 -《Objective-C 高级编程》，这次推荐给大家的是<a href="https://knightsj.github.io/" target="_blank" rel="noopener">J<em>Knight</em></a>同学的关于此书的读书笔记。同书的结构，他也分了三篇来写的笔记：</p>
 <ul>
-<li>根据需求决定持久化方案</li>
-<li>持久层与业务层之间的隔离</li>
-<li>持久层与业务层的交互方式</li>
-<li>数据迁移方案</li>
-<li>数据同步方案</li>
+<li>引用计数篇</li>
+<li>Block篇</li>
+<li>GCD篇</li>
 </ul>
-<p>我在做项目的时候，会非常纠结解耦和同步问题，所以会经常回过头来查阅这篇文章给的方案。所以如果你有更好的方案或者想法，欢迎留言讨论。</p>
-<p>至于iOS动态部署方案，事实上也可以另开一篇的内容，不过Casa Taloyum把他们和在一起了。随着Apple对动态部署方案的审核愈加严格，所以请更加慎重的选择方案。</p>
-<p>在发布这篇文章的时候，Casa Taloyum也发布了CTPersistance和CTJSBridge这两个库，因此也欢迎大家下载使用或者分析。</p>
+<p>这是第一篇 - 引用计数篇， 也希望大家在读书之后通过阅读此博客对知识进行一下梳理和二次复习。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/01/zebra-1-4/#more" rel="contents">
+            <a class="btn" href="/2018/05/08/zebra-8-1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1010,7 +992,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/zebra-1-5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/zebra-8-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -1029,7 +1011,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/01/zebra-1-5/" itemprop="url">iOS应用架构谈 组件化方案</a></h1>
+                <a class="post-title-link" href="/2018/05/08/zebra-8-3/" itemprop="url">《Objective-C 高级编程》干货三部曲（三）：GCD篇</a></h1>
         
 
         <div class="post-meta">
@@ -1041,8 +1023,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T01:00:00+08:00">
-                2018-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T03:00:00+08:00">
+                2018-05-08
               </time>
             
 
@@ -1064,8 +1046,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-01-第1期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/01 第1期</span>
+                  <a href="/categories/斑马日报-2018-05-08-第8期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/08 第8期</span>
                   </a>
                 </span>
 
@@ -1082,8 +1064,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/01/zebra-1-5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/01/zebra-1-5/" itemprop="commentCount"></span>
+                <a href="/2018/05/08/zebra-8-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/08/zebra-8-3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1091,7 +1073,7 @@
 
           
           
-             <span id="/2018/05/01/zebra-1-5/" class="leancloud_visitors" data-flag-title="iOS应用架构谈 组件化方案">
+             <span id="/2018/05/08/zebra-8-3/" class="leancloud_visitors" data-flag-title="《Objective-C 高级编程》干货三部曲（三）：GCD篇">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1123,14 +1105,17 @@
 
       
         
-          <img src="/2018/05/01/zebra-1-5/zebra-1-5.png" title="iOS应用架构谈 组件化方案">
-<p>适合: 高级开发者阅读<br>来自: <a href="https://casatwy.com/" target="_blank" rel="noopener">Casa Taloyum</a><br>关键字: 架构<br>原文：<a href="https://casatwy.com/iOS-Modulization.html" target="_blank" rel="noopener">iOS应用架构谈 组件化方案</a> </p>
-<p>Casa Taloyum的iOS应用架构谈系列第五篇。这是额外的一篇，如Casa Taloyum所说，他在最初构思架构谈时，并没有打算写组件化方案，不过恰巧微信群里蘑菇街的Limboy做了一个分享，讲了蘑菇街的组件化之路，颇有想法，因此他把他的想法整理成文章，所以有了这额外的一篇。</p>
-<p><a href="http://limboy.me/tech/2016/03/10/mgj-components.html" target="_blank" rel="noopener">蘑菇街 App 的组件化之路</a><br><a href="http://limboy.me/tech/2016/03/14/mgj-components-continued.html" target="_blank" rel="noopener">蘑菇街 App 的组件化之路·续</a></p>
-<p>好吧，大家就看两大神仙是如何过招的吧。我就不多“剧透”了</p>
+          <p>适合: 所有开发者阅读<br>来自: <a href="https://knightsj.github.io/" target="_blank" rel="noopener">J<em>Knight</em></a><br>关键字: 书籍推荐<br>原文：<a href="https://knightsj.github.io/2017/04/24/%E3%80%8AObjective-C%20%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E3%80%8B%E5%B9%B2%E8%B4%A7%E4%B8%89%E9%83%A8%E6%9B%B2%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9AGCD%E7%AF%87/" target="_blank" rel="noopener">《Objective-C 高级编程》干货三部曲（三）：GCD篇</a> </p>
+<p>之前向大家推荐过这本书 -《Objective-C 高级编程》，这次推荐给大家的是<a href="https://knightsj.github.io/" target="_blank" rel="noopener">J<em>Knight</em></a>同学的关于此书的读书笔记。同书的结构，他也分了三篇来写的笔记：</p>
+<ul>
+<li>引用计数篇</li>
+<li>Block篇</li>
+<li>GCD篇</li>
+</ul>
+<p>这是第三篇 - GCD篇， 也希望大家在读书之后通过阅读此博客对知识进行一下梳理和二次复习。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/01/zebra-1-5/#more" rel="contents">
+            <a class="btn" href="/2018/05/08/zebra-8-3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1181,7 +1166,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/30/启发日报-第14期-2018-04-27/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/zebra-7-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -1200,7 +1185,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/30/启发日报-第14期-2018-04-27/" itemprop="url">启发日报 第14期 2018/04/27</a></h1>
+                <a class="post-title-link" href="/2018/05/07/zebra-7-4/" itemprop="url">《Effective Objective-C》超级干货三部曲（三）：技巧篇</a></h1>
         
 
         <div class="post-meta">
@@ -1212,8 +1197,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-30T20:05:32+08:00">
-                2018-04-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T05:00:00+08:00">
+                2018-05-07
               </time>
             
 
@@ -1235,8 +1220,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/启发日报/" itemprop="url" rel="index">
-                    <span itemprop="name">启发日报</span>
+                  <a href="/categories/斑马日报-2018-05-07-第7期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/07 第7期</span>
                   </a>
                 </span>
 
@@ -1253,8 +1238,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/30/启发日报-第14期-2018-04-27/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/30/启发日报-第14期-2018-04-27/" itemprop="commentCount"></span>
+                <a href="/2018/05/07/zebra-7-4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/07/zebra-7-4/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1262,7 +1247,181 @@
 
           
           
-             <span id="/2018/04/30/启发日报-第14期-2018-04-27/" class="leancloud_visitors" data-flag-title="启发日报 第14期 2018/04/27">
+             <span id="/2018/05/07/zebra-7-4/" class="leancloud_visitors" data-flag-title="《Effective Objective-C》超级干货三部曲（三）：技巧篇">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>适合: 所有开发者阅读<br>来自: <a href="https://knightsj.github.io/" target="_blank" rel="noopener">J<em>Knight</em></a><br>关键字: 书籍推荐<br>原文：<a href="https://knightsj.github.io/2017/01/13/%E3%80%8AEffective%20Objective-C%E3%80%8B%E8%B6%85%E7%BA%A7%E5%B9%B2%E8%B4%A7%E4%B8%89%E9%83%A8%E6%9B%B2%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E6%8A%80%E5%B7%A7%E7%AF%87/" target="_blank" rel="noopener">《《Effective Objective-C》超级干货三部曲（三）：技巧篇</a> </p>
+<p><a href="https://knightsj.github.io/" target="_blank" rel="noopener">J<em>Knight</em></a>同学为我们做了非常不错的《Effective Objective-C》的读书笔记，他从另一个角度对这些Tips进行了分类：</p>
+<ul>
+<li>概念类：讲解了一些概念性知识。</li>
+<li>规范类：讲解了一些为了避免一些问题或者为后续开发提供便利所需要遵循的规范性知识。</li>
+<li>技巧类：讲解了一些为了解决某些特定问题而需要用到的技巧性知识。</li>
+</ul>
+<p>这是第三篇 - 技巧篇，也希望大家在读书之后通过阅读此博客对知识进行一下梳理和二次复习。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/07/zebra-7-4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/zebra-7-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="启发光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="启发光明的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/07/zebra-7-3/" itemprop="url">《Effective Objective-C》超级干货三部曲（二）：规范篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T05:00:00+08:00">
+                2018-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/斑马日报-2018-05-07-第7期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/07 第7期</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/07/zebra-7-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/07/zebra-7-3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/07/zebra-7-3/" class="leancloud_visitors" data-flag-title="《Effective Objective-C》超级干货三部曲（二）：规范篇">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1295,11 +1454,15 @@
       
         
           
-          写了那么多的block，却从来没有特别系统的去学习过block。事实上是看过一些的，block的语法部分还可以理解，但每次看到底层实现时，总会被弄的晕乎乎的。今天打算花一点时间，好好的学习一下。主要是参考《Objective-C 高级编程 iOS与OS X多线程和内存管理》一书的第二章“Blocks
+          
+适合: 所有开发者阅读来自: JKnight关键字: 书籍推荐原文：《Effective Objective-C》超级干货三部曲（二）：规范篇 
+JKnight同学为我们做了非常不错的《Effective Objective-C》的读书笔记，他从另一个角度对这些Tips进行了分类：
+
+概念类：讲解
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/30/启发日报-第14期-2018-04-27/#more" rel="contents">
+            <a class="btn" href="/2018/05/07/zebra-7-3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1350,7 +1513,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/启发日报-第13期-2018-04-26/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/zebra-7-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -1369,7 +1532,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/26/启发日报-第13期-2018-04-26/" itemprop="url">启发日报 第13期 2018/04/26</a></h1>
+                <a class="post-title-link" href="/2018/05/07/zebra-7-1/" itemprop="url">书籍推荐 - Effective Objective-C 2.0</a></h1>
         
 
         <div class="post-meta">
@@ -1381,8 +1544,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T20:28:13+08:00">
-                2018-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T05:00:00+08:00">
+                2018-05-07
               </time>
             
 
@@ -1404,8 +1567,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/启发日报/" itemprop="url" rel="index">
-                    <span itemprop="name">启发日报</span>
+                  <a href="/categories/斑马日报-2018-05-07-第7期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/07 第7期</span>
                   </a>
                 </span>
 
@@ -1422,8 +1585,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/26/启发日报-第13期-2018-04-26/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/26/启发日报-第13期-2018-04-26/" itemprop="commentCount"></span>
+                <a href="/2018/05/07/zebra-7-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/07/zebra-7-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1431,7 +1594,7 @@
 
           
           
-             <span id="/2018/04/26/启发日报-第13期-2018-04-26/" class="leancloud_visitors" data-flag-title="启发日报 第13期 2018/04/26">
+             <span id="/2018/05/07/zebra-7-1/" class="leancloud_visitors" data-flag-title="书籍推荐 - Effective Objective-C 2.0">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1463,13 +1626,13 @@
 
       
         
-          
-          做iOS开发，避免不了用户注册，登录页面。业务逻辑别论，UI的实现上肯定涉及到UITextField。看上去很简单，可有时候不少功能还是挺折腾的。所以今天要推荐的第几篇是关于UITextField的。
-#####基础知识：iOS-UITextField 全面解析我更推荐看UITextField，不过
-          ...
+          <p>适合: 所有开发者阅读<br>来自: <a href="https://book.douban.com/subject/25829244/" target="_blank" rel="noopener">书籍推荐</a><br>关键字: CocoaPods<br>原文：<a href="https://book.douban.com/subject/25829244/" target="_blank" rel="noopener">书籍推荐 - Effective Objective-C 2.0</a> </p>
+<p>《effective objective-c 2.0：编写高质量ios与os x代码的52个有效方法》是世界级c++开发大师scott meyers亲自担当顾问编辑的“effective software development series”系列丛书中的新作，amazon全五星评价。从语法、接口与api设计、内存管理、框架等7大方面总结和探讨了objective-c编程中52个鲜为人知和容易被忽视的特性与陷阱。书中包含大量实用范例代码，为编写易于理解、便于维护、易于扩展和高效的objective-c应用提供了解决方案。</p>
+<p>全书共7章。第1章通论与objective-c的核心概念相关的技巧；第2章讲述的技巧与面向对象语言的重要特征（对象、消息和运行期）相关；第3章介绍的技巧与接口和api设计相关；第4章讲述协议与分类相关的技巧；第5章介绍内存管理中易犯的错误以及如何避免犯这些错误；第6章介绍块与大中枢派发相关的技巧；第7章讲解使用cocoa和cocoa touch系统框架时的相关技巧。</p>
+<p>我个人是非常喜欢这个本书，有浅有深，适合所有开发者阅读，基本上作为我的案边书，经常可以翻阅看看。所以强烈推荐给大家。原文链接到了豆瓣读书。也欢迎大家在留言讨论区留下自己的读后感。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/26/启发日报-第13期-2018-04-26/#more" rel="contents">
+            <a class="btn" href="/2018/05/07/zebra-7-1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1520,7 +1683,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/启发日报-第12期-2018-04-25/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/zebra-7-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -1539,7 +1702,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/25/启发日报-第12期-2018-04-25/" itemprop="url">启发日报 第12期 2018/04/25</a></h1>
+                <a class="post-title-link" href="/2018/05/07/zebra-7-2/" itemprop="url">《Effective Objective-C》超级干货三部曲（一）：概念篇</a></h1>
         
 
         <div class="post-meta">
@@ -1551,8 +1714,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T19:40:22+08:00">
-                2018-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T05:00:00+08:00">
+                2018-05-07
               </time>
             
 
@@ -1574,8 +1737,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/启发日报/" itemprop="url" rel="index">
-                    <span itemprop="name">启发日报</span>
+                  <a href="/categories/斑马日报-2018-05-07-第7期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/07 第7期</span>
                   </a>
                 </span>
 
@@ -1592,8 +1755,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/25/启发日报-第12期-2018-04-25/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/25/启发日报-第12期-2018-04-25/" itemprop="commentCount"></span>
+                <a href="/2018/05/07/zebra-7-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/07/zebra-7-2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1601,7 +1764,7 @@
 
           
           
-             <span id="/2018/04/25/启发日报-第12期-2018-04-25/" class="leancloud_visitors" data-flag-title="启发日报 第12期 2018/04/25">
+             <span id="/2018/05/07/zebra-7-2/" class="leancloud_visitors" data-flag-title="《Effective Objective-C》超级干货三部曲（一）：概念篇">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1633,13 +1796,17 @@
 
       
         
-          
-          今天首先推荐的是基础内容，事实上大家对NSArray, NSSet, NSOrderedSet 和 NSDictionary这些类已经用的非常熟悉了，但是这篇文章肯定有您不知道的内容：来自Objc.io中国的一篇关于基础集合类的文章，虽然是15年的文章，但其含金量还是足足的。
-#####基础知识：基
-          ...
+          <p>适合: 所有开发者阅读<br>来自: <a href="https://knightsj.github.io/" target="_blank" rel="noopener">J<em>Knight</em></a><br>关键字: 书籍推荐<br>原文：<a href="https://knightsj.github.io/2017/01/13/%E3%80%8AEffective%20Objective-C%E3%80%8B%E8%B6%85%E7%BA%A7%E5%B9%B2%E8%B4%A7%E4%B8%89%E9%83%A8%E6%9B%B2%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E6%A6%82%E5%BF%B5%E7%AF%87/" target="_blank" rel="noopener">Effective Objective-C》超级干货三部曲（一）：概念篇</a> </p>
+<p><a href="https://knightsj.github.io/" target="_blank" rel="noopener">J<em>Knight</em></a>同学为我们做了非常不错的《Effective Objective-C》的读书笔记，他从另一个角度对这些Tips进行了分类：</p>
+<ul>
+<li>概念类：讲解了一些概念性知识。</li>
+<li>规范类：讲解了一些为了避免一些问题或者为后续开发提供便利所需要遵循的规范性知识。</li>
+<li>技巧类：讲解了一些为了解决某些特定问题而需要用到的技巧性知识。</li>
+</ul>
+<p>这是第一篇 - 概念篇，也希望大家在读书之后通过阅读此博客对知识进行一下梳理和二次复习。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/25/启发日报-第12期-2018-04-25/#more" rel="contents">
+            <a class="btn" href="/2018/05/07/zebra-7-2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1690,7 +1857,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/启发日报-第11期-2018-04-24/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/zebra-6-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -1709,7 +1876,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/25/启发日报-第11期-2018-04-24/" itemprop="url">启发日报 第11期 2018/04/24</a></h1>
+                <a class="post-title-link" href="/2018/05/06/zebra-6-1/" itemprop="url">深入理解YYCache</a></h1>
         
 
         <div class="post-meta">
@@ -1721,8 +1888,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T19:40:14+08:00">
-                2018-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T05:00:00+08:00">
+                2018-05-06
               </time>
             
 
@@ -1744,8 +1911,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/启发日报/" itemprop="url" rel="index">
-                    <span itemprop="name">启发日报</span>
+                  <a href="/categories/斑马日报-2018-05-06-第6期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/06 第6期</span>
                   </a>
                 </span>
 
@@ -1762,8 +1929,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/25/启发日报-第11期-2018-04-24/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/25/启发日报-第11期-2018-04-24/" itemprop="commentCount"></span>
+                <a href="/2018/05/06/zebra-6-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/06/zebra-6-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1771,7 +1938,7 @@
 
           
           
-             <span id="/2018/04/25/启发日报-第11期-2018-04-24/" class="leancloud_visitors" data-flag-title="启发日报 第11期 2018/04/24">
+             <span id="/2018/05/06/zebra-6-1/" class="leancloud_visitors" data-flag-title="深入理解YYCache">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1803,184 +1970,12 @@
 
       
         
-          
-          昨天有点偷懒，所以没有按时写完第11期。事实上是昨天忙着别的事情了，没有时间去阅读一些文章，因此也不知道推荐什么。
-因此，今天首要的任务是把昨天没完成的补上。
-今天在重构本地缓存相关的类，有用到Sqlite以及NSCache。重构的时候，就在考虑是不是有更好的第三方库，因此今天推荐给大家的是
-###
-          ...
+          <img src="/2018/05/06/zebra-6-1/zebra-6-1.png" title="深入理解YYCache">
+<p>适合: 中级开发者阅读<br>来自: <a href="https://www.cnblogs.com/" target="_blank" rel="noopener">cnblogs</a><br>关键字: 源码阅读<br>原文：<a href="https://www.cnblogs.com/machao/p/7086675.html" target="_blank" rel="noopener">深入理解YYCache</a> </p>
+<p>这是一篇比较另类的YYCache源码阅读的博客，他有一些自己独到的视角，并没有类似之前我推荐的那几篇文章，一个个源文件的解读，因此也在我的推荐列表里。阅读他并不会花费你太多的时间，但可能会有不少的Tips能引起你的注意。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/25/启发日报-第11期-2018-04-24/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/启发日报-第10期-2018-04-23/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="启发光明">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="启发光明的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/23/启发日报-第10期-2018-04-23/" itemprop="url">启发日报 第10期 2018/04/23</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T18:54:57+08:00">
-                2018-04-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/启发日报/" itemprop="url" rel="index">
-                    <span itemprop="name">启发日报</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/23/启发日报-第10期-2018-04-23/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/23/启发日报-第10期-2018-04-23/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/04/23/启发日报-第10期-2018-04-23/" class="leancloud_visitors" data-flag-title="启发日报 第10期 2018/04/23">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          因为在重构自己的代码，所以周末的时候有在看MVVM以及ReactiveCocoa，考虑是否用MVVM重构下自己的代码，并考虑是否引入ReactiveCocoa。因为ReactiveCocoa的学习成本高，而且调试困难，所以一直都在由于。今天看了雷纯锋的这篇技术博客，确实给自己增强了不少信心。所以，就
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/23/启发日报-第10期-2018-04-23/#more" rel="contents">
+            <a class="btn" href="/2018/05/06/zebra-6-1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2022,7 +2017,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2072,7 +2067,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2083,7 +2078,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2094,7 +2089,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">75</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
