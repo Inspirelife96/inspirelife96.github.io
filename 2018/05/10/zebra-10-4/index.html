@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="启发光明的博客">
 <meta property="og:description" content="适合: 初级开发者阅读来自: 掘金关键字: KVO, Key-Value Observing原文：iOS开发·KVO用法，原理与底层实现-runtime模拟实现KVO监听机制（Blcok及Delgate方式）  Key-Value Observing, KVO, 键值观察，这是一种机制，当指定对象属性改变的时候允许另一个对象接受通知。由NSObject的一个非正式协议NSKeyValueObser">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-22T02:34:31.000Z">
+<meta property="og:updated_time" content="2018-07-02T00:15:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发·KVO用法，原理与底层实现-runtime模拟实现KVO监听机制（Blcok及Delgate方式）">
 <meta name="twitter:description" content="适合: 初级开发者阅读来自: 掘金关键字: KVO, Key-Value Observing原文：iOS开发·KVO用法，原理与底层实现-runtime模拟实现KVO监听机制（Blcok及Delgate方式）  Key-Value Observing, KVO, 键值观察，这是一种机制，当指定对象属性改变的时候允许另一个对象接受通知。由NSObject的一个非正式协议NSKeyValueObser">
@@ -411,16 +411,8 @@
         
 <p>适合: 初级开发者阅读<br>来自: <a href="https://juejin.im/" target="_blank" rel="noopener">掘金</a><br>关键字: KVO, Key-Value Observing<br>原文：<a href="https://juejin.im/post/5aeff463f265da0b851cc6ac" target="_blank" rel="noopener">iOS开发·KVO用法，原理与底层实现-runtime模拟实现KVO监听机制（Blcok及Delgate方式）</a> </p>
 <p>Key-Value Observing, KVO, 键值观察，这是一种机制，当指定对象属性改变的时候允许另一个对象接受通知。由NSObject的一个非正式协议NSKeyValueObserving(其实就是NSObject的一个Category)实现。这相当于NSObject及其子类自带了设计模式中的观察者模式。 这就意味着我们不需要自己去实现这样的方案。每次属性改变了就发送消息通知，这是KVO机制提供的最大的优点，因为这个方案已经被明确定义，获得框架级支持，可以方便地采用。</p>
-<p>这篇<a href="https://www.jianshu.com/p/2a4a41a3d607" target="_blank" rel="noopener">谈谈 KVO</a> 是我个人认为总结的非常不错的KVO的博客，作者<a href="https://www.jianshu.com/u/7f46578eb677" target="_blank" rel="noopener">我叫纠结伦</a>从下面几个方面来阐述了他对KVO的理解：</p>
-<ul>
-<li>Why? （为什么要用KVO）</li>
-<li>What? （KVO是什么）</li>
-<li>How? （ KVO怎么用）</li>
-<li>More （更多细节）</li>
-<li>原理</li>
-<li>自己实现KVO</li>
-</ul>
-<p>里面的不少细节和提醒非常值得我们在使用KVO时注意，唯一遗憾的是“自己实现KVO”的内容只是讲解了大概的思路，并没有具体的实现。推荐阅读。</p>
+<p>这是另外一篇我想向大家推荐的KVO的文章，这篇文章的重点，是在于KVO的底层实现，并用runtime以Block及Delegate的方式模拟实现了KVO的监听机制。正是上一篇<a href="https://www.jianshu.com/p/2a4a41a3d607" target="_blank" rel="noopener">谈谈 KVO</a> 最后“自己实现KVO”一笔带过的内容。通过模拟KVO的实现，可以让你更好的掌握KVO并深刻理解其原理，同时也可以让你学习runtime的一系列有用的API如何运用。</p>
+<p>所以，阅读之余，你可以自己写一下KVO的实现来验证下本文。</p>
 <a id="more"></a>
       
     </div>
@@ -461,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/09/zebra-9-1/" rel="next" title="Key-Value Coding Programming Guide">
-                <i class="fa fa-chevron-left"></i> Key-Value Coding Programming Guide
+              <a href="/2018/05/10/zebra-10-5/" rel="next" title="Key-Value Observing">
+                <i class="fa fa-chevron-left"></i> Key-Value Observing
               </a>
             
           </div>
@@ -471,8 +463,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/10/zebra-10-5/" rel="prev" title="Key-Value Observing">
-                Key-Value Observing <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/10/zebra-10-3/" rel="prev" title="谈谈 KVO">
+                谈谈 KVO <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -550,7 +542,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">114</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -561,7 +553,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -572,7 +564,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

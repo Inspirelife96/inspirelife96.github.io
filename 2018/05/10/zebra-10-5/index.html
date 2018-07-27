@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="启发光明的博客">
 <meta property="og:description" content="适合: 初级开发者阅读来自: nshipster关键字: KVO, Key-Value Observing原文：Key-Value Observing  Key-Value Observing, KVO, 键值观察，这是一种机制，当指定对象属性改变的时候允许另一个对象接受通知。由NSObject的一个非正式协议NSKeyValueObserving(其实就是NSObject的一个Category)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-22T02:41:50.000Z">
+<meta property="og:updated_time" content="2018-07-02T00:15:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Key-Value Observing">
 <meta name="twitter:description" content="适合: 初级开发者阅读来自: nshipster关键字: KVO, Key-Value Observing原文：Key-Value Observing  Key-Value Observing, KVO, 键值观察，这是一种机制，当指定对象属性改变的时候允许另一个对象接受通知。由NSObject的一个非正式协议NSKeyValueObserving(其实就是NSObject的一个Category)">
@@ -411,8 +411,13 @@
         
 <p>适合: 初级开发者阅读<br>来自: <a href="http://nshipster.cn/" target="_blank" rel="noopener">nshipster</a><br>关键字: KVO, Key-Value Observing<br>原文：<a href="http://nshipster.cn/key-value-observing/" target="_blank" rel="noopener">Key-Value Observing</a> </p>
 <p>Key-Value Observing, KVO, 键值观察，这是一种机制，当指定对象属性改变的时候允许另一个对象接受通知。由NSObject的一个非正式协议NSKeyValueObserving(其实就是NSObject的一个Category)实现。这相当于NSObject及其子类自带了设计模式中的观察者模式。 这就意味着我们不需要自己去实现这样的方案。每次属性改变了就发送消息通知，这是KVO机制提供的最大的优点，因为这个方案已经被明确定义，获得框架级支持，可以方便地采用。</p>
-<p>这是另外一篇我想向大家推荐的KVO的文章，这篇文章的重点，是在于KVO的底层实现，并用runtime以Block及Delegate的方式模拟实现了KVO的监听机制。正是上一篇<a href="https://www.jianshu.com/p/2a4a41a3d607" target="_blank" rel="noopener">谈谈 KVO</a> 最后“自己实现KVO”一笔带过的内容。通过模拟KVO的实现，可以让你更好的掌握KVO并深刻理解其原理，同时也可以让你学习runtime的一系列有用的API如何运用。</p>
-<p>所以，阅读之余，你可以自己写一下KVO的实现来验证下本文。</p>
+<p><a href="http://nshipster.cn/authors/mattt-thompson/" target="_blank" rel="noopener">Mattt Thompson</a>在<a href="http://nshipster.cn/" target="_blank" rel="noopener">nshipster</a>上也写有一篇关于KVO的文章，来吐槽苹果自带的KVO是如何的难用。但是同<a href="http://nshipster.cn/" target="_blank" rel="noopener">nshipster</a>网站的意义，关注被忽略的 Objective-C、Swift 和 Cocoa 特性，这篇文章同样提出了很多需要关注的KVO的要点，例如：</p>
+<ul>
+<li>如何申明上下文</li>
+<li>如何使用更好的Key Paths</li>
+<li>如何安全的取消注册。</li>
+</ul>
+<p>这篇文章很简短，所以请阅读一下，这并不会花费你太多的时间，但你肯定可以收获不少。</p>
 <a id="more"></a>
       
     </div>
@@ -453,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/10/zebra-10-4/" rel="next" title="iOS开发·KVO用法，原理与底层实现-runtime模拟实现KVO监听机制（Blcok及Delgate方式）">
-                <i class="fa fa-chevron-left"></i> iOS开发·KVO用法，原理与底层实现-runtime模拟实现KVO监听机制（Blcok及Delgate方式）
+              <a href="/2018/05/09/zebra-9-1/" rel="next" title="Key-Value Coding Programming Guide">
+                <i class="fa fa-chevron-left"></i> Key-Value Coding Programming Guide
               </a>
             
           </div>
@@ -463,8 +468,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/10/zebra-10-3/" rel="prev" title="谈谈 KVO">
-                谈谈 KVO <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/10/zebra-10-4/" rel="prev" title="iOS开发·KVO用法，原理与底层实现-runtime模拟实现KVO监听机制（Blcok及Delgate方式）">
+                iOS开发·KVO用法，原理与底层实现-runtime模拟实现KVO监听机制（Blcok及Delgate方式） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -542,7 +547,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">114</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -553,7 +558,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -564,7 +569,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

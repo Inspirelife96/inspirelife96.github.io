@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="适合: 中级开发者阅读来自: cnblogs关键字: Object Runtime, Runtime, 运行时, 动态, 方法交换原文：iOS runtime（一）（runtime 分析理解）  本文主要是我对学习runtime或其它知识过程中的串联起来写成的，里面也包括了引用外部相关的内容，也包括自己的理解，对runtime做个总结记录的同时把runtime的各个知识点衔接起来，希望能对读者有所">
+<meta name="description" content="适合: 中级开发者阅读来自: cnblogs关键字: Object Runtime, Runtime, 运行时, 动态, 方法交换原文：iOS runtime （二）（runtime学习之AutoCoding源码分析）  在上一篇文章中，学习了runtime中的各个重要的知识点，接下来就是要开始运用了。主要是分析一些优秀开源库是如何运用runtime,提高工作效率的。">
 <meta name="keywords" content="Fundation,Object Runtime,中级,Runtime,运行时,动态,cnblogs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS runtime （二）（runtime学习之AutoCoding源码分析）">
 <meta property="og:url" content="http://yoursite.com/2018/05/12/zebra-14-2/index.html">
 <meta property="og:site_name" content="启发光明的博客">
-<meta property="og:description" content="适合: 中级开发者阅读来自: cnblogs关键字: Object Runtime, Runtime, 运行时, 动态, 方法交换原文：iOS runtime（一）（runtime 分析理解）  本文主要是我对学习runtime或其它知识过程中的串联起来写成的，里面也包括了引用外部相关的内容，也包括自己的理解，对runtime做个总结记录的同时把runtime的各个知识点衔接起来，希望能对读者有所">
+<meta property="og:description" content="适合: 中级开发者阅读来自: cnblogs关键字: Object Runtime, Runtime, 运行时, 动态, 方法交换原文：iOS runtime （二）（runtime学习之AutoCoding源码分析）  在上一篇文章中，学习了runtime中的各个重要的知识点，接下来就是要开始运用了。主要是分析一些优秀开源库是如何运用runtime,提高工作效率的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-23T05:41:41.000Z">
+<meta property="og:updated_time" content="2018-07-02T00:15:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS runtime （二）（runtime学习之AutoCoding源码分析）">
-<meta name="twitter:description" content="适合: 中级开发者阅读来自: cnblogs关键字: Object Runtime, Runtime, 运行时, 动态, 方法交换原文：iOS runtime（一）（runtime 分析理解）  本文主要是我对学习runtime或其它知识过程中的串联起来写成的，里面也包括了引用外部相关的内容，也包括自己的理解，对runtime做个总结记录的同时把runtime的各个知识点衔接起来，希望能对读者有所">
+<meta name="twitter:description" content="适合: 中级开发者阅读来自: cnblogs关键字: Object Runtime, Runtime, 运行时, 动态, 方法交换原文：iOS runtime （二）（runtime学习之AutoCoding源码分析）  在上一篇文章中，学习了runtime中的各个重要的知识点，接下来就是要开始运用了。主要是分析一些优秀开源库是如何运用runtime,提高工作效率的。">
 
 
 
@@ -409,8 +409,8 @@
 
       
         
-<p>适合: 中级开发者阅读<br>来自: <a href="https://www.cnblogs.com/" target="_blank" rel="noopener">cnblogs</a><br>关键字: Object Runtime, Runtime, 运行时, 动态, 方法交换<br>原文：<a href="http://www.cnblogs.com/chenxianming/p/5616073.html" target="_blank" rel="noopener">iOS runtime（一）（runtime 分析理解）</a> </p>
-<p>本文主要是我对学习runtime或其它知识过程中的串联起来写成的，里面也包括了引用外部相关的内容，也包括自己的理解，对runtime做个总结记录的同时把runtime的各个知识点衔接起来，希望能对读者有所帮助，文章有点长，希望读者做好心理准备。在仔细读完这文章后相信大家都对runtime有一定的理解。那么学了runtime有什么用呢，这就是我下一篇文章 iOS runtime (二) (开源库分析) 要写的内容，主要讲解的是一些优秀的开源库是如何运用runtime,提高我们的开发效率的。</p>
+<p>适合: 中级开发者阅读<br>来自: <a href="https://www.cnblogs.com/" target="_blank" rel="noopener">cnblogs</a><br>关键字: Object Runtime, Runtime, 运行时, 动态, 方法交换<br>原文：<a href="http://www.cnblogs.com/chenxianming/p/5616073.html" target="_blank" rel="noopener">iOS runtime （二）（runtime学习之AutoCoding源码分析）</a> </p>
+<p>在上一篇文章中，学习了runtime中的各个重要的知识点，接下来就是要开始运用了。主要是分析一些优秀开源库是如何运用runtime,提高工作效率的。</p>
 <a id="more"></a>
       
     </div>
@@ -453,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/12/zebra-12-3/" rel="next" title="iOS开发·runtime原理与实践 - 基本知识篇(类，超类，元类，super_class，isa，对象，方法，SEL，IMP)">
-                <i class="fa fa-chevron-left"></i> iOS开发·runtime原理与实践 - 基本知识篇(类，超类，元类，super_class，isa，对象，方法，SEL，IMP)
+              <a href="/2018/05/12/zebra-14-4/" rel="next" title="iOS源码解析—YYModel（YYClassInfo）">
+                <i class="fa fa-chevron-left"></i> iOS源码解析—YYModel（YYClassInfo）
               </a>
             
           </div>
@@ -463,8 +463,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/13/zebra-13-3/" rel="prev" title="从YYModel源码中可以学到什么：前篇">
-                从YYModel源码中可以学到什么：前篇 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/12/zebra-14-1/" rel="prev" title="iOS runtime（一）（runtime 分析理解）">
+                iOS runtime（一）（runtime 分析理解） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -542,7 +542,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">114</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -553,7 +553,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -564,7 +564,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
