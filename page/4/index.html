@@ -297,6 +297,868 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/zebra-17-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="启发光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="启发光明的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/17/zebra-17-2/" itemprop="url">iOS Notification Center</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T04:00:00+08:00">
+                2018-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/斑马日报-2018-05-17-第17期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/17 第17期</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/17/zebra-17-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/17/zebra-17-2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/17/zebra-17-2/" class="leancloud_visitors" data-flag-title="iOS Notification Center">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>适合: 初级开发者阅读<br>来自: <a href="https://www.jianshu.com/" target="_blank" rel="noopener">简书</a><br>关键字: Foundation, App Support, Notifications<br>原文：<a href="https://www.jianshu.com/p/209ef870e131" target="_blank" rel="noopener">iOS Notification Center</a> </p>
+<p>iOS的通知机制(NSNotification/NSNotificationCenter)想必大家都很熟悉，平常的开发中或多或少的应该都用过。它是Cocoa中一个非常重要的机制，能把一个事件发送给多个监听该事件的对象，而消息的发送者不需要知道消息接收者的任何信息，消息的接受者也只是向通知中心（NSNotificationCenter）注册监听自己感兴趣的通知即可，任何对象都可以监听或者发送通知，这在很大程度上降低了消息发送者和接受者之间的耦合度。这也是iOS中观察者模式的一种实现方式。</p>
+<p>你可以通过阅读<a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Notifications/Articles/NotificationCenters.html#//apple_ref/doc/uid/20000216-111391-BCICDDAC" target="_blank" rel="noopener">Notification Programming Topics</a> 来了解上如何使用Notification来进行编程，以及编程过程中需要注意的问题。</p>
+<p>当然，如果你更喜欢阅读中文，那么<a href="https://www.jianshu.com/u/b678fba227d3" target="_blank" rel="noopener">MasonFu</a>这篇<a href="https://www.jianshu.com/p/209ef870e131" target="_blank" rel="noopener">iOS Notification Center</a>就能满足你的要求，他总结了<a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Notifications/Articles/NotificationCenters.html#//apple_ref/doc/uid/20000216-111391-BCICDDAC" target="_blank" rel="noopener">Notification Programming Topics</a>的核心内容并翻译成了中文。</p>
+<p>希望大家喜欢，并能快速获得你需要的知识。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/17/zebra-17-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/zebra-17-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="启发光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="启发光明的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/17/zebra-17-4/" itemprop="url">iOS Notification实现原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T03:00:00+08:00">
+                2018-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/斑马日报-2018-05-17-第17期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/17 第17期</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/17/zebra-17-4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/17/zebra-17-4/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/17/zebra-17-4/" class="leancloud_visitors" data-flag-title="iOS Notification实现原理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>适合: 初级开发者阅读<br>来自: <a href="https://blog.csdn.net/" target="_blank" rel="noopener">csdn</a><br>关键字: Foundation, App Support, Notifications<br>原文：<a href="https://blog.csdn.net/qq_18505715/article/details/76146575" target="_blank" rel="noopener">iOS Notification实现原理</a></p>
+<p>iOS的通知机制(NSNotification/NSNotificationCenter)想必大家都很熟悉，平常的开发中或多或少的应该都用过。它是Cocoa中一个非常重要的机制，能把一个事件发送给多个监听该事件的对象，而消息的发送者不需要知道消息接收者的任何信息，消息的接受者也只是向通知中心（NSNotificationCenter）注册监听自己感兴趣的通知即可，任何对象都可以监听或者发送通知，这在很大程度上降低了消息发送者和接受者之间的耦合度。这也是iOS中观察者模式的一种实现方式。</p>
+<p>我总觉得应该给大家一篇介绍原理和实现的博客，不过找来找去没有找到非常好的。最终只矮个子里面拔高个，推荐的这篇<a href="https://blog.csdn.net/qq_18505715/article/details/76146575" target="_blank" rel="noopener">iOS Notification实现原理</a>基本上把可能的原理和实现方式提供给了大家，供大家参考学习。</p>
+<p>如果你有更好的推荐，记得留言通知我。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/17/zebra-17-4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/zebra-17-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="启发光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="启发光明的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/17/zebra-17-3/" itemprop="url">NSNotification & NSNotification​Center</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T03:00:00+08:00">
+                2018-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/斑马日报-2018-05-17-第17期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/17 第17期</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/17/zebra-17-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/17/zebra-17-3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/17/zebra-17-3/" class="leancloud_visitors" data-flag-title="NSNotification & NSNotification​Center">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>适合: 初级开发者阅读<br>来自: <a href="https://nshipster.com/" target="_blank" rel="noopener">nshipster</a><br>关键字: Foundation, App Support, Notifications<br>原文：<a href="https://nshipster.com/nsnotification-and-nsnotificationcenter/" target="_blank" rel="noopener">NSNotification &amp; NSNotification​Center</a></p>
+<p>iOS的通知机制(NSNotification/NSNotificationCenter)想必大家都很熟悉，平常的开发中或多或少的应该都用过。它是Cocoa中一个非常重要的机制，能把一个事件发送给多个监听该事件的对象，而消息的发送者不需要知道消息接收者的任何信息，消息的接受者也只是向通知中心（NSNotificationCenter）注册监听自己感兴趣的通知即可，任何对象都可以监听或者发送通知，这在很大程度上降低了消息发送者和接受者之间的耦合度。这也是iOS中观察者模式的一种实现方式。</p>
+<p><a href="https://nshipster.com/authors/mattt/" target="_blank" rel="noopener">Mattt</a>大神也写过关于NSNotification的文章：<a href="https://nshipster.com/nsnotification-and-nsnotificationcenter/" target="_blank" rel="noopener">NSNotification &amp; NSNotification​Center</a>，很遗憾这篇没有被译成中文，所以大家只能看英文版本了。</p>
+<p>Enjoy It，看看大神是如何指导我们的。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/17/zebra-17-3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/16/zebra-16-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="启发光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="启发光明的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/16/zebra-16-1/" itemprop="url">ios AFNetworking 3.0 原码阅读分析 （一）（AFURLRequestSerialization模块）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T05:00:00+08:00">
+                2018-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/斑马日报-2018-05-16-第16期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/16 第16期</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/16/zebra-16-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/16/zebra-16-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/16/zebra-16-1/" class="leancloud_visitors" data-flag-title="ios AFNetworking 3.0 原码阅读分析 （一）（AFURLRequestSerialization模块）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>适合: 中级开发者阅读<br>来自: <a href="https://www.cnblogs.com" target="_blank" rel="noopener">cnblogs</a><br>关键字: AFNetworking, Foundation, Networking, 源码阅读<br>原文：<a href="https://www.cnblogs.com/chenxianming/p/5674652.html" target="_blank" rel="noopener">ios AFNetworking 3.0 原码阅读分析 （一）（AFURLRequestSerialization模块）</a> </p>
+<p>继续向大家推荐<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="noopener">AFNetworking</a>的源码阅读系列博文。今天要推荐的是发表于<a href="https://www.cnblogs.com" target="_blank" rel="noopener">cnblogs</a>的<a href="https://www.cnblogs.com/chenxianming" target="_blank" rel="noopener">chenxianming</a>同学的博文，本系列一共分四篇，分别为AFURLRequestSerialization模块， AFURLResponseSerialization模块，AFSecurityPolicy模块， AFHTTPSessionManager模块。 AFURLRequestSerialization模块写的非常不错，不过后面几篇写的比较粗枝大叶，但依旧把核心的内容给罗列了出来，依靠这这些内容的点拨配合源码，依旧是不错的源码阅读分析博文。</p>
+<p>为什么要推荐本系列？如果要给三个理由的话，那么下面的就是：</p>
+<ul>
+<li>UML的类图画的非常不错，给人提纲挈领的理解。</li>
+<li>伪代码概括的非常到位，能帮助读者快速理解源码。</li>
+<li>复杂的逻辑给出了程序流程图，非常赞。</li>
+</ul>
+<p>这是本系列的第一篇，主要介绍AFURLRequestSerialization， 正如我上面给出的理由，我非常推荐大家把类图好好看一下，然后理解下伪代码，这样对阅读源码非常有帮助。</p>
+<p>那么，现在就开始吧。如果你有什么额外的看法，又或者有在阅读代码中感到疑惑，请在评论区留言。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/16/zebra-16-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/16/zebra-16-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="启发光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="启发光明的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/16/zebra-16-2/" itemprop="url">ios AFNetworking 3.0 原码阅读分析 （二）（AFURLResponseSerialization模块）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T04:00:00+08:00">
+                2018-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/斑马日报-2018-05-16-第16期/" itemprop="url" rel="index">
+                    <span itemprop="name">斑马日报 2018/05/16 第16期</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/16/zebra-16-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/16/zebra-16-2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/16/zebra-16-2/" class="leancloud_visitors" data-flag-title="ios AFNetworking 3.0 原码阅读分析 （二）（AFURLResponseSerialization模块）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>适合: 中级开发者阅读<br>来自: <a href="https://www.cnblogs.com" target="_blank" rel="noopener">cnblogs</a><br>关键字: AFNetworking, Foundation, Networking, 源码阅读<br>原文：<a href="https://www.cnblogs.com/chenxianming/p/5695792.html" target="_blank" rel="noopener">ios AFNetworking 3.0 原码阅读分析 （二）（AFURLResponseSerialization模块）</a> </p>
+<p>继续向大家推荐<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="noopener">AFNetworking</a>的源码阅读系列博文。今天要推荐的是发表于<a href="https://www.cnblogs.com" target="_blank" rel="noopener">cnblogs</a>的<a href="https://www.cnblogs.com/chenxianming" target="_blank" rel="noopener">chenxianming</a>同学的博文，本系列一共分四篇，分别为AFURLRequestSerialization模块， AFURLResponseSerialization模块，AFSecurityPolicy模块， AFHTTPSessionManager模块。 AFURLRequestSerialization模块写的非常不错，不过后面几篇写的比较粗枝大叶，但依旧把核心的内容给罗列了出来，依靠这这些内容的点拨配合源码，依旧是不错的源码阅读分析博文。</p>
+<p>为什么要推荐本系列？如果要给三个理由的话，那么下面的就是：</p>
+<ul>
+<li>UML的类图画的非常不错，给人提纲挈领的理解。</li>
+<li>伪代码概括的非常到位，能帮助读者快速理解源码。</li>
+<li>复杂的逻辑给出了程序流程图，非常赞。</li>
+</ul>
+<p>这是本系列的第二篇，主要介绍AFURLResponseSerialization， 本篇的篇幅非常短，那是因为AFURLResponseSerialization本身就非常简单，看一下文章头上的类图，你就会知道这个文件的内容了。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/16/zebra-16-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/16/zebra-16-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -473,7 +1335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/16/zebra-16-2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/16/zebra-16-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -492,7 +1354,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/16/zebra-16-2/" itemprop="url">ios AFNetworking 3.0 原码阅读分析 （二）（AFURLResponseSerialization模块）</a></h1>
+                <a class="post-title-link" href="/2018/05/16/zebra-16-3/" itemprop="url">ios AFNetworking 3.0 源码阅读分析 （三）（AFSecurityPolicy模块）</a></h1>
         
 
         <div class="post-meta">
@@ -545,8 +1407,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/16/zebra-16-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/16/zebra-16-2/" itemprop="commentCount"></span>
+                <a href="/2018/05/16/zebra-16-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/16/zebra-16-3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -554,7 +1416,7 @@
 
           
           
-             <span id="/2018/05/16/zebra-16-2/" class="leancloud_visitors" data-flag-title="ios AFNetworking 3.0 原码阅读分析 （二）（AFURLResponseSerialization模块）">
+             <span id="/2018/05/16/zebra-16-3/" class="leancloud_visitors" data-flag-title="ios AFNetworking 3.0 源码阅读分析 （三）（AFSecurityPolicy模块）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -586,7 +1448,7 @@
 
       
         
-          <p>适合: 中级开发者阅读<br>来自: <a href="https://www.cnblogs.com" target="_blank" rel="noopener">cnblogs</a><br>关键字: AFNetworking, Foundation, Networking, 源码阅读<br>原文：<a href="https://www.cnblogs.com/chenxianming/p/5695792.html" target="_blank" rel="noopener">ios AFNetworking 3.0 原码阅读分析 （二）（AFURLResponseSerialization模块）</a> </p>
+          <p>适合: 中级开发者阅读<br>来自: <a href="https://www.cnblogs.com" target="_blank" rel="noopener">cnblogs</a><br>关键字: AFNetworking, Foundation, Networking, 源码阅读<br>原文：<a href="https://www.cnblogs.com/chenxianming/p/5704449.html" target="_blank" rel="noopener">iios AFNetworking 3.0 源码阅读分析 （三）（AFSecurityPolicy模块）</a> </p>
 <p>继续向大家推荐<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="noopener">AFNetworking</a>的源码阅读系列博文。今天要推荐的是发表于<a href="https://www.cnblogs.com" target="_blank" rel="noopener">cnblogs</a>的<a href="https://www.cnblogs.com/chenxianming" target="_blank" rel="noopener">chenxianming</a>同学的博文，本系列一共分四篇，分别为AFURLRequestSerialization模块， AFURLResponseSerialization模块，AFSecurityPolicy模块， AFHTTPSessionManager模块。 AFURLRequestSerialization模块写的非常不错，不过后面几篇写的比较粗枝大叶，但依旧把核心的内容给罗列了出来，依靠这这些内容的点拨配合源码，依旧是不错的源码阅读分析博文。</p>
 <p>为什么要推荐本系列？如果要给三个理由的话，那么下面的就是：</p>
 <ul>
@@ -594,10 +1456,10 @@
 <li>伪代码概括的非常到位，能帮助读者快速理解源码。</li>
 <li>复杂的逻辑给出了程序流程图，非常赞。</li>
 </ul>
-<p>这是本系列的第二篇，主要介绍AFURLResponseSerialization， 本篇的篇幅非常短，那是因为AFURLResponseSerialization本身就非常简单，看一下文章头上的类图，你就会知道这个文件的内容了。</p>
+<p>这是本系列的第三篇，主要介绍AFSecurityPolicy， 同样篇幅较短，因为如果你已经掌握了HTTPS，SSL/TSL，数字证书等知识内容，那么无非就是看看AFNetworking中的认证模式是如何实现的。 </p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/16/zebra-16-2/#more" rel="contents">
+            <a class="btn" href="/2018/05/16/zebra-16-3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -990,348 +1852,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/zebra-15-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="启发光明">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="启发光明的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/15/zebra-15-5/" itemprop="url">AFNetWorking源码之AFSecurityPolicy</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T03:00:00+08:00">
-                2018-05-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-15-第15期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/15 第15期</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/15/zebra-15-5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/15/zebra-15-5/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/05/15/zebra-15-5/" class="leancloud_visitors" data-flag-title="AFNetWorking源码之AFSecurityPolicy">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-适合: 中级开发者阅读来自: 黄成都关键字: AFNetworking, Foundation, Networking, 源码阅读原文：AFNetWorking源码之AFSecurityPolicy 
-AFNetworking 可能根本不需要推荐，因为他几乎已经成为iOS开发的标配。如果一个初级i
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/15/zebra-15-5/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/zebra-15-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="启发光明">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="启发光明的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/15/zebra-15-4/" itemprop="url">AFNetWorking源码之AFURLRequestSerialization</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T03:00:00+08:00">
-                2018-05-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-15-第15期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/15 第15期</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/15/zebra-15-4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/15/zebra-15-4/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/05/15/zebra-15-4/" class="leancloud_visitors" data-flag-title="AFNetWorking源码之AFURLRequestSerialization">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-适合: 中级开发者阅读来自: 黄成都关键字: AFNetworking, Foundation, Networking, 源码阅读原文：AFNetWorking源码之AFURLRequestSerialization 
-AFNetworking 可能根本不需要推荐，因为他几乎已经成为iOS开发的标
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/15/zebra-15-4/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/zebra-15-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1492,517 +2012,6 @@ AFNetworking 可能根本不需要推荐，因为他几乎已经成为iOS开发�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/zebra-13-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="启发光明">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="启发光明的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/13/zebra-13-2/" itemprop="url">YYModel</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T05:00:00+08:00">
-                2018-05-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-13-第13期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/13 第13期</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/13/zebra-13-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/13/zebra-13-2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/05/13/zebra-13-2/" class="leancloud_visitors" data-flag-title="YYModel">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>适合: 中级开发者阅读<br>来自: <a href="https://github.com" target="_blank" rel="noopener">Github</a><br>关键字: Object Runtime, Runtime, 第三方框架<br>原文：<a href="https://github.com/ibireme/YYModel" target="_blank" rel="noopener">YYModel</a> </p>
-<p><a href="https://github.com/ibireme" target="_blank" rel="noopener">ibireme</a>大神的另一个大作：高性能 iOS/OSX 模型转换框架。 </p>
-<ul>
-<li>高性能: 模型转换性能接近手写解析代码。</li>
-<li>自动类型转换: 对象类型可以自动转换，详情见下方表格。</li>
-<li>类型安全: 转换过程中，所有的数据类型都会被检测一遍，以保证类型安全，避免崩溃问题。</li>
-<li>无侵入性: 模型无需继承自其他基类。</li>
-<li>轻量: 该框架只有 5 个文件 (包括.h文件)。</li>
-<li>文档和单元测试: 文档覆盖率100%, 代码覆盖率99.6%。</li>
-</ul>
-<p>支持CocoaPods和Carthage， 推荐大家使用。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/13/zebra-13-2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/zebra-13-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="启发光明">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="启发光明的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/13/zebra-13-3/" itemprop="url">从YYModel源码中可以学到什么：前篇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T04:00:00+08:00">
-                2018-05-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-13-第13期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/13 第13期</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/13/zebra-13-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/13/zebra-13-3/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/05/13/zebra-13-3/" class="leancloud_visitors" data-flag-title="从YYModel源码中可以学到什么：前篇">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>适合: 中级开发者阅读<br>来自: <a href="https://jesuslove.github.io/" target="_blank" rel="noopener">紫电清霜</a><br>关键字: Object Runtime, Runtime, 第三方框架<br>原文：<a href="https://jesuslove.github.io/2017/12/21/YYModel%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%80/" target="_blank" rel="noopener">从YYModel源码中可以学到什么：前篇</a> </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/13/zebra-13-3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/zebra-13-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="启发光明">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="启发光明的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/13/zebra-13-4/" itemprop="url">从YYModel源码中可以学到什么：后篇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T04:00:00+08:00">
-                2018-05-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/斑马日报-2018-05-13-第13期/" itemprop="url" rel="index">
-                    <span itemprop="name">斑马日报 2018/05/13 第13期</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/13/zebra-13-4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/13/zebra-13-4/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/05/13/zebra-13-4/" class="leancloud_visitors" data-flag-title="从YYModel源码中可以学到什么：后篇">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>适合: 中级开发者阅读<br>来自: <a href="https://jesuslove.github.io/" target="_blank" rel="noopener">紫电清霜</a><br>关键字: Object Runtime, Runtime, 第三方框架<br>原文：<a href="https://jesuslove.github.io/2017/12/27/YYModel%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%BA%8C/" target="_blank" rel="noopener">从YYModel源码中可以学到什么：后篇</a> </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/13/zebra-13-4/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2057,7 +2066,7 @@ AFNetworking 可能根本不需要推荐，因为他几乎已经成为iOS开发�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">114</span>
+                  <span class="site-state-item-count">120</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2068,7 +2077,7 @@ AFNetworking 可能根本不需要推荐，因为他几乎已经成为iOS开发�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2079,7 +2088,7 @@ AFNetworking 可能根本不需要推荐，因为他几乎已经成为iOS开发�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2153,7 +2162,7 @@ AFNetworking 可能根本不需要推荐，因为他几乎已经成为iOS开发�
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
