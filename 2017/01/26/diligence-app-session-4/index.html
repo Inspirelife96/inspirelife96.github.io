@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="APP开发,原型," />
+  <meta name="keywords" content="APP开发,网络层," />
 
 
 
@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="应用很早就上线了，欢迎大家下载使用：http://itunes.apple.com/app/id1206687109源码已经公开，大家可以去https://github.com/Inspirelife96/ILDiligence下载。 喜欢的话Fork或者给个Star，非常感谢。下面是这一系列的全部帖子：想法和原型勤之时 - 架构与工程组织结构勤之时 - 数据持久层的实现勤之时 - 网络层的实现勤">
-<meta name="keywords" content="APP开发,原型">
+<meta name="description" content="事实上，【勤之时】一个本地应用，基本上没有什么网络请求，或者需要从服务器端下载数据。不过为了美观，每天的背景图片会变化，并且会有一个每日故事的分享页面，也就是说，每天一图。  那么具体这个图片怎么来？当然可以自己搭建服务器，然后提供图片。不过这样相对来说比较复杂，不但要搭建服务器，还要自己准备图片。所以最简单的是看有没有现成的API 服务，我找到了两个：  Bing 的每日一图 Unsplash">
+<meta name="keywords" content="APP开发,网络层">
 <meta property="og:type" content="article">
 <meta property="og:title" content="勤之时 - 网络层的实现">
 <meta property="og:url" content="http://yoursite.com/2017/01/26/diligence-app-session-4/index.html">
 <meta property="og:site_name" content="启发光明的博客">
-<meta property="og:description" content="应用很早就上线了，欢迎大家下载使用：http://itunes.apple.com/app/id1206687109源码已经公开，大家可以去https://github.com/Inspirelife96/ILDiligence下载。 喜欢的话Fork或者给个Star，非常感谢。下面是这一系列的全部帖子：想法和原型勤之时 - 架构与工程组织结构勤之时 - 数据持久层的实现勤之时 - 网络层的实现勤">
+<meta property="og:description" content="事实上，【勤之时】一个本地应用，基本上没有什么网络请求，或者需要从服务器端下载数据。不过为了美观，每天的背景图片会变化，并且会有一个每日故事的分享页面，也就是说，每天一图。  那么具体这个图片怎么来？当然可以自己搭建服务器，然后提供图片。不过这样相对来说比较复杂，不但要搭建服务器，还要自己准备图片。所以最简单的是看有没有现成的API 服务，我找到了两个：  Bing 的每日一图 Unsplash">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1771779-a4777c697c9fa9d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-05-03T01:07:54.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/01/26/diligence-app-session-4/diligence-app-session-4-1.png">
+<meta property="og:updated_time" content="2019-05-03T01:26:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="勤之时 - 网络层的实现">
-<meta name="twitter:description" content="应用很早就上线了，欢迎大家下载使用：http://itunes.apple.com/app/id1206687109源码已经公开，大家可以去https://github.com/Inspirelife96/ILDiligence下载。 喜欢的话Fork或者给个Star，非常感谢。下面是这一系列的全部帖子：想法和原型勤之时 - 架构与工程组织结构勤之时 - 数据持久层的实现勤之时 - 网络层的实现勤">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1771779-a4777c697c9fa9d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:description" content="事实上，【勤之时】一个本地应用，基本上没有什么网络请求，或者需要从服务器端下载数据。不过为了美观，每天的背景图片会变化，并且会有一个每日故事的分享页面，也就是说，每天一图。  那么具体这个图片怎么来？当然可以自己搭建服务器，然后提供图片。不过这样相对来说比较复杂，不但要搭建服务器，还要自己准备图片。所以最简单的是看有没有现成的API 服务，我找到了两个：  Bing 的每日一图 Unsplash">
+<meta name="twitter:image" content="http://yoursite.com/2017/01/26/diligence-app-session-4/diligence-app-session-4-1.png">
 
 
 
@@ -410,9 +410,8 @@
       
 
       
-        <p>应用很早就上线了，欢迎大家下载使用：<a href="http://itunes.apple.com/app/id1206687109" target="_blank" rel="noopener">http://itunes.apple.com/app/id1206687109</a><br>源码已经公开，大家可以去<a href="https://github.com/Inspirelife96/ILDiligence下载。" target="_blank" rel="noopener">https://github.com/Inspirelife96/ILDiligence下载。</a> 喜欢的话Fork或者给个Star，非常感谢。<br>下面是这一系列的全部帖子：<br><a href="http://www.jianshu.com/p/999e0f708fe1" target="_blank" rel="noopener">想法和原型</a><br><a href="http://www.jianshu.com/p/67f209fe1b46" target="_blank" rel="noopener">勤之时 - 架构与工程组织结构</a><br><a href="http://www.jianshu.com/p/a45c4944b5ef" target="_blank" rel="noopener">勤之时 - 数据持久层的实现</a><br><a href="http://www.jianshu.com/p/035e655eeb45" target="_blank" rel="noopener">勤之时 - 网络层的实现</a><br><a href="http://www.jianshu.com/p/dbb4b4b79f78" target="_blank" rel="noopener">勤之时 - 业务逻辑层</a><br><a href="http://www.jianshu.com/p/d3db0d0d73d7" target="_blank" rel="noopener">勤之时 - Info.plist的改动</a><br><a href="http://www.jianshu.com/p/b34698df5fdc" target="_blank" rel="noopener">勤之时 - 表示层（一）</a><br><a href="http://www.jianshu.com/p/d8c264daac66" target="_blank" rel="noopener">勤之时 - 表示层（二）</a><br><a href="http://www.jianshu.com/p/0fb58d101eaa" target="_blank" rel="noopener">勤之时 - 表示层（三）</a><br><a href="http://www.jianshu.com/p/37b1f5719a03" target="_blank" rel="noopener">勤之时 - 表示层（四）</a><br><a href="http://www.jianshu.com/p/1115cdca10cc" target="_blank" rel="noopener">勤之时 - 表示层（五）</a></p>
-<p>事实上，【勤之时】一个本地应用，基本上没有什么网络请求，或者需要从服务器端下载数据。不过为了美观，每天的背景图片会变化，并且会有一个每日故事的分享页面，也就是说，每天一图。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1771779-a4777c697c9fa9d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网络层需求.png"></p>
+        <p>事实上，【勤之时】一个本地应用，基本上没有什么网络请求，或者需要从服务器端下载数据。不过为了美观，每天的背景图片会变化，并且会有一个每日故事的分享页面，也就是说，每天一图。</p>
+<img src="/2017/01/26/diligence-app-session-4/diligence-app-session-4-1.png">
 <p>那么具体这个图片怎么来？当然可以自己搭建服务器，然后提供图片。不过这样相对来说比较复杂，不但要搭建服务器，还要自己准备图片。所以最简单的是看有没有现成的API 服务，我找到了两个：</p>
 <ol>
 <li><a href="https://www.bing.com" target="_blank" rel="noopener">Bing 的每日一图</a></li>
@@ -459,7 +458,7 @@
           
             <a href="/tags/APP开发/" rel="tag"># APP开发</a>
           
-            <a href="/tags/原型/" rel="tag"># 原型</a>
+            <a href="/tags/网络层/" rel="tag"># 网络层</a>
           
         </div>
       
@@ -472,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/26/diligence-app-session-5/" rel="next" title="勤之时APP开发-想法和原形">
-                <i class="fa fa-chevron-left"></i> 勤之时APP开发-想法和原形
+              <a href="/2017/01/26/diligence-app-session-3/" rel="next" title="勤之时 - 数据持久层的实现">
+                <i class="fa fa-chevron-left"></i> 勤之时 - 数据持久层的实现
               </a>
             
           </div>
@@ -482,8 +481,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/26/diligence-app-session-3/" rel="prev" title="勤之时 - 数据持久层的实现">
-                勤之时 - 数据持久层的实现 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/18/diligence-app-session-2/" rel="prev" title="勤之时 - 架构与工程组织结构">
+                勤之时 - 架构与工程组织结构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -561,7 +560,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -572,7 +571,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -583,7 +582,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

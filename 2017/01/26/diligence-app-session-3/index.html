@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="APP开发,原型," />
+  <meta name="keywords" content="APP开发,数据持久层," />
 
 
 
@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="应用很早就上线了，欢迎大家下载使用：http://itunes.apple.com/app/id1206687109源码已经公开，大家可以去https://github.com/Inspirelife96/ILDiligence下载。 喜欢的话Fork或者给个Star，非常感谢。下面是这一系列的全部帖子：想法和原型勤之时 - 架构与工程组织结构勤之时 - 数据持久层的实现勤之时 - 网络层的实现勤">
-<meta name="keywords" content="APP开发,原型">
+<meta name="description" content="关于数据持久层的设计，首先推荐一篇大神的文章iOS应用架构谈 本地持久化方案及动态部署 我们一点点来看, 首先根据需求决定持久化方案那么需求是什么？【勤之时】有一个任务列表，每个任务有自己的一些配置，并可以增，删任务，和修改任务配置。另外一个比较重要的是，任务执行状况的统计分析，这意味着每次执行任务时，需要记录下来。此外，还有每日图片分享，这个图片以及图片介绍是每日从网上下载的，若没有网络的情况下">
+<meta name="keywords" content="APP开发,数据持久层">
 <meta property="og:type" content="article">
 <meta property="og:title" content="勤之时 - 数据持久层的实现">
 <meta property="og:url" content="http://yoursite.com/2017/01/26/diligence-app-session-3/index.html">
 <meta property="og:site_name" content="启发光明的博客">
-<meta property="og:description" content="应用很早就上线了，欢迎大家下载使用：http://itunes.apple.com/app/id1206687109源码已经公开，大家可以去https://github.com/Inspirelife96/ILDiligence下载。 喜欢的话Fork或者给个Star，非常感谢。下面是这一系列的全部帖子：想法和原型勤之时 - 架构与工程组织结构勤之时 - 数据持久层的实现勤之时 - 网络层的实现勤">
+<meta property="og:description" content="关于数据持久层的设计，首先推荐一篇大神的文章iOS应用架构谈 本地持久化方案及动态部署 我们一点点来看, 首先根据需求决定持久化方案那么需求是什么？【勤之时】有一个任务列表，每个任务有自己的一些配置，并可以增，删任务，和修改任务配置。另外一个比较重要的是，任务执行状况的统计分析，这意味着每次执行任务时，需要记录下来。此外，还有每日图片分享，这个图片以及图片介绍是每日从网上下载的，若没有网络的情况下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1771779-125bb3f38e51c994.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-05-03T01:07:30.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/01/26/diligence-app-session-3/diligence-app-session-3-1.png">
+<meta property="og:updated_time" content="2019-05-03T01:24:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="勤之时 - 数据持久层的实现">
-<meta name="twitter:description" content="应用很早就上线了，欢迎大家下载使用：http://itunes.apple.com/app/id1206687109源码已经公开，大家可以去https://github.com/Inspirelife96/ILDiligence下载。 喜欢的话Fork或者给个Star，非常感谢。下面是这一系列的全部帖子：想法和原型勤之时 - 架构与工程组织结构勤之时 - 数据持久层的实现勤之时 - 网络层的实现勤">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1771779-125bb3f38e51c994.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:description" content="关于数据持久层的设计，首先推荐一篇大神的文章iOS应用架构谈 本地持久化方案及动态部署 我们一点点来看, 首先根据需求决定持久化方案那么需求是什么？【勤之时】有一个任务列表，每个任务有自己的一些配置，并可以增，删任务，和修改任务配置。另外一个比较重要的是，任务执行状况的统计分析，这意味着每次执行任务时，需要记录下来。此外，还有每日图片分享，这个图片以及图片介绍是每日从网上下载的，若没有网络的情况下">
+<meta name="twitter:image" content="http://yoursite.com/2017/01/26/diligence-app-session-3/diligence-app-session-3-1.png">
 
 
 
@@ -410,10 +410,10 @@
       
 
       
-        <p>应用很早就上线了，欢迎大家下载使用：<a href="http://itunes.apple.com/app/id1206687109" target="_blank" rel="noopener">http://itunes.apple.com/app/id1206687109</a><br>源码已经公开，大家可以去<a href="https://github.com/Inspirelife96/ILDiligence下载。" target="_blank" rel="noopener">https://github.com/Inspirelife96/ILDiligence下载。</a> 喜欢的话Fork或者给个Star，非常感谢。<br>下面是这一系列的全部帖子：<br><a href="http://www.jianshu.com/p/999e0f708fe1" target="_blank" rel="noopener">想法和原型</a><br><a href="http://www.jianshu.com/p/67f209fe1b46" target="_blank" rel="noopener">勤之时 - 架构与工程组织结构</a><br><a href="http://www.jianshu.com/p/a45c4944b5ef" target="_blank" rel="noopener">勤之时 - 数据持久层的实现</a><br><a href="http://www.jianshu.com/p/035e655eeb45" target="_blank" rel="noopener">勤之时 - 网络层的实现</a><br><a href="http://www.jianshu.com/p/dbb4b4b79f78" target="_blank" rel="noopener">勤之时 - 业务逻辑层</a><br><a href="http://www.jianshu.com/p/d3db0d0d73d7" target="_blank" rel="noopener">勤之时 - Info.plist的改动</a><br><a href="http://www.jianshu.com/p/b34698df5fdc" target="_blank" rel="noopener">勤之时 - 表示层（一）</a><br><a href="http://www.jianshu.com/p/d8c264daac66" target="_blank" rel="noopener">勤之时 - 表示层（二）</a><br><a href="http://www.jianshu.com/p/0fb58d101eaa" target="_blank" rel="noopener">勤之时 - 表示层（三）</a><br><a href="http://www.jianshu.com/p/37b1f5719a03" target="_blank" rel="noopener">勤之时 - 表示层（四）</a><br><a href="http://www.jianshu.com/p/1115cdca10cc" target="_blank" rel="noopener">勤之时 - 表示层（五）</a></p>
-<p>关于数据持久层的设计，首先推荐一篇大神的文章<a href="https://casatwy.com/iosying-yong-jia-gou-tan-ben-di-chi-jiu-hua-fang-an-ji-dong-tai-bu-shu.html" target="_blank" rel="noopener">iOS应用架构谈 本地持久化方案及动态部署</a></p>
+        <p>关于数据持久层的设计，首先推荐一篇大神的文章<a href="https://casatwy.com/iosying-yong-jia-gou-tan-ben-di-chi-jiu-hua-fang-an-ji-dong-tai-bu-shu.html" target="_blank" rel="noopener">iOS应用架构谈 本地持久化方案及动态部署</a></p>
 <p>我们一点点来看, 首先根据需求决定持久化方案<br>那么需求是什么？<br>【勤之时】有一个任务列表，每个任务有自己的一些配置，并可以增，删任务，和修改任务配置。另外一个比较重要的是，任务执行状况的统计分析，这意味着每次执行任务时，需要记录下来。此外，还有每日图片分享，这个图片以及图片介绍是每日从网上下载的，若没有网络的情况下，则用前一次的图片及内容。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1771779-125bb3f38e51c994.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="持久层需求.png"><br>综上所述，有3个需要持久化的内容</p>
+<img src="/2017/01/26/diligence-app-session-3/diligence-app-session-3-1.png">
+<p>综上所述，有3个需要持久化的内容</p>
 <ul>
 <li>任务列表及其配置， 若以数据库表结构来描述一个任务（Task Data Table），如下 ）（需要增，删，改，查）</li>
 </ul>
@@ -602,7 +602,7 @@
           
             <a href="/tags/APP开发/" rel="tag"># APP开发</a>
           
-            <a href="/tags/原型/" rel="tag"># 原型</a>
+            <a href="/tags/数据持久层/" rel="tag"># 数据持久层</a>
           
         </div>
       
@@ -615,8 +615,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/26/diligence-app-session-4/" rel="next" title="勤之时 - 网络层的实现">
-                <i class="fa fa-chevron-left"></i> 勤之时 - 网络层的实现
+              <a href="/2017/01/26/diligence-app-session-1/" rel="next" title="勤之时 - 想法和原型">
+                <i class="fa fa-chevron-left"></i> 勤之时 - 想法和原型
               </a>
             
           </div>
@@ -625,8 +625,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/26/diligence-app-session-2/" rel="prev" title="勤之时APP开发-想法和原形">
-                勤之时APP开发-想法和原形 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/26/diligence-app-session-4/" rel="prev" title="勤之时 - 网络层的实现">
+                勤之时 - 网络层的实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -704,7 +704,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -715,7 +715,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -726,7 +726,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
