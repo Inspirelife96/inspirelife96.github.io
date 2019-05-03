@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Parse Server," />
+
+
+
+
+
+  <link rel="alternate" href="content:true" title="启发光明的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="警告：数据库的SSL Key没有做定期的更新，因此每3个月可能会因为Key过期导致服务因数据库无法访问而异常。虽然有不少教程，但找来找去没有一个能顺利的在Ubuntu上顺利部署的。因此在这里把自己部署的过程记录下来。 前提条件：Ubuntu Server 16.04.1 LTS 64 服务器一个域名  登陆Ubuntu 服务器，除了root或者安装的用户之外，创建一个管理员用户：12345//创建">
+<meta name="keywords" content="Parse Server">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Ubuntu上部署Parse Server">
+<meta property="og:url" content="http://yoursite.com/2018/02/19/parse-server-session-2/index.html">
+<meta property="og:site_name" content="启发光明的博客">
+<meta property="og:description" content="警告：数据库的SSL Key没有做定期的更新，因此每3个月可能会因为Key过期导致服务因数据库无法访问而异常。虽然有不少教程，但找来找去没有一个能顺利的在Ubuntu上顺利部署的。因此在这里把自己部署的过程记录下来。 前提条件：Ubuntu Server 16.04.1 LTS 64 服务器一个域名  登陆Ubuntu 服务器，除了root或者安装的用户之外，创建一个管理员用户：12345//创建">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/02/19/parse-server-session-2/parse-server-session-2-1.png">
+<meta property="og:updated_time" content="2019-05-03T06:18:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Ubuntu上部署Parse Server">
+<meta name="twitter:description" content="警告：数据库的SSL Key没有做定期的更新，因此每3个月可能会因为Key过期导致服务因数据库无法访问而异常。虽然有不少教程，但找来找去没有一个能顺利的在Ubuntu上顺利部署的。因此在这里把自己部署的过程记录下来。 前提条件：Ubuntu Server 16.04.1 LTS 64 服务器一个域名  登陆Ubuntu 服务器，除了root或者安装的用户之外，创建一个管理员用户：12345//创建">
+<meta name="twitter:image" content="http://yoursite.com/2018/02/19/parse-server-session-2/parse-server-session-2-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/02/19/parse-server-session-2/"/>
+
+
+
+
+
+  <title>在Ubuntu上部署Parse Server | 启发光明的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">启发光明的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">个人博客，iOS开发，C/C++开发，IT技术，每日精选</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/19/parse-server-session-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="启发光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="启发光明的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在Ubuntu上部署Parse Server</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-19T11:12:00+08:00">
+                2018-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Parse-Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Parse Server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/19/parse-server-session-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/02/19/parse-server-session-2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/02/19/parse-server-session-2/" class="leancloud_visitors" data-flag-title="在Ubuntu上部署Parse Server">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>警告：数据库的SSL Key没有做定期的更新，因此每3个月可能会因为Key过期导致服务因数据库无法访问而异常。<br>虽然有不少教程，但找来找去没有一个能顺利的在Ubuntu上顺利部署的。因此在这里把自己部署的过程记录下来。</p>
+<p>前提条件：<br>Ubuntu Server 16.04.1 LTS 64 服务器<br>一个域名</p>
+<ol>
+<li>登陆Ubuntu 服务器，除了root或者安装的用户之外，创建一个管理员用户：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//创建用户</span><br><span class="line">sudo adduser xxxxxx</span><br><span class="line"></span><br><span class="line">//授权管理员权限</span><br><span class="line">sudo usermod -aG sudo xxxxxx</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>参考连接：<a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04#step-one-%E2%80%94-root-login" target="_blank" rel="noopener">Initial Server Setup with Ubuntu 16.04</a></p>
+</blockquote>
+<ol>
+<li>安装Node和npm<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -</span><br><span class="line"></span><br><span class="line">sudo apt-get install -y nodejs</span><br><span class="line"></span><br><span class="line">//安装完毕后可以用下面的命令查看node和npm的版本</span><br><span class="line">node --version</span><br><span class="line">npm --version</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>参考连接：<a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions" target="_blank" rel="noopener">Installing Node.js via package manager</a></p>
+</blockquote>
+<ol>
+<li>安装mongo db<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5</span><br><span class="line">echo &quot;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install -y mongodb-org</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>参考连接:<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank" rel="noopener">Install MongoDB Community Edition on Ubuntu</a></p>
+<p>系统重启时，自动启动mongodb<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable mongod</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>安装Nginx<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install nginx</span><br><span class="line"></span><br><span class="line">//安装完毕之后，Nginx会自动启动</span><br><span class="line">//可以在浏览器查看ip，得到的应该如下：</span><br><span class="line">//不知道ip的话，可以用下面的命令得到</span><br><span class="line">ip addr show eth0 | grep inet | awk &apos;&#123; print $2; &#125;&apos; | sed &apos;s/\/.*$//&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<img src="/2018/02/19/parse-server-session-2/parse-server-session-2-1.png">
+<p>参考连接:<a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-14-04-lts" target="_blank" rel="noopener">How To Install Nginx on Ubuntu 14.04 LTS</a></p>
+<ol>
+<li>设置Let’s Encrypt支持https<br>5.1 添加云解析：<br>在购买的云服务器的控制台，找到云解析，找到购买的域名，添加两条解析：<br>– 添加一条A record，将域名”example.com”指向Ubuntu服务器的公网IP<br>– 添加一条A record，将域名”www.example.com”指向Ubuntu服务器的公网IP<br>5.2 安装Certbot<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:certbot/certbot</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install python-certbot-nginx</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>配置Nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/nginx/sites-available/default</span><br><span class="line"></span><br><span class="line">将server_name _;这一行的内容修改为对应的域名，例如：</span><br><span class="line"></span><br><span class="line">server_name example.com www.example.com;</span><br><span class="line"></span><br><span class="line">//检查修改内容是否正确</span><br><span class="line">sudo nginx -t</span><br><span class="line"></span><br><span class="line">//重启nginx</span><br><span class="line">sudo service nginx reload</span><br></pre></td></tr></table></figure></p>
+<p>获取SSL证书<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//记得修改对应的域名</span><br><span class="line">sudo certbot --nginx -d example.com -d www.example.com</span><br></pre></td></tr></table></figure></p>
+<p>自动续约SSL证书<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br></pre></td></tr></table></figure></p>
+<p>参考连接：<a href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04" target="_blank" rel="noopener">How To Secure Nginx with Let’s Encrypt on Ubuntu 14.04</a></p>
+<p>配置Mongo DB支持SSL连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /etc/letsencrypt/archive/domain_name/&#123;fullchain1.pem,privkey1.pem&#125; | sudo tee /etc/ssl/mongo.pem</span><br><span class="line"></span><br><span class="line">//确保mongo.pem 只可以被 mongodb 访问</span><br><span class="line">sudo chown mongodb:mongodb /etc/ssl/mongo.pem</span><br><span class="line">sudo chmod 600 /etc/ssl/mongo.pem</span><br></pre></td></tr></table></figure></p>
+<p>修改mongo配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/mongod.conf</span><br><span class="line"></span><br><span class="line">//修改内容如下：</span><br><span class="line"># network interfaces</span><br><span class="line">net:</span><br><span class="line">  port: 27017</span><br><span class="line">  bindIp: 0.0.0.0</span><br><span class="line">  ssl:</span><br><span class="line">    mode: requireSSL</span><br><span class="line">    PEMKeyFile: /etc/ssl/mongo.pem</span><br><span class="line"></span><br><span class="line"># security</span><br><span class="line">security:</span><br><span class="line">  authorization: enabled</span><br><span class="line"></span><br><span class="line">setParameter:</span><br><span class="line">  failIndexKeyTooLong: false</span><br></pre></td></tr></table></figure></p>
+<p>保存配置文件</p>
+<p>添加一个新的DB管理员用户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//连接mongo db</span><br><span class="line">mongo --port 27017</span><br><span class="line"></span><br><span class="line">//创建一个管理员用户（请修改为自己的用户名和密码）</span><br><span class="line">use admin</span><br><span class="line">db.createUser(&#123;</span><br><span class="line">  user: &quot;sammy&quot;,</span><br><span class="line">  pwd: &quot;password&quot;,</span><br><span class="line">  roles: [ &#123; role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; &#125; ]</span><br><span class="line">&#125;)</span><br><span class="line">exit</span><br></pre></td></tr></table></figure></p>
+<p>重启mongo db<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service mongod restart</span><br></pre></td></tr></table></figure></p>
+<p>以后可以这样连接mongo db<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//然后需要输入密码</span><br><span class="line">mongo --port 27017 --ssl --sslAllowInvalidCertificates --authenticationDatabase admin --username sammy --password</span><br></pre></td></tr></table></figure></p>
+<p>创建一个database和对应的db用户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use database_name</span><br><span class="line">db.createUser(&#123; user: &quot;database_user&quot;, pwd: &quot;password&quot;, roles: [ &quot;readWrite&quot;, &quot;dbAdmin&quot; ] &#125;)</span><br></pre></td></tr></table></figure></p>
+<p>//注意，上面的”sammy”是DB登陆用户，而这个”database_user”才可以对这个database可以操作。我们后面连接数据库时，需要用到这个”database_user”和对应的密码以及数据库。</p>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongodb://database_user:password@your_domain_name:27017/database_name?ssl=true</span><br></pre></td></tr></table></figure></p>
+<p>安装Parse Server App Sample<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/ParsePlatform/parse-server-example.git</span><br><span class="line"></span><br><span class="line">cd ~/parse-server-example</span><br><span class="line"></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<p>测试Sample Application<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br><span class="line"></span><br><span class="line">结果如下：</span><br><span class="line">&gt; parse-server-example@1.0.0 start /home/sammy/parse-server-example</span><br><span class="line">&gt; node index.js</span><br><span class="line"></span><br><span class="line">DATABASE_URI not specified, falling back to localhost.</span><br><span class="line">parse-server-example running on port 1337.</span><br></pre></td></tr></table></figure></p>
+<p>另外开启一个session连接服务器,用如下测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST \</span><br><span class="line">  -H &quot;X-Parse-Application-Id: myAppId&quot; \</span><br><span class="line">  -H &quot;Content-Type: application/json&quot; \</span><br><span class="line">  -d &apos;&#123;&quot;score&quot;:1337,&quot;playerName&quot;:&quot;Sammy&quot;,&quot;cheatMode&quot;:false&#125;&apos; \</span><br><span class="line">  http://localhost:1337/parse/classes/GameScore</span><br><span class="line"></span><br><span class="line">Output</span><br><span class="line">&#123;&quot;objectId&quot;:&quot;fu7t4oWLuW&quot;,&quot;createdAt&quot;:&quot;2016-02-02T18:43:00.659Z&quot;&#125;</span><br><span class="line"></span><br><span class="line">curl -H &quot;X-Parse-Application-Id: myAppId&quot; http://localhost:1337/parse/classes/GameScore</span><br><span class="line"></span><br><span class="line">Output</span><br><span class="line">&#123;&quot;results&quot;:[&#123;&quot;objectId&quot;:&quot;GWuEydYCcd&quot;,&quot;score&quot;:1337,&quot;playerName&quot;:&quot;Sammy&quot;,&quot;cheatMode&quot;:false,&quot;updatedAt&quot;:&quot;2016-02-02T04:04:29.497Z&quot;,&quot;createdAt&quot;:&quot;2016-02-02T04:04:29.497Z&quot;&#125;]&#125;</span><br><span class="line"></span><br><span class="line">curl -X POST \</span><br><span class="line">  -H &quot;X-Parse-Application-Id: myAppId&quot; \</span><br><span class="line">  -H &quot;Content-Type: application/json&quot; \</span><br><span class="line">  -d &apos;&#123;&#125;&apos; \</span><br><span class="line">  http://localhost:1337/parse/functions/hello</span><br><span class="line"></span><br><span class="line">Output</span><br><span class="line">&#123;&quot;result&quot;:&quot;Hi&quot;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>回到原来的Session，Ctrl-C终止Parse Application的运行。</p>
+<p>安装dashboard<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//将dashboard加入package中</span><br><span class="line">cd ~/parse-server-example</span><br><span class="line"></span><br><span class="line">nano package.json</span><br><span class="line">&quot;dependencies&quot;中添加一行</span><br><span class="line">parse-dashboard&quot;: &quot;1.1.2&quot; </span><br><span class="line"></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<p>配置新的Application，包括dashboard<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano my_app.js</span><br></pre></td></tr></table></figure></p>
+<p>内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">// Packtor Server</span><br><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var ParseServer = require(&apos;parse-server&apos;).ParseServer;</span><br><span class="line">var ParseDashboard = require(&apos;parse-dashboard&apos;);</span><br><span class="line">var path = require(&apos;path&apos;);</span><br><span class="line"></span><br><span class="line">var databaseUri = process.env.DATABASE_URI || &apos;mongodb://database_user:password@your_domain_name:27017/database_name?ssl=tru&apos;;</span><br><span class="line"></span><br><span class="line">if (!databaseUri) &#123;</span><br><span class="line">  console.log(&apos;DATABASE_URI not specified, falling back to localhost.&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Set up parse server</span><br><span class="line">var api = new ParseServer(&#123;</span><br><span class="line">  databaseURI: databaseUri || &apos;mongodb://database_user:password@your_domain_name:27017/database_name?ssl=tru&apos;,</span><br><span class="line">  cloud: process.env.CLOUD_CODE_MAIN || __dirname + &apos;/cloud/main.js&apos;,</span><br><span class="line">  appId: process.env.APP_ID || &apos;appId&apos;,</span><br><span class="line">  masterKey: process.env.MASTER_KEY || &apos;masterKey&apos;,</span><br><span class="line">  serverURL: process.env.SERVER_URL || &apos;http://localhost:1337/parse&apos;,</span><br><span class="line">  publicServerURL: &apos;https://your_domain_name/parse&apos;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">// Serve static assets from the /public folder</span><br><span class="line">app.use(&apos;/public&apos;, express.static(path.join(__dirname, &apos;/public&apos;)));</span><br><span class="line"></span><br><span class="line">// Serve the Parse API on the /parse URL prefix</span><br><span class="line">var mountPath = process.env.PARSE_MOUNT || &apos;/parse&apos;;</span><br><span class="line">app.use(mountPath, api);</span><br><span class="line"></span><br><span class="line">// Parse Server plays nicely with the rest of your web routes</span><br><span class="line">app.get(&apos;/&apos;, function(req, res) &#123;</span><br><span class="line">  res.status(200).send(&apos;Parse Server App&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var port = process.env.PORT || 1337;</span><br><span class="line">var httpServer = require(&apos;http&apos;).createServer(app);</span><br><span class="line">httpServer.listen(port, function() &#123;</span><br><span class="line">    console.log(&apos;Parse-server running on port &apos; + port + &apos;.&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// Set up parse dashboard</span><br><span class="line">var dashboard = new ParseDashboard(&#123;</span><br><span class="line">  &quot;apps&quot;: [&#123;</span><br><span class="line">      &quot;serverURL&quot;: &apos;https://your_domain_name/parse&apos;, // Not localhost</span><br><span class="line">      &quot;appId&quot;: &apos;appId&apos;,</span><br><span class="line">      &quot;masterKey&quot;: &apos;masterKey&apos;,</span><br><span class="line">      &quot;appName&quot;: &quot;appName&quot;,</span><br><span class="line">      &quot;production&quot;: false,</span><br><span class="line">      &quot;iconName&quot;: &quot;app-icon.png&quot;,</span><br><span class="line">  &#125;],</span><br><span class="line">  &quot;users&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;user&quot;:&quot;user&quot;,</span><br><span class="line">      &quot;pass&quot;:&quot;password&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;iconsFolder&quot;: &quot;icons&quot;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var dashApp = express();</span><br><span class="line"></span><br><span class="line">// make the Parse Dashboard available at /dashboard</span><br><span class="line">dashApp.use(&apos;/dashboard&apos;, dashboard);</span><br><span class="line"></span><br><span class="line">// Parse Server plays nicely with the rest of your web routes</span><br><span class="line">dashApp.get(&apos;/&apos;, function(req, res) &#123;</span><br><span class="line">  res.status(200).send(&apos;Parse Dashboard App&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var httpServerDash = require(&apos;http&apos;).createServer(dashApp);</span><br><span class="line">httpServerDash.listen(4040, function() &#123;</span><br><span class="line">    console.log(&apos;dashboard-server running on port 4040.&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>运行这个Application，可以用如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">node my_app.js</span><br><span class="line"></span><br><span class="line">结果应该如下：</span><br><span class="line">Iconsfolder at path: icons not found!</span><br><span class="line">Parse-server running on port 1337.</span><br><span class="line">dashboard-server running on port 4040.</span><br></pre></td></tr></table></figure></p>
+<p>配置Nignx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+C终止Application运行</span><br><span class="line"></span><br><span class="line">sudo nano /etc/nginx/sites-available/default</span><br><span class="line"></span><br><span class="line">在location / &#123;</span><br><span class="line">                # First attempt to serve request as file, then</span><br><span class="line">                # as directory, then fall back to displaying a 404.</span><br><span class="line">                try_files $uri $uri/ =404;</span><br><span class="line">        &#125;</span><br><span class="line">之后， 添加如下内容</span><br><span class="line">        location /parse/ &#123;</span><br><span class="line">                proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">                proxy_set_header X-NginX-Proxy true;</span><br><span class="line">                proxy_pass http://localhost:1337/parse/;</span><br><span class="line">                proxy_ssl_session_reuse off;</span><br><span class="line">                proxy_set_header Host $http_host;</span><br><span class="line">                proxy_redirect off;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        # Pass requests for /dashboard/ to Parse Server instance at localhost:4040</span><br><span class="line">        location /dashboard/ &#123;</span><br><span class="line">            proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">            proxy_set_header X-NginX-Proxy true;</span><br><span class="line">            proxy_pass http://localhost:4040/dashboard/;</span><br><span class="line">            proxy_ssl_session_reuse off;</span><br><span class="line">            proxy_set_header Host $http_host;</span><br><span class="line">            proxy_redirect off;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p>保存，退出，并重启Nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo nginx -t</span><br><span class="line"></span><br><span class="line">sudo service nginx reload</span><br></pre></td></tr></table></figure></p>
+<p>再次运行Application<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node my_app.js</span><br></pre></td></tr></table></figure></p>
+<p>此时，访问<a href="https://www.iosreader.com/dashboard/将会跳转到dashboard的login界面，可以用定义在配置文件里的用户名（user）和密码（password）进行登陆" target="_blank" rel="noopener">https://www.iosreader.com/dashboard/将会跳转到dashboard的login界面，可以用定义在配置文件里的用户名（user）和密码（password）进行登陆</a></p>
+<p>安装PM2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+c退出Application</span><br><span class="line"></span><br><span class="line">//返回用户目录</span><br><span class="line">cd ~</span><br><span class="line">sudo npm install -g pm2</span><br></pre></td></tr></table></figure></p>
+<p>/*<br>配置ecosystem.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ecosystem.json</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;apps&quot; : [&#123;</span><br><span class="line">    &quot;name&quot;        : &quot;parse-wrapper&quot;,</span><br><span class="line">    &quot;script&quot;      : &quot;/home/xxxxxx/parse-server-example/my_app.js&quot;,</span><br><span class="line">    &quot;watch&quot;       : true,</span><br><span class="line">    &quot;merge_logs&quot;  : true,</span><br><span class="line">    &quot;cwd&quot;         : &quot;/home/xxxxxx/parse-server-example&quot;,</span><br><span class="line">    &quot;env&quot;: &#123;</span><br><span class="line">      &quot;PARSE_SERVER_CLOUD_CODE_MAIN&quot;: &quot;/home/xxxxxx/parse-server-example/cloud/main.js&quot;,</span><br><span class="line">      &quot;PARSE_SERVER_DATABASE_URI&quot;: &quot;mongodb://database_user:password@your_domain_name:27017/database_name?ssl=true&quot;,</span><br><span class="line">      &quot;PARSE_SERVER_APPLICATION_ID&quot;: &quot;appId&quot;,</span><br><span class="line">      &quot;PARSE_SERVER_MASTER_KEY&quot;: &quot;masterKey&quot;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>*/</p>
+<p>运行PM2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//pm2 start ecosystem.json</span><br><span class="line">修改为pm2 start my_app.js </span><br><span class="line">不知道为何，配置ecosystem.json并且通过该文件启动my_app.js，在服务器重启之后，parse server的连接会出错，暂时不清楚问题的原因，以及如何修改。但是可以通过直接启动my_app.js，此方法在服务器重启之后，一切服务正常。</span><br><span class="line"></span><br><span class="line">Sample Output</span><br><span class="line">...</span><br><span class="line">[PM2] Spawning PM2 daemon</span><br><span class="line">[PM2] PM2 Successfully daemonized</span><br><span class="line">[PM2] Process launched</span><br><span class="line">┌───────────────┬────┬──────┬──────┬────────┬─────────┬────────┬─────────────┬──────────┐</span><br><span class="line">│ App name      │ id │ mode │ pid  │ status │ restart │ uptime │ memory      │ watching │</span><br><span class="line">├───────────────┼────┼──────┼──────┼────────┼─────────┼────────┼─────────────┼──────────┤</span><br><span class="line">│ parse-wrapper │ 0  │ fork │ 3499 │ online │ 0       │ 0s     │ 13.680 MB   │  enabled │</span><br><span class="line">└───────────────┴────┴──────┴──────┴────────┴─────────┴────────┴─────────────┴──────────┘</span><br><span class="line"> Use `pm2 show &lt;id|name&gt;` to get more details about an app</span><br></pre></td></tr></table></figure></p>
+<p>保存<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pm2 save</span><br><span class="line"></span><br><span class="line">Sample Output</span><br><span class="line">[PM2] Dumping processes</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pm2 startup ubuntu -u xxxxxx --hp /home/xxxxxx/</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Parse-Server/" rel="tag"># Parse Server</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/27/ios-develop-9/" rel="next" title="App ipa以及资源文件的获取">
+                <i class="fa fa-chevron-left"></i> App ipa以及资源文件的获取
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/26/rss-research-session-2/" rel="prev" title="如何获取RSS的历史记录">
+                如何获取RSS的历史记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzQ4OC8xMDA0NA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://upload.jianshu.io/users/upload_avatars/1771779/7b7d99e1984b?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240"
+                alt="启发光明" />
+            
+              <p class="site-author-name" itemprop="name">启发光明</p>
+              <p class="site-description motion-element" itemprop="description">达则兼济天下，穷则独善其身。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="content:true" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Inspirelife96" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:inspirelife@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.jianshu.com/u/6dad13dfc23e" title="启发光明的简书" target="_blank">启发光明的简书</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">启发光明</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=65050849";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NnaQFWnPDdfBE3AFhLsshsXr-gzGzoHsz',
+        appKey: 'xcl3EVb0RqdL4dSUHvYOcBMi',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("NnaQFWnPDdfBE3AFhLsshsXr-gzGzoHsz", "xcl3EVb0RqdL4dSUHvYOcBMi");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
