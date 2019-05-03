@@ -90,10 +90,10 @@
 <meta property="og:description" content="个人理解的iOS分层架构   表示层：由UIKit Framework构成，也就是我们看到的视图，控制器，各种控件以及事件处理等内容。 业务逻辑层：由具体的业务而定。根据网络层和本地数据持久层，针对具体业务进行数据加工，最终提供给表示层使用。 本地数据持久层：提供本地数据持久，iOS提供的最基本的四种方式，分别为：属性列表，对象归档，SQLite3以及Core Data。 网络层：通过HTTP等访">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2017/03/18/diligence-app-session-2/diligence-app-session-2-1.png">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1771779-3ad75ed6f9f49808.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1771779-99e77dda14b47114.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://yoursite.com/2017/03/18/diligence-app-session-2/diligence-app-session-2-2.png">
-<meta property="og:updated_time" content="2019-05-03T01:31:15.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/03/18/diligence-app-session-2/diligence-app-session-2-3.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/18/diligence-app-session-2/diligence-app-session-2-4.png">
+<meta property="og:updated_time" content="2019-05-03T02:01:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="勤之时 - 架构与工程组织结构">
 <meta name="twitter:description" content="个人理解的iOS分层架构   表示层：由UIKit Framework构成，也就是我们看到的视图，控制器，各种控件以及事件处理等内容。 业务逻辑层：由具体的业务而定。根据网络层和本地数据持久层，针对具体业务进行数据加工，最终提供给表示层使用。 本地数据持久层：提供本地数据持久，iOS提供的最基本的四种方式，分别为：属性列表，对象归档，SQLite3以及Core Data。 网络层：通过HTTP等访">
@@ -423,11 +423,11 @@
 </ul>
 <p>既然采用了分层架构，需要注意的一点是：不到万不得已，不要出现跨层依赖。</p>
 <p>在工程组织中，如果项目简单的话，可以在同一个工程中简单的用group来分割各个分层。复杂的项目，建议一层一个工程，方便合作开发，也更能在开发过程中考虑依赖问题。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1771779-3ad75ed6f9f49808.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Group分割分层.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1771779-99e77dda14b47114.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="工程分割.png"></p>
+<img src="/2017/03/18/diligence-app-session-2/diligence-app-session-2-2.png">
+<img src="/2017/03/18/diligence-app-session-2/diligence-app-session-2-3.png">
 <p>第三方库，推荐使用Cocoa Pod集成。至于不支持Cocoa Pod的第三方库，会在后面提到。</p>
 <p>表示层工程组织结构：</p>
-<img src="/2017/03/18/diligence-app-session-2/diligence-app-session-2-2.png">
+<img src="/2017/03/18/diligence-app-session-2/diligence-app-session-2-4.png">
 <p>Base：表示层内的基类<br>Category：Category都放在这个Group内<br>Constant：宏，常量等定义，可以根据内容分为以下几类：<br>Macros：常用的宏，这里都是#define相关的内容，例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//  ILMacros.h</span><br><span class="line"></span><br><span class="line">#define ScreenWidth [UIScreen mainScreen].bounds.size.width</span><br><span class="line">#define ScreenHeight [UIScreen mainScreen].bounds.size.height</span><br><span class="line"></span><br><span class="line">#define StatusBarHeight        (20.f)</span><br><span class="line">#define TopBarHeight           (44.f)</span><br><span class="line">#define BottomBarHeight        (49.f)</span><br><span class="line">#define EnglishKeyboardHeight  (216.f)</span><br><span class="line">#define ChineseKeyboardHeight  (252.f)</span><br></pre></td></tr></table></figure>
 <p>URLConstants：URL的定义，推荐使用Constants，不要用#define，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//  ILURLConstants.h</span><br><span class="line"></span><br><span class="line">#pragma mark - app url</span><br><span class="line"></span><br><span class="line">extern NSString *const kAppReviewURL;</span><br><span class="line">extern NSString *const kAppURL;</span><br><span class="line"></span><br><span class="line">#pragma mark - privacy url</span><br><span class="line"></span><br><span class="line">extern NSString *const kPrivacyURL;</span><br></pre></td></tr></table></figure></p>
