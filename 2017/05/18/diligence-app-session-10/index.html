@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="APP开发,业务逻辑层," />
+  <meta name="keywords" content="APP开发,表示层," />
 
 
 
@@ -81,22 +81,24 @@
 
 
 
-<meta name="description" content="业务逻辑层是衔接数据持久层（网络层）与表示层的中间一层，他读取数据持久层的数据，经过业务处理，然后传递给表示层用与展示的数据。同样，当表示层操作使数据发生变化时，通过业务逻辑层将变化的数据保存到数据持久层。 因此，必不可少，我们在这里会处理所谓MVC模式里面M的部分。也许不是直接用于VC的Model，但至少是这一Model的基本来源。 【勤之时】的表示层主要有3个DataCenter和一些列的Mo">
-<meta name="keywords" content="APP开发,业务逻辑层">
+<meta name="description" content="因为某些事情，耽搁了好久。总算可以开始把这个内容给补全了。希望接下来的一周能把这个应用的开发过程描述完毕，并把源码公开给大家。 这一节讲任务设置的部分，左上角的按钮对应的功能。 功能描述如下： 【任务一览】 View Controller  中上部为应用图标／名称／描述 下面为任务一览的列表，列表内容为任务配色，名称以及任务时间 左上角为【关闭】按钮 右上角为【添加】按钮，点击跳转到任务添加页面，">
+<meta name="keywords" content="APP开发,表示层">
 <meta property="og:type" content="article">
-<meta property="og:title" content="勤之时 - 业务逻辑层">
-<meta property="og:url" content="http://yoursite.com/2017/03/22/diligence-app-session-5/index.html">
+<meta property="og:title" content="勤之时 - 表示层（四）">
+<meta property="og:url" content="http://yoursite.com/2017/05/18/diligence-app-session-10/index.html">
 <meta property="og:site_name" content="启发光明的博客">
-<meta property="og:description" content="业务逻辑层是衔接数据持久层（网络层）与表示层的中间一层，他读取数据持久层的数据，经过业务处理，然后传递给表示层用与展示的数据。同样，当表示层操作使数据发生变化时，通过业务逻辑层将变化的数据保存到数据持久层。 因此，必不可少，我们在这里会处理所谓MVC模式里面M的部分。也许不是直接用于VC的Model，但至少是这一Model的基本来源。 【勤之时】的表示层主要有3个DataCenter和一些列的Mo">
+<meta property="og:description" content="因为某些事情，耽搁了好久。总算可以开始把这个内容给补全了。希望接下来的一周能把这个应用的开发过程描述完毕，并把源码公开给大家。 这一节讲任务设置的部分，左上角的按钮对应的功能。 功能描述如下： 【任务一览】 View Controller  中上部为应用图标／名称／描述 下面为任务一览的列表，列表内容为任务配色，名称以及任务时间 左上角为【关闭】按钮 右上角为【添加】按钮，点击跳转到任务添加页面，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/03/22/diligence-app-session-5/diligence-app-session-5-1.png">
-<meta property="og:image" content="http://yoursite.com/2017/03/22/diligence-app-session-5/diligence-app-session-5-2.png">
-<meta property="og:image" content="http://yoursite.com/2017/03/22/diligence-app-session-5/diligence-app-session-5-3.png">
-<meta property="og:updated_time" content="2019-05-03T01:31:17.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/05/18/diligence-app-session-10/diligence-app-session-10-1.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/18/diligence-app-session-10/diligence-app-session-10-2.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/18/diligence-app-session-10/diligence-app-session-10-3.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/18/diligence-app-session-10/diligence-app-session-10-4.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/18/diligence-app-session-10/diligence-app-session-10-5.png">
+<meta property="og:updated_time" content="2019-05-03T02:08:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="勤之时 - 业务逻辑层">
-<meta name="twitter:description" content="业务逻辑层是衔接数据持久层（网络层）与表示层的中间一层，他读取数据持久层的数据，经过业务处理，然后传递给表示层用与展示的数据。同样，当表示层操作使数据发生变化时，通过业务逻辑层将变化的数据保存到数据持久层。 因此，必不可少，我们在这里会处理所谓MVC模式里面M的部分。也许不是直接用于VC的Model，但至少是这一Model的基本来源。 【勤之时】的表示层主要有3个DataCenter和一些列的Mo">
-<meta name="twitter:image" content="http://yoursite.com/2017/03/22/diligence-app-session-5/diligence-app-session-5-1.png">
+<meta name="twitter:title" content="勤之时 - 表示层（四）">
+<meta name="twitter:description" content="因为某些事情，耽搁了好久。总算可以开始把这个内容给补全了。希望接下来的一周能把这个应用的开发过程描述完毕，并把源码公开给大家。 这一节讲任务设置的部分，左上角的按钮对应的功能。 功能描述如下： 【任务一览】 View Controller  中上部为应用图标／名称／描述 下面为任务一览的列表，列表内容为任务配色，名称以及任务时间 左上角为【关闭】按钮 右上角为【添加】按钮，点击跳转到任务添加页面，">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/18/diligence-app-session-10/diligence-app-session-10-1.png">
 
 
 
@@ -126,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/22/diligence-app-session-5/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/18/diligence-app-session-10/"/>
 
 
 
 
 
-  <title>勤之时 - 业务逻辑层 | 启发光明的博客</title>
+  <title>勤之时 - 表示层（四） | 启发光明的博客</title>
   
 
 
@@ -302,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/22/diligence-app-session-5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/18/diligence-app-session-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="启发光明">
@@ -319,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">勤之时 - 业务逻辑层</h1>
+          <h1 class="post-title" itemprop="name headline">勤之时 - 表示层（四）</h1>
         
 
         <div class="post-meta">
@@ -331,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T19:41:00+08:00">
-                2017-03-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-18T06:12:00+08:00">
+                2017-05-18
               </time>
             
 
@@ -372,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/22/diligence-app-session-5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/03/22/diligence-app-session-5/" itemprop="commentCount"></span>
+                <a href="/2017/05/18/diligence-app-session-10/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/05/18/diligence-app-session-10/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -381,7 +383,7 @@
 
           
           
-             <span id="/2017/03/22/diligence-app-session-5/" class="leancloud_visitors" data-flag-title="勤之时 - 业务逻辑层">
+             <span id="/2017/05/18/diligence-app-session-10/" class="leancloud_visitors" data-flag-title="勤之时 - 表示层（四）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,28 +414,51 @@
       
 
       
-        <p>业务逻辑层是衔接数据持久层（网络层）与表示层的中间一层，他读取数据持久层的数据，经过业务处理，然后传递给表示层用与展示的数据。同样，当表示层操作使数据发生变化时，通过业务逻辑层将变化的数据保存到数据持久层。</p>
-<p>因此，必不可少，我们在这里会处理所谓MVC模式里面M的部分。也许不是直接用于VC的Model，但至少是这一Model的基本来源。</p>
-<p>【勤之时】的表示层主要有3个DataCenter和一些列的Model构成。</p>
+        <p>因为某些事情，耽搁了好久。总算可以开始把这个内容给补全了。希望接下来的一周能把这个应用的开发过程描述完毕，并把源码公开给大家。</p>
+<p>这一节讲任务设置的部分，左上角的按钮对应的功能。</p>
+<p>功能描述如下：</p>
+<p>【任务一览】 View Controller<br><img src="/2017/05/18/diligence-app-session-10/diligence-app-session-10-1.png"></p>
 <ul>
-<li>ILDTaskDataCenter</li>
-<li>ILDDiligenceDataCenter</li>
-<li>ILDStoryDataCenter</li>
-<li>ILDTaskModel</li>
-<li>ILDDiligenceModel</li>
-<li>ILDStoryModel</li>
-<li>ILDStatisticsTodayModel</li>
-<li>ILDStatisticsHistoryModel</li>
+<li>中上部为应用图标／名称／描述</li>
+<li>下面为任务一览的列表，列表内容为任务配色，名称以及任务时间</li>
+<li>左上角为【关闭】按钮</li>
+<li>右上角为【添加】按钮，点击跳转到任务添加页面，可以添加一个新的任务。</li>
 </ul>
-<p>ILDTaskDataCenter 和 ILDTaskModel 主要向下面这些页面提供数据服务接口和数据模型。<br><img src="/2017/03/22/diligence-app-session-5/diligence-app-session-5-1.png"></p>
-<p>我们可以想到的功能是这些：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//获得所有的TaskId，用于任务一览的展示</span><br><span class="line">- (NSArray *)taskIds;</span><br><span class="line"></span><br><span class="line">//根据taskId获取对应的TaskModel，用于Task Configuration的展示／修改等。</span><br><span class="line">- (ILDTaskModel *)taskConfigurationById:(NSString *)taskId;</span><br><span class="line"></span><br><span class="line">//添加一个任务，并保存</span><br><span class="line">- (void)addTask:(ILDTaskModel *)taskConfiguration;</span><br><span class="line"></span><br><span class="line">//更新一个任务，并保存</span><br><span class="line">- (void)updateTask:(NSString *)taskId taskConfiguration:(ILDTaskModel *)taskConfiguration;</span><br><span class="line"></span><br><span class="line">//删除一个任务，并保存</span><br><span class="line">- (void)removeTask:(NSString *)taskId;</span><br></pre></td></tr></table></figure></p>
-<p>ILDDiligenceDataCenter 和 ILDDiligenceModel，ILDStatisticsTodayModel， ILDStatisticsHistoryModel主要向下面这些页面提供数据服务接口和数据模型。<br><img src="/2017/03/22/diligence-app-session-5/diligence-app-session-5-2.png"></p>
-<p>我们可以想到的功能是这些：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//当任务计时完成，我们需要添加一条勤记录到数据持久层。</span><br><span class="line">- (void)addDiligence:(ILDDiligenceModel *)diligenceData;</span><br><span class="line"></span><br><span class="line">//当某一个任务删除时，需要把该任务对应的所有勤记录从数据持久层中删除。</span><br><span class="line">- (void)removeDiligence:(NSString *)taskId;</span><br><span class="line"></span><br><span class="line">//提供今日统计的数据模型。数据是基于数据持久层中的勤数据来统计的。</span><br><span class="line">- (ILDStatisticsTodayModel *)prepareStatisticsToday;</span><br><span class="line"></span><br><span class="line">//提供历史数据的数据模型。数据是基于数据持久层中的勤数据来统计的。</span><br><span class="line">- (ILDStatisticsHistoryModel *)prepareStatisticsHistory;</span><br></pre></td></tr></table></figure></p>
-<p>ILDStoryDataCenter 和 ILDStoryModel主要向下面这些页面提供数据服务接口和数据模型。<br><img src="/2017/03/22/diligence-app-session-5/diligence-app-session-5-3.png"></p>
-<p>我们可以想到的功能是这些：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//提供今日故事模型</span><br><span class="line">- (ILDStoryModel *)prepareStoryModel;</span><br></pre></td></tr></table></figure></p>
-<p>ILDTaskDataCenter， ILDDiligenceDataCenter， ILDStoryDataCenter读取对应的数据持久层的数据，根据业务逻辑，重新组装数据，提供给表示层使用，并负责对数据持久层的增删改操作。</p>
-<p>这三个类都以单例的形式设计，因为在应用程序运行期间他们有且仅需要一份内容。</p>
-
+<p>【任务设置】View Controller<br><img src="/2017/05/18/diligence-app-session-10/diligence-app-session-10-2.png"></p>
+<ul>
+<li>以TableView的形式展示所有任务设置的内容。</li>
+<li>左上角为【返回】按钮，点击返回【任务一览】页面</li>
+<li>右上角为【删除】按钮，点击删除该任务。【删除】按钮设置为红色，点击后会弹出警告框提示用户，且最后一个任务不得删除。</li>
+</ul>
+<p>【任务设置详细】View Controllers<br><img src="/2017/05/18/diligence-app-session-10/diligence-app-session-10-3.png"></p>
+<ul>
+<li>如图所示，点击【任务设置】的每个cell会跳转到各自的设置页面，如果子设置还有子设置，则以navigation的形式弹出，如果不是，则已Present的形式弹出。</li>
+</ul>
+<p>【添加任务】View Controller<br><img src="/2017/05/18/diligence-app-session-10/diligence-app-session-10-4.png"></p>
+<ul>
+<li>【添加任务】和【任务设置】本质上一样的，只不过修改了左右上方的按钮，并以Present的形式弹出。</li>
+</ul>
+<p>MVC设计考虑：<br>在编写这个功能的时候，我个人会觉得非常的杂乱，因为它们是一系列类似但又有细微差别的View Controller，每一个单独写吧，总会有那么一部分的代码会重复，抽取一些公共内容吧，也总有一些别扭。 所以，如果大家有好的意见建议，请指教。<br>最终的考虑<br><img src="/2017/05/18/diligence-app-session-10/diligence-app-session-10-5.png"></p>
+<ul>
+<li>Controller：<ul>
+<li>Base：考虑大部分的View Controller要么以有Nav+TableView的组合，要么以Present+PickView的组合，所以我单独写了两个基类，来添加控件以及控件的布局，具体的控件的内容配置，由子类自己实现。</li>
+<li>Controllers：每一个配置一个View Controller</li>
+</ul>
+</li>
+<li>Model：<ul>
+<li>【任务一览】需要获得所有的任务信息，所以可以通过ILDTaskDataCenter来获得所有任务的taskIds</li>
+<li>然后再由taskId来获得每个任务的ILDTaskModel</li>
+<li>在任务配置过程中，所有传递的Model都是该任务的ILDTaskModel，且可被修改，仅在最后保存，或者退出【任务设置】时，根据修改后的内容写入本地任务配置中。</li>
+</ul>
+</li>
+<li>View：<ul>
+<li>对于Cell也做了一些整合，因为整个配置中只有这四种Cell形式。</li>
+</ul>
+</li>
+</ul>
+<p>详细编码：<br>ILDTaskConfigurationViewController 有两种风格，即【任务设置】和【添加任务】风格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef NS_ENUM(NSInteger, TaskConfigurationType) &#123;</span><br><span class="line">    TaskConfigurationTypeAdd,</span><br><span class="line">    TaskConfigurationTypeModify</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>因此，对导航左右按钮的操作会有所不同，同时考虑到此时需要保存任务设置的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- (void)clickBackBarButtonItem:(id)sender &#123;</span><br><span class="line">    if (self.configurationType == TaskConfigurationTypeModify) &#123;</span><br><span class="line">        if ([self.taskConfiguration.name isEqualToString:@&quot;&quot;]) &#123;</span><br><span class="line">            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@&quot;警告&quot; message:@&quot;任务名称不能为空，请设置&quot; preferredStyle:UIAlertControllerStyleAlert];</span><br><span class="line">            </span><br><span class="line">            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&quot;知道&quot; style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) &#123;</span><br><span class="line">                //</span><br><span class="line">            &#125;];</span><br><span class="line">            </span><br><span class="line">            [alertVC addAction:cancelAction];</span><br><span class="line">            </span><br><span class="line">            [self presentViewController:alertVC animated:YES completion:nil];</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            [[ILDTaskDataCenter sharedInstance] updateTask:self.taskId taskConfiguration:self.taskConfiguration];</span><br><span class="line">            [super clickBackBarButtonItem:sender];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        [self dismissViewControllerAnimated:YES completion:nil];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">- (void)clickRightButtonItem:(id)sender &#123;</span><br><span class="line">    if (self.configurationType == TaskConfigurationTypeAdd) &#123;</span><br><span class="line">        [[ILDTaskDataCenter sharedInstance] addTask:self.taskConfiguration];</span><br><span class="line">        [self dismissViewControllerAnimated:YES completion:nil];</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        if ( [[[ILDTaskDataCenter sharedInstance] taskIds] count] &lt;= 1) &#123;</span><br><span class="line">            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@&quot;通知&quot; message:@&quot;这是最后一个任务，无法被删除&quot; preferredStyle:UIAlertControllerStyleAlert];</span><br><span class="line">            </span><br><span class="line">            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&quot;知道了&quot; style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) &#123;</span><br><span class="line">                //</span><br><span class="line">            &#125;];</span><br><span class="line">            </span><br><span class="line">            [alertVC addAction:cancelAction];</span><br><span class="line">            </span><br><span class="line">            [self presentViewController:alertVC animated:YES completion:nil];</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@&quot;警告&quot; message:@&quot;该操作会删除当前任务以及所有的和任务相关的统计记录，确认删除吗？&quot; preferredStyle:UIAlertControllerStyleAlert];</span><br><span class="line">            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@&quot;确认&quot; style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) &#123;</span><br><span class="line">                [[ILDTaskDataCenter sharedInstance] removeTask:self.taskId];</span><br><span class="line">                [self.navigationController popViewControllerAnimated:YES];</span><br><span class="line">            &#125;];</span><br><span class="line">            </span><br><span class="line">            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@&quot;取消&quot; style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) &#123;</span><br><span class="line">                //</span><br><span class="line">            &#125;];</span><br><span class="line">            </span><br><span class="line">            [alertVC addAction:cancelAction];</span><br><span class="line">            [alertVC addAction:okAction];</span><br><span class="line">            </span><br><span class="line">            [self presentViewController:alertVC animated:YES completion:nil];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -452,7 +477,7 @@
           
             <a href="/tags/APP开发/" rel="tag"># APP开发</a>
           
-            <a href="/tags/业务逻辑层/" rel="tag"># 业务逻辑层</a>
+            <a href="/tags/表示层/" rel="tag"># 表示层</a>
           
         </div>
       
@@ -465,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/20/diligence-app-session-4/" rel="next" title="勤之时 - 网络层的实现">
-                <i class="fa fa-chevron-left"></i> 勤之时 - 网络层的实现
+              <a href="/2017/03/28/diligence-app-session-9/" rel="next" title="勤之时 - 表示层（三）">
+                <i class="fa fa-chevron-left"></i> 勤之时 - 表示层（三）
               </a>
             
           </div>
@@ -475,8 +500,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/26/diligence-app-session-7/" rel="prev" title="勤之时 - 表示层（一）">
-                勤之时 - 表示层（一） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/28/diligence-app-session-11/" rel="prev" title="勤之时 - 表示层（五）">
+                勤之时 - 表示层（五） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
