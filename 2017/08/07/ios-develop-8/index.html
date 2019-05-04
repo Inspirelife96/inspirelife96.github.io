@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="启发光明的博客">
 <meta property="og:description" content="在说Push Notification的响应之前，先来讨论下iOS应用程序的状态，回调方法以及状态切换  应用程序的状态     状态 说明 描述     Not Running 未运行 程序没启动   Inactive 未激活 程序在前台运行，不过没有接收到事件。在没有事件处理情况下程序通常停留在这个状态   Active 激活 程序在前台运行而且接收到了事件。这也是前台的一个正常的模式   B">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-03T07:02:51.000Z">
+<meta property="og:updated_time" content="2019-05-04T02:44:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于iOS的Push Notification的响应">
 <meta name="twitter:description" content="在说Push Notification的响应之前，先来讨论下iOS应用程序的状态，回调方法以及状态切换  应用程序的状态     状态 说明 描述     Not Running 未运行 程序没启动   Inactive 未激活 程序在前台运行，不过没有接收到事件。在没有事件处理情况下程序通常停留在这个状态   Active 激活 程序在前台运行而且接收到了事件。这也是前台的一个正常的模式   B">
@@ -471,7 +471,50 @@
 <li>application:didReceiveRemoteNotification:fetchCompletionHandler:</li>
 </ul>
 <p>这两个函数有什么区别呢？<br>简单来说，iOS7以上，你只需要实现第二个函数即可。因为如果你两个函数都实现的化，程序只会调用第二个。（相信现在也没有什么iOS不支持iOS7了吧。）<br>具体的请参考苹果文档<br><a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623117-application" target="_blank" rel="noopener">https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623117-application</a><br><a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application" target="_blank" rel="noopener">https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application</a></p>
-<p>那么什么情况下application: didReceiveRemoteNotification: fetchCompletionHandler: 会被触发？<br>| APP状态| 消息推送| 用户操作 |是否触发 |<br>|————-|———-|—–|—–|<br>| Not Running|收到推送消息提示| 点击消息 |YES |<br>| Not Running|收到推送消息提示| 点击APP |NO|<br>| Background|收到推送消息提示| 点击消息 |YES |<br>| Background|收到推送消息提示| 点击APP |NO|<br>| Active|无推送消息提示| 无 |YES |<br>结论：如果应用不在激活状态，点击APP激活应用是不会触发application:didReceiveRemoteNotification:fetchCompletionHandler函数的，只有点击推送过来的消息，才会触发函数调用。</p>
+<p>那么什么情况下application: didReceiveRemoteNotification: fetchCompletionHandler: 会被触发？</p>
+<table>
+<thead>
+<tr>
+<th>APP状态</th>
+<th>消息推送</th>
+<th>用户操作</th>
+<th>是否触发</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Not Running</td>
+<td>收到推送消息提示</td>
+<td>点击消息</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Not Running</td>
+<td>收到推送消息提示</td>
+<td>点击APP</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Background</td>
+<td>收到推送消息提示</td>
+<td>点击消息</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Background</td>
+<td>收到推送消息提示</td>
+<td>点击APP</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>无推送消息提示</td>
+<td>无</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+<p>结论：如果应用不在激活状态，点击APP激活应用是不会触发application:didReceiveRemoteNotification:fetchCompletionHandler函数的，只有点击推送过来的消息，才会触发函数调用。</p>
 <p>此外，在iOS7之后，不需要再考虑在应用未启动状态下，接到推送消息，在application: didFinishLaunchingWithOptions:中获取推送信息了。因为application:didReceiveRemoteNotification:fetchCompletionHandler在这种情况下会被调用。如果还继续在application: didFinishLaunchingWithOptions:中做推送处理，那么就会出现重复。</p>
 <p>再看iOS10的情况，iOS10提供了两个delegate函数，分别对应应用处于激活状态和非激活状态</p>
 <ul>
